@@ -3,6 +3,7 @@
     python src/buffer_post.py launch/EP_lights_upload.json 20_lights_at_914 21_lights_part2 22_lights_part3
     python src/buffer_post.py --channels          # list connected channels
     python src/buffer_post.py --queue             # list scheduled posts
+    python src/buffer_post.py <kit> <sids...> --only=instagram   # one platform only
 
 Buffer only takes videos by public URL, so each video (and its cover) is pushed to the
 media/ folder of this repo's project branch and linked from raw.githubusercontent.com.
@@ -65,7 +66,7 @@ def strip_shorts(s):
     return s.replace(" #shorts", "").replace("#shorts ", "")
 
 
-def main(kit_path, sids):
+def main(kit_path, sids, only=None):
     cfg = json.loads(CFG.read_text())
     kit = json.loads(pathlib.Path(kit_path).read_text())
     parts = list(kit.values())
@@ -82,11 +83,11 @@ def main(kit_path, sids):
         jobs = [("youtube", m["description"], {"youtube": {"title": m["title"][:100], "privacy": "public", "categoryId": "24",
                                                              "madeForKids": False, "isAiGenerated": True, "notifySubscribers": True}}),
                 ("tiktok", tiktok_text[:2200], {"tiktok": {"title": strip_shorts(m["title"])[:90], "isAiGenerated": True}}),
-                ("instagram", tiktok_text[:2200], {"instagram": {"type": "reel", "shouldShareToFeed": True, "isAiGenerated": True,
-                                                                 "firstComment": m.get("comment", "")}})]
+                ("instagram", (strip_shorts(m["title"]) + "\n\n" + m.get("comment", "") + "\n\n" + strip_shorts(m["description"]))[:2200],
+                 {"instagram": {"type": "reel", "shouldShareToFeed": True, "isAiGenerated": True}})]   # first comment needs a paid Buffer plan
         for svc, text, meta in jobs:
             ch = cfg["channels"].get(svc)
-            if not ch:
+            if not ch or (only and svc not in only):
                 continue
             r = create(ch, text, due, vurl, cover if svc in ("tiktok", "instagram") else None, meta)
             print(f"part {k + 1} {svc}: {r}")
@@ -103,4 +104,6 @@ if __name__ == "__main__":
         for e in d["posts"]["edges"]:
             n = e["node"]; print(n["dueAt"], n["channelService"], n["status"], (n.get("error") or {}).get("message", ""), n["text"][:40].replace("\n", " "))
     else:
-        main(sys.argv[1], sys.argv[2:])
+        args = [a for a in sys.argv[1:] if not a.startswith("--only=")]
+        only = next((a.split("=", 1)[1].split(",") for a in sys.argv[1:] if a.startswith("--only=")), None)
+        main(args[0], args[1:], only)
