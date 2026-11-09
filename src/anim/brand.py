@@ -97,3 +97,18 @@ if __name__ == "__main__":
     thumb(1080, 1920, "thumb_ep1_vertical.png")
     thumb(1280, 720, "thumb_ep1_16x9.png")
     print("ok")
+
+
+def part_thumb(module, scene, t, d, title_lines, badge, name, colors=((1, 1, 1), (1, 0.8, 0.4))):
+    """Vertical cover for one part: a story frame + big title + 1/3 badge."""
+    import importlib
+    mod = importlib.import_module(module)
+    s, c = canvas(1080, 1920)
+    mod.SCENES[scene - 1](c, t, d)
+    rgb(c, (0, 0, 0), 0.25); c.paint()
+    for k, ln in enumerate(title_lines):
+        text(c, ln, 540, 330 + k * 165, 160, colors[k % 2], outline=16)
+    bw = 120 + 46 * len(badge)
+    rgb(c, hexc("#c4302b")); rrect(c, 540 - bw / 2, 1560, bw, 130, 65); c.fill()
+    text(c, badge, 540, 1625, 84, (1, 1, 1))
+    s.write_to_png(str(OUT / name))

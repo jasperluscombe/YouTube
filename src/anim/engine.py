@@ -545,7 +545,7 @@ def piano_score(total, tense_from, bpm=66, seed=0):
     beat = 60 / bpm / 2
     rng = np.random.default_rng(seed)
     t, k = 0.0, 0
-    while t < tense_from:
+    while t < min(tense_from, total):
         ch = chords[(k // 8) % 4]
         n = ch[[0, 2, 1, 3, 2, 1, 3, 2][k % 8]]
         if k % 8 == 0:                    # bass note on each chord
