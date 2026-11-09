@@ -60,7 +60,7 @@ def banner():
     glow(c, W_ / 2, 720, 900, (1, 0.7, 0.35), 0.18)
     # safe area for all devices: centre 1546 x 423
     text(c, CHANNEL, W_ / 2, 655, 200, (1, 0.85, 0.5), outline=14)
-    text(c, "ANIMATED SURVIVAL MYSTERIES  •  NEW EPISODES DAILY", W_ / 2, 805, 58, (0.9, 0.92, 1), outline=6)
+    text(c, "ANIMATED SURVIVAL STORIES  •  A NEW STORY EVERY DAY IN 3 PARTS", W_ / 2, 805, 58, (0.9, 0.92, 1), outline=6)
     vignette(c, 0.5)
     s.write_to_png(str(OUT / "banner.png"))
 
