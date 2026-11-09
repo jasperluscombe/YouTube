@@ -25,7 +25,7 @@ POLISH = ("highpass=f=70,equalizer=f=160:t=q:w=1:g=3,equalizer=f=3000:t=q:w=1.2:
           "aecho=0.8:0.5:22|37:0.12|0.07")
 
 # pause (seconds) after a phrase, by how it ends
-PAUSE = {"...": 1.2, "…": 1.2, ".": 0.8, "?": 1.0, "!": 0.7, ",": 0.0, "": 0.4}
+PAUSE = {"...": 1.0, "…": 1.0, ".": 0.7, "?": 0.9, "!": 0.6, ",": 0.0, "": 0.35}
 
 
 def ensure_models():
@@ -96,7 +96,8 @@ def chatterbox_batch(story, outdir, vcfg):
             if not out.exists():
                 jobs.append({"text": say_text(p), "out": str(out),
                              "exaggeration": scene.get("drama", cb.get("exaggeration", 0.6)),
-                             "cfg": cb.get("cfg", 0.35), "temperature": cb.get("temperature", 0.8)})
+                             "cfg": cb.get("cfg", 0.35), "temperature": cb.get("temperature", 0.8),
+                             "seed": cb.get("seed", 7) + (7919 if out.with_suffix(".retry").exists() else 0)})
     if jobs:
         spec = work / "jobs.json"
         spec.write_text(json.dumps({"voice_ref": str(ROOT / cb["voice_ref"]) if cb.get("voice_ref") else None,

@@ -148,7 +148,7 @@ def window_scene(ctx, t, lit=1.0, fig=True, wave=0.0, sign_up=0.0, sign_lines=No
 
 # ------------------------------------------------------------------ scenes
 def s1(ctx, t, d):       # Every night at 9:14 ... every light turns on ... darkness.
-    on, off = at(1, 1), at(1, -1)
+    on, off = at(1, 3), at(1, -1)
     level = ease(prog(t, on, on + 0.7)) * (1 - prog(t, off, off + 0.15))
     z = 1 + 0.06 * t / d
     ctx.save(); ctx.translate(W / 2, GY); ctx.scale(z, z); ctx.translate(-W / 2, -GY)
@@ -249,7 +249,7 @@ SHELF = [(k, random.Random(k).random()) for k in range(60)]
 
 
 def s5(ctx, t, d):       # Search the stores ... give him the bigger half.
-    split = at(5, -2)
+    split = at(5, -3)
     vgrad(ctx, -200, GY, [(0, hexc("#1c2125")), (1, hexc("#2c3338"))])
     for k in range(4):                    # dead fluorescent tubes, one flickering
         a = 0.9 if k != 2 else (0.9 if math.sin(t * 17) * math.sin(t * 3) > 0 else 0.15)
@@ -520,7 +520,7 @@ def s16(ctx, t, d):      # Biscuit stares at the door. Part two...
         ctx.move_to(0, 0); ctx.line_to(120, 0); ctx.line_to(260, -420); ctx.line_to(160, -440); ctx.close_path(); ctx.restore(); ctx.fill()
     ctx.restore()
     dog(ctx, 820, 1560, 330, "sit", face=-1, head_up=1, shiver=0.25)
-    p2 = prog(t, at(16, -2), at(16, -2) + 0.4)
+    p2 = prog(t, at(16, 2), at(16, 2) + 0.4)
     if p2 > 0:
         ctx.save(); ctx.translate(W / 2, 330); s = 1 + (1 - ease_out(p2)) * 0.6; ctx.scale(s, s)
         text(ctx, "PART 2", 0, 0, 170, (1, 0.3, 0.25), ease(p2), outline=14)
@@ -557,7 +557,7 @@ def sfx(i, d):
     t = np.arange(int(d * SR)) / SR
     bed = band_noise(d, 60, 300, i) * 0.06
     if i == 1:
-        on, off = at(1, 1), at(1, -1)
+        on, off = at(1, 3), at(1, -1)
         x = bed + env_at(d, [on], 0.6) * (tone(d, 55) + band_noise(d, 80, 600, 2) * 0.5) * 0.7 \
             + tone(d, 120, "saw") * 0.03 * ((t > on) & (t < off)) + env_at(d, [off], 0.4) * tone(d, 50) * 0.6
     elif i in (2, 8, 15):
@@ -574,7 +574,7 @@ def sfx(i, d):
     elif i == 4:
         x = bed + env_at(d, list(np.random.default_rng(4).uniform(0, d, 25)), 0.01) * band_noise(d, 2000, 8000, 4) * 0.25
     elif i == 5:
-        split = at(5, -2)
+        split = at(5, -3)
         steps = [k * math.pi / 6.5 for k in range(int(split * 6.5 / math.pi) + 1)]
         x = bed + env_at(d, steps, 0.05) * band_noise(d, 1500, 6000, 5) * 0.35 + tone(d, 120) * 0.02
     elif i == 6:
