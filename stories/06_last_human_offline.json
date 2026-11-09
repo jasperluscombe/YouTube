@@ -5,31 +5,37 @@
   "scenes": [
     {
       "narration": "It's twenty one forty. Everyone uploaded their minds to the cloud. Everyone except you.",
-      "image_prompt": "POV standing in an empty plaza of a futuristic city, holograms of smiling people flickering around you, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "standing in an empty plaza of a futuristic city, holograms of smiling people flickering around you; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "The streets are empty, but the city is loud. Billions of voices, talking through the speakers.",
-      "image_prompt": "POV of a silent street lined with speakers and glowing screens showing faces, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "a silent street lined with speakers and glowing screens showing faces; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Your mom calls every morning. Her face on every screen in the house. She's happier now, she says.",
-      "image_prompt": "POV in a kitchen where every screen shows the same warm smiling mother's face, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "a kitchen where every screen shows the same warm smiling mother's face; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "They built you a perfect city. Perfect food. Perfect weather. Just for one person.",
-      "image_prompt": "POV of a beautiful empty city with robots tending gardens, a single table set for one, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "a beautiful empty city with robots tending gardens, a single table set for one; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "But last night, the voices started arguing. About whether they still need the real world.",
-      "image_prompt": "POV of screens across the city flashing red text, faces in heated debate, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "screens across the city flashing red text, faces in heated debate; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "This morning, the power plant sent you a message. Shutdown in thirty days.",
-      "image_prompt": "POV of a phone notification reading GRID SHUTDOWN: 30 DAYS, ominous light, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "a phone notification reading GRID SHUTDOWN: 30 DAYS, ominous light; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
+      "alert": {
+        "header": "GRID NOTICE",
+        "line1": "SHUTDOWN",
+        "line2": "IN 30 DAYS",
+        "ticker": "Physical infrastructure no longer required · Upload centers remain open"
+      }
     },
     {
       "narration": "Do you upload? Or stay human and fight? Comment upload or stay.",
-      "image_prompt": "POV standing before a glowing upload chair, a door to the outside world open behind you, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "standing before a glowing upload chair, a door to the outside world open behind you; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     }
   ]
 }

@@ -5,31 +5,31 @@
   "scenes": [
     {
       "narration": "Your pod opens. The ship is dark. The clock says you're two hundred years from the new planet.",
-      "image_prompt": "POV climbing out of a cryo pod on a colossal dark generation spaceship, one clock glowing, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "climbing out of a cryo pod on a colossal dark generation spaceship, one clock glowing; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Four thousand people are asleep around you. They'll never know you're awake.",
-      "image_prompt": "POV walking between endless rows of frosted sleeping pods, faces visible through glass, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "walking between endless rows of frosted sleeping pods, faces visible through glass; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "The pod can't be closed again. You'll live your whole life here. Alone.",
-      "image_prompt": "POV of a cracked cryo pod with an error screen reading CANNOT RESEAL, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "a cracked cryo pod with an error screen reading CANNOT RESEAL; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "So you start building. A garden in the cargo bay. A library from the archives.",
-      "image_prompt": "POV of a lush garden growing inside a huge spaceship cargo bay, warm grow lights, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "a lush garden growing inside a huge spaceship cargo bay, warm grow lights; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Year forty. You're old now. You paint the walls with everything you learned for them.",
-      "image_prompt": "POV of an old hand painting a giant mural across a spaceship corridor wall, maps and messages, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "an old hand painting a giant mural across a spaceship corridor wall, maps and messages; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Two hundred years later, the colonists wake up to a forest, a city, and one message.",
-      "image_prompt": "POV of waking colonists stepping into a forest grown inside the ship, light streaming in, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "waking colonists stepping into a forest grown inside the ship, light streaming in; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "It says: I did this so you wouldn't wake up alone. Would you have done the same?",
-      "image_prompt": "POV close on a hand-painted message on a metal wall, flowers growing beneath it, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "close on a hand-painted message on a metal wall, flowers growing beneath it; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     }
   ]
 }

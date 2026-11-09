@@ -5,31 +5,31 @@
   "scenes": [
     {
       "narration": "You step out of the time machine. The year is ten thousand. And nobody's surprised to see you.",
-      "image_prompt": "POV stepping out of a smoking time machine into a serene futuristic landscape, calm onlookers, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "stepping out of a smoking time machine into a serene futuristic landscape, calm onlookers; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Humans are taller here. Quieter. They don't speak out loud. They just know what you mean.",
-      "image_prompt": "POV of tall graceful humans with soft glowing eyes looking at you kindly, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "tall graceful humans with soft glowing eyes looking at you kindly; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "There are no cities. Buildings grow out of the ground like trees, and move when you need them.",
-      "image_prompt": "POV of living organic buildings growing from the ground, shifting shape, bioluminescent, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "living organic buildings growing from the ground, shifting shape, bioluminescent; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "A child takes your hand and leads you to a museum. Inside is your phone.",
-      "image_prompt": "POV in a vast museum, an ancient smartphone displayed on a pedestal with reverent lighting, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "a vast museum, an ancient smartphone displayed on a pedestal with reverent lighting; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "The sign says: the device that almost ended us. People stared at it for six hours a day.",
-      "image_prompt": "POV close-up of a museum plaque beneath the phone, visitors whispering, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "close-up of a museum plaque beneath the phone, visitors whispering; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "The child asks you a question you can't answer. Was it worth it?",
-      "image_prompt": "POV looking down at a curious child with glowing eyes looking up at you, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "down at a curious child with glowing eyes looking up at you; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "What would the museum of the future say about us? Comment your guess.",
-      "image_prompt": "POV wide view of the museum hall with artifacts of the 21st century under glass, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "wide view of the museum hall with artifacts of the 21st century under glass; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     }
   ]
 }

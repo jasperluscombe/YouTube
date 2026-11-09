@@ -5,31 +5,31 @@
   "scenes": [
     {
       "narration": "Day one. You wake up and your family won't. They're breathing. They just won't wake up.",
-      "image_prompt": "POV standing in a bedroom doorway looking at a family peacefully asleep, morning light, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "standing in a bedroom doorway looking at a family peacefully asleep, morning light; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Outside, cars have stopped in the street. Drivers asleep at the wheel. The whole city is quiet.",
-      "image_prompt": "POV of a city intersection with stopped cars, drivers slumped asleep, silence, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "a city intersection with stopped cars, drivers slumped asleep, silence; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Day four. You find a hospital. You learn to set up IV drips from a textbook.",
-      "image_prompt": "POV of hands following a medical textbook to set up an IV drip beside a sleeping patient, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "hands following a medical textbook to set up an IV drip beside a sleeping patient; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Day nine. You start talking to them. Just so the city isn't silent.",
-      "image_prompt": "POV sitting beside sleeping people in a hospital ward, reading aloud from a book, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "sitting beside sleeping people in a hospital ward, reading aloud from a book; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Day twelve. A man walks into the hospital. He's awake. He's been looking for you.",
-      "image_prompt": "POV turning to see a stranger in a doorway at the end of a dark hospital corridor, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "turning to see a stranger in a doorway at the end of a dark hospital corridor; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "He says there are seven of you. Across the whole world. And you all had the same dream.",
-      "image_prompt": "POV of the stranger unfolding a world map with seven circled locations, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "the stranger unfolding a world map with seven circled locations; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "What do you think the dream was? Best answer gets the next part.",
-      "image_prompt": "POV close on the map, a glowing mark over your own city, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "close on the map, a glowing mark over your own city; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     }
   ]
 }

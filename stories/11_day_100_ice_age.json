@@ -5,31 +5,36 @@
   "scenes": [
     {
       "narration": "Day one. Snow in July. Everyone posts pictures. It's kind of fun.",
-      "image_prompt": "POV of a summer street covered in fresh snow, people in t-shirts laughing and taking photos, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "a summer street covered in fresh snow, people in t-shirts laughing and taking photos; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Day twenty. The snow hasn't stopped. Schools close. Then highways. Then airports.",
-      "image_prompt": "POV of an airport departure board with every flight CANCELLED, snow piling against the windows, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "an airport departure board with every flight CANCELLED, snow piling against the windows; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
+      "alert": {
+        "line1": "ALL FLIGHTS",
+        "line2": "CANCELLED",
+        "ticker": "Snowfall continues for 20th day · Highways closed · Stay indoors"
+      }
     },
     {
       "narration": "Day forty five. The snow is past the first floor. You enter your home through the window.",
-      "image_prompt": "POV climbing through a second floor window from a snow drift, houses buried, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "climbing through a second floor window from a snow drift, houses buried; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Day seventy. Whole neighborhoods move into the mall. It has heat, food, and space.",
-      "image_prompt": "POV inside a shopping mall turned into a survivor camp, tents between stores, warm light, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "a shopping mall turned into a survivor camp, tents between stores, warm light; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Day one hundred. A plane flies overhead for the first time in months.",
-      "image_prompt": "POV looking up through a mall skylight as a plane crosses a grey frozen sky, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "up through a mall skylight as a plane crosses a grey frozen sky; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "It drops thousands of flyers. They all say the same thing: go south. The equator is still warm.",
-      "image_prompt": "POV catching falling paper flyers in snow, text reading GO SOUTH, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "catching falling paper flyers in snow, text reading GO SOUTH; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Three thousand miles. On foot. In the snow. Would you make it? Comment yes or no.",
-      "image_prompt": "POV at the edge of a frozen highway stretching south into a white horizon, a line of travelers, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "the edge of a frozen highway stretching south into a white horizon, a line of travelers; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     }
   ]
 }

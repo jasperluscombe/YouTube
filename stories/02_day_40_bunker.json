@@ -4,32 +4,37 @@
   "title": "Day 40 Underground: Then The Radio Came Back On",
   "scenes": [
     {
-      "narration": "Day one. The sirens went off at 6 a.m. You made it into the bunker with ninety seconds to spare.",
-      "image_prompt": "POV running down concrete stairs into a bunker, heavy steel door closing, red siren light, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "narration": "Day one. The sirens went off at six in the morning You made it into the bunker with ninety seconds to spare.",
+      "visual": "running down concrete stairs into a bunker, heavy steel door closing, red siren light; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
+      "alert": {
+        "line1": "SHELTER",
+        "line2": "IMMEDIATELY",
+        "ticker": "Sirens active in all districts · Proceed to the nearest shelter · Do not use roads"
+      }
     },
     {
       "narration": "Day ten. You learn to ration. One can of beans. Half a bottle of water. Every day.",
-      "image_prompt": "POV of hands opening a single can of beans on a metal table, rows of supplies on shelves, dim lamp, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "hands opening a single can of beans on a metal table, rows of supplies on shelves, dim lamp; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Day twenty. The radio goes silent. No more broadcasts. Just static.",
-      "image_prompt": "POV of an old radio with a glowing dial on a bunker desk, tally marks scratched on the wall, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "an old radio with a glowing dial on a bunker desk, tally marks scratched on the wall; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Day thirty. You hear something scratching on the door. It lasts all night. You don't sleep.",
-      "image_prompt": "POV staring at a thick steel bunker door with dents and scratches, flashlight beam, tense darkness, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "staring at a thick steel bunker door with dents and scratches, flashlight beam, tense darkness; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Day forty. The radio crackles. A voice. Survivors. Thirty miles north. Come at dawn.",
-      "image_prompt": "POV close on the radio speaker crackling, a hand reaching for the volume, hope in warm light, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "close on the radio speaker crackling, a hand reaching for the volume, hope in warm light; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "You open the door for the first time in forty days. The sky isn't blue anymore. It's green.",
-      "image_prompt": "POV pushing open a bunker hatch to a strange green sky over a ruined landscape, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "pushing open a bunker hatch to a strange green sky over a ruined landscape; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     },
     {
       "narration": "Do you go north? Or do you stay where it's safe? Comment what you'd do.",
-      "image_prompt": "POV looking at a cracked road leading north toward a faint signal tower on the horizon, green sky, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+      "visual": "at a cracked road leading north toward a faint signal tower on the horizon, green sky; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
     }
   ]
 }
