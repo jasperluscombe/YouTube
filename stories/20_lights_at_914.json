@@ -5,73 +5,84 @@
   "hook_note": "Liminal mystery + survival + a dog companion, serialized with a cliffhanger.",
   "scenes": [
     {
-      "narration": "Every night, at exactly nine fourteen... every light in this dead city turns on. For one minute. Then... darkness.",
+      "narration": "Every night... at exactly nine fourteen... every light in this dead city... turns on. For one minute. Then... darkness.",
       "visual": "dark city skyline, every window snaps on at once, then off",
-      "speed": 0.95
+      "drama": 0.8
     },
     {
-      "narration": "You've watched it happen two hundred and twelve nights in a row. From the same rooftop. With the same dog.",
-      "visual": "rooftop at night, you and the dog sitting on the ledge, seen from behind"
+      "narration": "You've watched it happen... two hundred and twelve nights in a row. Same rooftop. Same silence. Same dog.",
+      "visual": "rooftop at night, you and the dog sitting on the ledge, seen from behind",
+      "drama": 0.8
     },
     {
-      "narration": "His name is Biscuit. You found him on day three... shaking under a bus. Waiting for someone who was never coming back.",
-      "visual": "flashback, rain, a small dog shivering under an abandoned bus, you crouch and reach out"
+      "narration": "His name is Biscuit. You found him on day three... shaking under a bus. Waiting for someone... who was never coming back.",
+      "visual": "flashback, rain, a small dog shivering under an abandoned bus, you crouch and reach out",
+      "drama": 0.9
     },
     {
-      "narration": "He's the reason you still get up in the morning. He's the reason you still talk out loud.",
-      "visual": "candle-lit apartment, you sit on the floor talking to the dog, tail wagging"
+      "narration": "He's the reason you still get up in the morning. He's the reason... you still talk out loud.",
+      "visual": "candle-lit apartment, you sit on the floor talking to the dog, tail wagging",
+      "drama": 0.9
     },
     {
-      "narration": "Every day is the same. Search the stores. Take whatever's left. And always... give him the bigger half.",
-      "visual": "empty supermarket aisle, you walk with a backpack, the dog trotting behind"
+      "narration": "Every day is the same. Search the stores. Take whatever's left. And always... always... give him the bigger half.",
+      "visual": "empty supermarket aisle, you walk with a backpack, the dog trotting behind",
+      "drama": 0.85
     },
     {
-      "narration": "Nobody ever told you what happened. One morning, everyone was just gone. Cars still running. Coffee... still warm.",
-      "visual": "grey dawn street, car door open, engine running, steaming coffee cup on the roof"
+      "narration": "Nobody ever told you what happened. One morning... everyone was just... gone. Cars still running. Coffee... still warm.",
+      "visual": "grey dawn street, car door open, engine running, steaming coffee cup on the roof",
+      "drama": 0.85
     },
     {
-      "narration": "There was no warning. No news. Just a thousand screens... all saying the same two words.",
-      "visual": "electronics store window, a wall of TVs all showing NO SIGNAL"
+      "narration": "No warning. No news. Just a thousand screens... all saying the same two words.",
+      "visual": "electronics store window, a wall of TVs all showing NO SIGNAL",
+      "drama": 0.85
     },
     {
-      "narration": "But tonight, at nine fourteen... something is different.",
+      "narration": "But tonight... at nine fourteen... something is different.",
       "visual": "rooftop, a glowing clock reads 9:14, you stand up slowly",
-      "speed": 0.92
+      "drama": 0.95
     },
     {
       "narration": "The city stays dark. Only one window lights up. Across the river. Top floor.",
-      "visual": "dark skyline across a river, a single window lights up, camera pushes in"
+      "visual": "dark skyline across a river, a single window lights up, camera pushes in",
+      "drama": 0.9
     },
     {
-      "narration": "And standing in that window... is a person. Waving at you.",
+      "narration": "And standing in that window... is a person. Waving... at you.",
       "visual": "close on the lit window, a silhouette waving slowly",
-      "speed": 0.92
+      "drama": 1.0
     },
     {
-      "narration": "Biscuit starts barking. He hasn't barked in months.",
-      "visual": "the dog barking at the window, ears up"
+      "narration": "Biscuit starts barking. He hasn't barked... in months.",
+      "visual": "the dog barking at the window, ears up",
+      "drama": 0.95
     },
     {
-      "narration": "You grab the binoculars. Your hands are shaking. They're holding up a sign.",
-      "visual": "you raise binoculars; binocular view of the window, a figure lifting a sign"
+      "narration": "You grab the binoculars. Your hands are shaking. They're holding up... a sign.",
+      "visual": "you raise binoculars; binocular view of the window, a figure lifting a sign",
+      "drama": 0.95
     },
     {
-      "narration": "It says... don't come here.",
+      "narration": "It says... don't... come here.",
       "visual": "binocular view: the sign reads DON'T COME HERE",
-      "speed": 0.9
+      "drama": 1.0
     },
     {
-      "narration": "They flip it over. On the back, in smaller letters... it's not me turning them on.",
+      "narration": "They flip it over. On the back... in smaller letters... it's not me... turning them on.",
       "visual": "binocular view: the sign flips: IT'S NOT ME TURNING THEM ON",
-      "speed": 0.92
+      "drama": 1.0
     },
     {
       "narration": "The window goes dark. And behind you... the light above the stairwell door... flickers on.",
-      "visual": "rooftop, the bulb above the stairwell door buzzes on behind you, you turn"
+      "visual": "rooftop, the bulb above the stairwell door buzzes on behind you, you turn",
+      "drama": 1.0
     },
     {
-      "narration": "Biscuit goes silent. He's staring at the door. Part two... if you want to know who's on those stairs.",
-      "visual": "the dog frozen staring at a door slightly ajar, light spilling out, slow push in"
+      "narration": "Biscuit goes silent. He's staring at the door. Part two... if you want to know... who's on those stairs.",
+      "visual": "the dog frozen staring at a door slightly ajar, light spilling out, slow push in",
+      "drama": 1.0
     }
   ]
 }

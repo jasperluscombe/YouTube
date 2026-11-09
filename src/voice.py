@@ -25,7 +25,7 @@ POLISH = ("highpass=f=70,equalizer=f=160:t=q:w=1:g=3,equalizer=f=3000:t=q:w=1.2:
           "aecho=0.8:0.5:22|37:0.12|0.07")
 
 # pause (seconds) after a phrase, by how it ends
-PAUSE = {"...": 0.75, "…": 0.75, ".": 0.5, "?": 0.6, "!": 0.45, ",": 0.0, "": 0.3}
+PAUSE = {"...": 1.2, "…": 1.2, ".": 0.8, "?": 1.0, "!": 0.7, ",": 0.0, "": 0.4}
 
 
 def ensure_models():
