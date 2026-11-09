@@ -53,7 +53,7 @@ def caption_filters(text, dur, tmp, prefix):
         tf.write_text(re.sub(r"[.,;:]$", "", p).upper())
         f.append(f"drawtext=fontfile={FONT}:textfile={tf}:fontsize=118:fontcolor=white:"
                  f"borderw=9:bordercolor=black:shadowx=0:shadowy=8:shadowcolor=black@0.6:"
-                 f"x=(w-text_w)/2:y=h*0.6:enable='between(t,{t:.3f},{t + d:.3f})'")
+                 f"x=(w-text_w)/2:y=h*0.76:enable='between(t,{t:.3f},{t + d:.3f})'")
         t += d
     return f
 
@@ -126,10 +126,15 @@ def main():
                   f"x=(w-text_w)/2:y=h*0.18:line_spacing=12,{caps}")
 
         clip = tmp / f"clip_{i:02d}.mp4"
-        run(["ffmpeg", "-y", *inputs, "-i", str(wav), "-map", "0:v", "-map", "1:a",
-             "-vf", vf, "-t", f"{dur:.2f}", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
-             "-pix_fmt", "yuv420p", "-r", str(FPS), "-c:a", "aac", "-ar", "44100", "-ac", "2",
-             "-af", "apad", str(clip)])
+        sfx = vid.with_suffix(".sfx.wav")
+        if sfx.exists() and not scene.get("alert"):   # sound design from the animator
+            extra, afc = ["-i", str(sfx)], "[1:a]apad[v];[2:a]volume=0.5[s];[v][s]amix=inputs=2:duration=first:normalize=0[a]"
+        else:
+            extra, afc = [], "[1:a]apad[a]"
+        run(["ffmpeg", "-y", *inputs, "-i", str(wav), *extra,
+             "-filter_complex", f"[0:v]{vf}[vo];{afc}", "-map", "[vo]", "-map", "[a]",
+             "-t", f"{dur:.2f}", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+             "-pix_fmt", "yuv420p", "-r", str(FPS), "-c:a", "aac", "-ar", "44100", "-ac", "2", str(clip)])
         clips.append(clip)
 
     lst = tmp / "clips.txt"

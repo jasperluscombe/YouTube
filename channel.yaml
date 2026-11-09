@@ -20,16 +20,16 @@ format:
   max_seconds: 60
 
 # Our own voice: a weighted blend of Kokoro preset voices.
-# Deep, calm, cinematic: a movie-trailer / survival-log narrator.
-# Tune weights (they're normalised) and re-run `python src/voice.py --preview`.
+# Natural, energetic storyteller (not a slow trailer voice).
+# Scenes can override pace with "speed" in the story JSON (e.g. 1.0 for a dramatic beat).
 voice:
   lang_code: "a"                   # a = American English, b = British
   blend:
-    am_onyx: 0.45                  # deep, low register
-    am_michael: 0.35               # clear, natural storytelling
-    am_fenrir: 0.20                # grit / tension
-  speed: 0.9                       # slower = more ominous
-  save_as: "voices/year_zero_narrator.pt"
+    am_michael: 0.55               # most natural male voice
+    am_puck: 0.30                  # brighter, more expressive
+    am_fenrir: 0.15                # a bit of edge
+  speed: 1.12                      # brisk, Shorts pacing
+  polish: true                     # EQ + compression + tiny room reverb so it sounds recorded, not synthetic
 
 # Animated clips (fal.ai). Swap the model to change look/price; clips are cached.
 video:

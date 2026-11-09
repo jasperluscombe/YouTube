@@ -35,7 +35,7 @@ def load():
     # Weighted average of voice style vectors = our own narrator voice.
     style = sum(tts.get_voice_style(n) * (w / total) for n, w in vcfg["blend"].items())
     lang = "en-us" if vcfg["lang_code"] == "a" else "en-gb"
-    return tts, style, vcfg["speed"], lang
+    return tts, style, vcfg["speed"], lang, vcfg.get("polish", False)
 
 
 def speak(tts, style, speed, lang, text):
@@ -43,20 +43,35 @@ def speak(tts, style, speed, lang, text):
     return np.asarray(audio), sr
 
 
+POLISH = ("highpass=f=70,equalizer=f=180:t=q:w=1:g=2.5,equalizer=f=3200:t=q:w=1.2:g=3,"
+          "acompressor=threshold=-20dB:ratio=3:attack=5:release=80:makeup=2,"
+          "aecho=0.8:0.5:22|37:0.12|0.07,loudnorm=I=-15:TP=-1.5")
+
+
+def write(path, audio, sr, polish):
+    sf.write(path, audio, sr)
+    if polish:
+        import subprocess
+        tmp = path.with_suffix(".raw.wav")
+        path.rename(tmp)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(tmp), "-af", POLISH, "-ar", "44100", str(path)], check=True)
+        tmp.unlink()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("story", nargs="?")
     ap.add_argument("--preview", action="store_true")
     args = ap.parse_args()
-    tts, style, speed, lang = load()
+    tts, style, speed, lang, polish = load()
 
     if args.preview or not args.story:
-        line = ("It's day forty. The radio went silent three weeks ago. "
-                "Tonight, for the first time, you see a light on the horizon.")
+        line = ("Day forty. The radio's been dead for three weeks. "
+                "And then, tonight... it crackles. Someone's out there!")
         out = ROOT / "out" / "voice_preview.wav"
         out.parent.mkdir(parents=True, exist_ok=True)
         audio, sr = speak(tts, style, speed, lang, line)
-        sf.write(out, audio, sr)
+        write(out, audio, sr, polish)
         print(f"preview -> {out}")
         return
 
@@ -64,8 +79,9 @@ def main():
     outdir = ROOT / "out" / story["id"]
     outdir.mkdir(parents=True, exist_ok=True)
     for i, scene in enumerate(story["scenes"], 1):
-        audio, sr = speak(tts, style, speed, lang, scene["narration"])
-        sf.write(outdir / f"scene_{i:02d}.wav", audio, sr)
+        sp = speed * scene.get("speed", 1.0)
+        audio, sr = speak(tts, style, sp, lang, scene["narration"])
+        write(outdir / f"scene_{i:02d}.wav", audio, sr, polish)
         print(f"  scene {i}: {len(audio) / sr:.1f}s")
 
 

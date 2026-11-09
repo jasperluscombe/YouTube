@@ -4,37 +4,39 @@
   "title": "Day 40 Underground: Then The Radio Came Back On",
   "scenes": [
     {
-      "narration": "Day one. The sirens went off at six in the morning You made it into the bunker with ninety seconds to spare.",
+      "narration": "Day one. Six A M. Every siren in the city goes off at once... and you've got ninety seconds to get underground.",
       "visual": "running down concrete stairs into a bunker, heavy steel door closing, red siren light; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
-      "alert": {
-        "line1": "SHELTER",
-        "line2": "IMMEDIATELY",
-        "ticker": "Sirens active in all districts · Proceed to the nearest shelter · Do not use roads"
-      }
+      "speed": 1.05
     },
     {
-      "narration": "Day ten. You learn to ration. One can of beans. Half a bottle of water. Every day.",
-      "visual": "hands opening a single can of beans on a metal table, rows of supplies on shelves, dim lamp; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+      "narration": "Day ten. You've got it down to a system. One can of beans. Half a bottle of water. That's it. Every single day.",
+      "visual": "hands opening a single can of beans on a metal table, rows of supplies on shelves, dim lamp; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
+      "speed": 1.0
     },
     {
-      "narration": "Day twenty. The radio goes silent. No more broadcasts. Just static.",
-      "visual": "an old radio with a glowing dial on a bunker desk, tally marks scratched on the wall; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+      "narration": "Day twenty. The radio goes quiet. No news. No music. Just... static.",
+      "visual": "an old radio with a glowing dial on a bunker desk, tally marks scratched on the wall; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
+      "speed": 0.95
     },
     {
-      "narration": "Day thirty. You hear something scratching on the door. It lasts all night. You don't sleep.",
-      "visual": "staring at a thick steel bunker door with dents and scratches, flashlight beam, tense darkness; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+      "narration": "Day thirty. Something's scratching at the door. All. Night. Long. You don't sleep.",
+      "visual": "staring at a thick steel bunker door with dents and scratches, flashlight beam, tense darkness; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
+      "speed": 0.95
     },
     {
-      "narration": "Day forty. The radio crackles. A voice. Survivors. Thirty miles north. Come at dawn.",
-      "visual": "close on the radio speaker crackling, a hand reaching for the volume, hope in warm light; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+      "narration": "Day forty. The radio crackles. A voice! Survivors, thirty miles north. Come at dawn.",
+      "visual": "close on the radio speaker crackling, a hand reaching for the volume, hope in warm light; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
+      "speed": 1.05
     },
     {
-      "narration": "You open the door for the first time in forty days. The sky isn't blue anymore. It's green.",
-      "visual": "pushing open a bunker hatch to a strange green sky over a ruined landscape; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+      "narration": "So you open the hatch for the first time in forty days... and the sky isn't blue anymore. It's green.",
+      "visual": "pushing open a bunker hatch to a strange green sky over a ruined landscape; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
+      "speed": 1.0
     },
     {
-      "narration": "Do you go north? Or do you stay where it's safe? Comment what you'd do.",
-      "visual": "at a cracked road leading north toward a faint signal tower on the horizon, green sky; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+      "narration": "So, do you go north? Or do you stay where it's safe? Tell me in the comments.",
+      "visual": "at a cracked road leading north toward a faint signal tower on the horizon, green sky; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
+      "speed": 1.05
     }
   ]
 }
