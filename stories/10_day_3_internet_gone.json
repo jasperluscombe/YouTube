@@ -1,0 +1,35 @@
+{
+  "id": "10_day_3_internet_gone",
+  "series": "Day __ of ____",
+  "title": "Day 3 Without The Internet. Forever.",
+  "scenes": [
+    {
+      "narration": "Day one. At nine a.m. the internet goes down. Everywhere. Every country. At the same time.",
+      "image_prompt": "POV holding a phone showing NO CONNECTION, people on a busy street all staring at their phones, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "No maps. No bank. Your card gets declined at the store. So does everyone's.",
+      "image_prompt": "POV at a grocery checkout with a DECLINED card screen and a long confused line, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Day two. The shelves are empty by noon. People start trading. Batteries for bread.",
+      "image_prompt": "POV in a supermarket with empty shelves and people bartering in the aisles, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "No one knows what happened. The TV only shows one message: please stay calm.",
+      "image_prompt": "POV of an old TV showing a test card with the text PLEASE STAY CALM, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Day three. Your neighbor knocks with a paper map. He says the old radio tower still works.",
+      "image_prompt": "POV opening a front door to a neighbor holding a paper map and a flashlight, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "On the radio, a voice reads a list of places with food and water. Your street is on it.",
+      "image_prompt": "POV of a crowd gathered around a radio in a dark living room, candlelight, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "How long would you last without the internet? A day? A week? Be honest.",
+      "image_prompt": "POV looking down a dark suburban street lit only by candles in windows, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    }
+  ]
+}

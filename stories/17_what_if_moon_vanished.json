@@ -1,0 +1,35 @@
+{
+  "id": "17_what_if_moon_vanished",
+  "series": "What If ____",
+  "title": "What If The Moon Disappeared Tonight?",
+  "scenes": [
+    {
+      "narration": "Tonight, the moon disappears. No explosion. It's just gone.",
+      "image_prompt": "POV looking up at a night sky where the moon should be, empty dark space, people pointing, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "The first thing you'd notice: darkness. Real darkness. Every full moon night, gone forever.",
+      "image_prompt": "POV of a pitch black countryside at night, only stars visible, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "The tides shrink to about a third. Beaches change. Fishing towns wake up to boats on dry mud.",
+      "image_prompt": "POV of fishing boats lying on mud at a harbor, confused fishermen, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Animals that hunt and breed by moonlight lose their clock. Coral reefs stop spawning together.",
+      "image_prompt": "POV underwater at a coral reef in darkness, no spawning, still and silent, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "And slowly, over thousands of years, Earth starts to wobble on its axis.",
+      "image_prompt": "POV from space of Earth slowly tilting, seasons drawn as shifting colors, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Seasons get wild. Ice ages, then heatwaves. The moon was holding us steady the whole time.",
+      "image_prompt": "POV of a landscape flashing between frozen tundra and scorching desert, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Would you rather lose the moon, or lose the stars? Comment moon or stars.",
+      "image_prompt": "POV looking at a sky split between a glowing moon and a field of stars, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    }
+  ]
+}

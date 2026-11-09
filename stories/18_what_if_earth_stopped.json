@@ -1,0 +1,35 @@
+{
+  "id": "18_what_if_earth_stopped",
+  "series": "What If ____",
+  "title": "What If Earth Stopped Spinning For One Second?",
+  "scenes": [
+    {
+      "narration": "Right now, you're spinning at about a thousand miles an hour. You just can't feel it.",
+      "image_prompt": "POV standing on a city street, motion lines showing Earth's rotation, calm people, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Now imagine the Earth stops. Instantly. But you don't.",
+      "image_prompt": "POV of everything frozen for a split second, clocks stopped, birds mid-air, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Everything not bolted down keeps moving east. People, cars, oceans. At the speed of a jet.",
+      "image_prompt": "POV of a massive ocean wave rising over a coastline, cars sliding sideways, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Winds faster than any hurricane scrape the surface. Buildings, forests, mountains of dust.",
+      "image_prompt": "POV of supersonic winds tearing across a landscape, dust walls on the horizon, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "If you survived, a day would now last a whole year. Six months of sun. Six months of night.",
+      "image_prompt": "POV of a frozen dark half of Earth meeting a scorching bright half, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "The oceans would pull toward the poles, and one giant continent would rise around the equator.",
+      "image_prompt": "POV from space of Earth with oceans at the poles and a giant dry belt around the middle, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Where would you want to be standing when it stopped?",
+      "image_prompt": "POV standing alone on a hill as a colossal dust storm approaches, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "16_pov_wake_up_2075",
+  "series": "POV: Year ____",
+  "title": "POV: You Were Frozen In 2026 And Wake Up In 2075",
+  "scenes": [
+    {
+      "narration": "You went to sleep in twenty twenty six. Frozen. They wake you up in twenty seventy five.",
+      "image_prompt": "POV waking up in a bright medical room, a doctor smiling, a date on screen reading 2075, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "The doctor is a robot. It speaks your language, with your accent. It learned it last night.",
+      "image_prompt": "POV of a friendly humanoid medical robot holding a tablet with your 2026 photo, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Your bank account grew for fifty years. You're a millionaire. A coffee costs ninety dollars.",
+      "image_prompt": "POV of a cafe menu display with absurd prices, a robot barista, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Nobody drives. Nobody carries a phone. Everything you need floats in the air in front of you.",
+      "image_prompt": "POV of a street with silent autonomous pods and floating holographic interfaces, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "You look yourself up. There's a whole page about you. The last person frozen in the old way.",
+      "image_prompt": "POV reading a holographic encyclopedia page with your own face on it, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "And at the bottom, a message, from your grandkid. They're sixty. They're waiting outside.",
+      "image_prompt": "POV at a clinic door, an old person waiting with flowers, tears in their eyes, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "What would you do first in twenty seventy five?",
+      "image_prompt": "POV looking out over a sunny futuristic city skyline from a balcony, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    }
+  ]
+}

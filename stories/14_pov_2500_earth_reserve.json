@@ -1,0 +1,35 @@
+{
+  "id": "14_pov_2500_earth_reserve",
+  "series": "POV: Year ____",
+  "title": "POV: Year 2500, Earth Is A Nature Reserve",
+  "scenes": [
+    {
+      "narration": "It's twenty five hundred. Nobody lives on Earth anymore. It's a nature reserve.",
+      "image_prompt": "POV looking down at a lush green Earth from a ring-shaped orbital city, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "You live in orbit, on a ring city. Today is your school trip to the surface.",
+      "image_prompt": "POV in a classroom shuttle with excited kids pressed against windows, Earth below, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "The old cities are forests now. Trees grow through the Eiffel Tower.",
+      "image_prompt": "POV walking through a dense forest with a vine-covered Eiffel Tower rising above the trees, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Wolves walk through Times Square. Whales swim where London used to be.",
+      "image_prompt": "POV of wolves crossing an overgrown Times Square, faded billboards in the trees, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "You're allowed six hours. You can't take anything. Not even a leaf.",
+      "image_prompt": "POV of a ranger drone scanning your hand, a sign reading LEAVE NO TRACE, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Your teacher says humans almost destroyed this place. Leaving was the only way to save it.",
+      "image_prompt": "POV of a teacher pointing at a restored coral reef through clear water, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Would you leave Earth forever if it meant saving it? Yes or no.",
+      "image_prompt": "POV from a departing shuttle window, the wild green planet shrinking behind, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    }
+  ]
+}

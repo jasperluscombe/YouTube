@@ -1,0 +1,35 @@
+{
+  "id": "06_last_human_offline",
+  "series": "Last Human",
+  "title": "POV: You're The Last Human Who Didn't Upload",
+  "scenes": [
+    {
+      "narration": "It's twenty one forty. Everyone uploaded their minds to the cloud. Everyone except you.",
+      "image_prompt": "POV standing in an empty plaza of a futuristic city, holograms of smiling people flickering around you, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "The streets are empty, but the city is loud. Billions of voices, talking through the speakers.",
+      "image_prompt": "POV of a silent street lined with speakers and glowing screens showing faces, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Your mom calls every morning. Her face on every screen in the house. She's happier now, she says.",
+      "image_prompt": "POV in a kitchen where every screen shows the same warm smiling mother's face, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "They built you a perfect city. Perfect food. Perfect weather. Just for one person.",
+      "image_prompt": "POV of a beautiful empty city with robots tending gardens, a single table set for one, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "But last night, the voices started arguing. About whether they still need the real world.",
+      "image_prompt": "POV of screens across the city flashing red text, faces in heated debate, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "This morning, the power plant sent you a message. Shutdown in thirty days.",
+      "image_prompt": "POV of a phone notification reading GRID SHUTDOWN: 30 DAYS, ominous light, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Do you upload? Or stay human and fight? Comment upload or stay.",
+      "image_prompt": "POV standing before a glowing upload chair, a door to the outside world open behind you, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "05_last_human_in_orbit",
+  "series": "Last Human",
+  "title": "POV: You're In Space When Earth Goes Dark",
+  "scenes": [
+    {
+      "narration": "You're on the space station, three hundred miles up. Your shift ends. You look out the window.",
+      "image_prompt": "POV floating inside a space station cupola looking down at a glowing Earth at night, city lights everywhere, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "The city lights are going out. Not all at once. One city. Then another. Then whole continents.",
+      "image_prompt": "POV through the window watching Earth's city lights blink out region by region, eerie, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Mission control stops answering. The last message just says: stay where you are.",
+      "image_prompt": "POV of a monitor with a frozen video feed of mission control, text reading STAY WHERE YOU ARE, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "You have food for six months. Air for longer. And nobody left to talk to.",
+      "image_prompt": "POV of supply lockers being counted with a floating notepad, tally marks, zero gravity, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Day ninety. One light comes back on. Just one. In the middle of the Pacific.",
+      "image_prompt": "POV looking down at a completely dark Earth with a single bright light in the middle of the ocean, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "It's blinking. Three short. Three long. Three short.",
+      "image_prompt": "close-up POV through a telescope of a tiny light blinking on a dark ocean, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Someone down there knows you're up here. Do you go down? Or do you wait?",
+      "image_prompt": "POV holding the handle of an escape capsule hatch, Earth dark below, one light blinking, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    }
+  ]
+}
