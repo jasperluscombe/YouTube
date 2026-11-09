@@ -83,6 +83,12 @@
       "narration": "Biscuit goes silent. He's staring at the door. Part two... if you want to know... who's on those stairs.",
       "visual": "the dog frozen staring at a door slightly ajar, light spilling out, slow push in",
       "drama": 1.0
+    },
+    {
+      "narration": "So... who's turning on the lights? Tell me your theory in the comments. The best one... I'll read in part two.",
+      "visual": "end card over the dark skyline: WHO'S TURNING ON THE LIGHTS? / COMMENT YOUR THEORY / FOLLOW FOR PART 2; the city lights snap on at the very end, looping into the opening shot",
+      "drama": 0.8,
+      "end_card": true
     }
   ]
 }

@@ -25,7 +25,7 @@ def segs(i):
     return json.loads(p.read_text()) if p.exists() else [["", 0, 5]]
 
 
-SEG = {i: segs(i) for i in range(1, 17)}
+SEG = {i: segs(i) for i in range(1, 18)}
 
 
 def at(i, k):
@@ -162,7 +162,7 @@ def s1(ctx, t, d):       # Every night at 9:14 ... every light turns on ... dark
     ctx.restore()
     a = prog(t, 0.2, 0.8)
     text(ctx, "9:14 PM", W / 2, 300, 150, (1, 0.85, 0.5) if level > 0.3 else (0.85, 0.87, 0.95), a, outline=12)
-    vignette(ctx, 0.75); grain(ctx, t); fade(ctx, t, d, 0.6, 0.15)
+    vignette(ctx, 0.75); grain(ctx, t); fade(ctx, t, d, 0.0, 0.15)
 
 
 def s2(ctx, t, d):       # 212 nights, same rooftop, same dog.
@@ -528,7 +528,37 @@ def s16(ctx, t, d):      # Biscuit stares at the door. Part two...
     vignette(ctx, 0.95); grain(ctx, t, 500); fade(ctx, t, d, 0.05, 0.35)
 
 
-SCENES = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16]
+def s17(ctx, t, d):      # End hook: comment your theory, follow for part 2, loop to the opening.
+    loop = prog(t, d - 0.9, d - 0.4)       # lights snap on right before the loop point
+    z = 1.06 - 0.06 * ease(t / d)          # drift back to the opening framing
+    ctx.save(); ctx.translate(W / 2, GY); ctx.scale(z, z); ctx.translate(-W / 2, -GY)
+    night_sky(ctx, t)
+    city_lights(ctx, CITY_FAR, GY - 90, hexc("#0d1020"), loop, t, 0.1)
+    city_lights(ctx, CITY_NEAR, GY, hexc("#07080f"), loop, t, 0.6)
+    vgrad(ctx, GY, H, [(0, hexc("#07080d")), (1, hexc("#020203"))])
+    ctx.restore()
+    q = prog(t, 0.2, 0.6)
+    ctx.save(); ctx.translate(W / 2, 360); s = 1 + (1 - ease_out(q)) * 0.5; ctx.scale(s, s)
+    text(ctx, "WHO'S TURNING", 0, -70, 120, (1, 1, 1), ease(q), outline=12)
+    text(ctx, "ON THE LIGHTS?", 0, 70, 120, (1, 0.8, 0.4), ease(q), outline=12)
+    ctx.restore()
+    c = prog(t, at(17, 1), at(17, 1) + 0.4)
+    if c > 0:
+        bob = math.sin(t * 5) * 8
+        rgb(ctx, (0, 0, 0), 0.55 * c); rrect(ctx, 120, 640 + bob, 840, 170, 30); ctx.fill()
+        text(ctx, "COMMENT YOUR THEORY", W / 2, 700 + bob, 84, (1, 1, 1), c)
+        text(ctx, "best one gets read in Part 2", W / 2, 775 + bob, 46, (0.85, 0.85, 0.9), c)
+        rgb(ctx, (1, 1, 1), c)                 # arrow pointing down-right at the comment button
+        ctx.set_line_width(10); ctx.move_to(880, 840 + bob); ctx.line_to(960, 960 + bob); ctx.stroke()
+        ctx.move_to(915, 950 + bob); ctx.line_to(962, 963 + bob); ctx.line_to(975, 915 + bob); ctx.stroke()
+    f = prog(t, at(17, -1), at(17, -1) + 0.4)
+    if f > 0:
+        rgb(ctx, hexc("#c4302b"), f); rrect(ctx, 260, 880, 560, 120, 60); ctx.fill()
+        text(ctx, "FOLLOW FOR PART 2", W / 2, 940, 62, (1, 1, 1), f)
+    vignette(ctx, 0.7); grain(ctx, t); fade(ctx, t, d, 0.1, 0.0)
+
+
+SCENES = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17]
 
 
 # ------------------------------------------------------------------ sound design
@@ -594,6 +624,8 @@ def sfx(i, d):
         if i == 14:
             f0 = at(14, 0) + 0.6
             x += env_at(d, [f0, f0 + 0.3], 0.12) * band_noise(d, 800, 5000, 14) * 0.4
+    elif i == 17:
+        x = bed + heart(d, 70) * 0.5 + env_at(d, [d - 0.9], 0.5) * (tone(d, 55) + band_noise(d, 80, 600, 2) * 0.5) * 0.7
     else:  # 16
         growl = band_noise(d, 50, 220, 16) * (0.5 + 0.5 * np.sin(2 * np.pi * 23 * t)) * 0.4 * np.clip(t / 2, 0, 1)
         creak = tone(d, 220 - 80 * np.clip((t - 0.8) / (d - 2.3), 0, 1), "saw") * 0.05 * ((t > 0.8) & (t < d - 1.5))
