@@ -1,0 +1,35 @@
+{
+  "id": "01_last_human_2087",
+  "series": "Last Human",
+  "title": "POV: You Wake Up As The Last Human (Year 2087)",
+  "scenes": [
+    {
+      "narration": "You wake up in a glass pod. The display says: year twenty eighty seven. Cryo sleep complete.",
+      "image_prompt": "POV looking up through a frosted cryo pod lid, glowing display reading 2087, dark lab, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Hundreds of pods line the hall. Every single one is empty. The doors are open.",
+      "image_prompt": "POV walking down a vast hall of open empty cryo pods, emergency lights, dust in the air, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Outside, the city is silent. Vines cover the skyscrapers. Deer walk down the highway.",
+      "image_prompt": "POV standing at a doorway overlooking an overgrown futuristic city, vines on skyscrapers, deer on a cracked highway, golden morning light, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Delivery drones still fly their routes. Dropping packages for people who aren't there anymore.",
+      "image_prompt": "POV of autonomous drones dropping packages onto empty overgrown doorsteps, piles of unopened boxes, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "A robot sweeps the street. It stops. It turns to you. And it says: welcome back.",
+      "image_prompt": "POV of a weathered humanoid service robot holding a broom, turning to face the viewer, mossy street, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "It's been waiting forty years for someone to talk to.",
+      "image_prompt": "close-up of the robot's scratched face with soft blue eyes, holding an old photograph of people, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "The question is... where did everyone else go? Tell me your theory.",
+      "image_prompt": "POV looking at a giant faded billboard reading EVACUATION COMPLETE, sunset over the empty city, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    }
+  ]
+}

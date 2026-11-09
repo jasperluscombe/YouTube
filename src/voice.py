@@ -1,7 +1,7 @@
 """Narration with our own blended Kokoro voice.
 
     python src/voice.py --preview                 # say a test line with the blend
-    python src/voice.py stories/01_the_last_kitten.json   # narrate every scene
+    python src/voice.py stories/01_last_human_2087.json   # narrate every scene
 
 Writes out/<story>/scene_XX.wav (24 kHz mono).
 """
@@ -50,7 +50,7 @@ def main():
     voice = build_voice(pipeline, vcfg)
 
     if args.preview or not args.story:
-        line = "He was the smallest kitten in the box. Nobody chose him. Until the rain came."
+        line = "It's day forty. The radio went silent three weeks ago. Tonight, for the first time, you see a light on the horizon."
         out = ROOT / "out" / "voice_preview.wav"
         out.parent.mkdir(parents=True, exist_ok=True)
         sf.write(out, speak(pipeline, voice, line, vcfg["speed"]), SR)

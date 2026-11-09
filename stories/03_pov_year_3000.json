@@ -1,0 +1,35 @@
+{
+  "id": "03_pov_year_3000",
+  "series": "POV: Year ____",
+  "title": "POV: A Normal Day In The Year 3000",
+  "scenes": [
+    {
+      "narration": "It's the year three thousand. You wake up, and your bedroom wall is the ocean. Live. From Europa.",
+      "image_prompt": "POV waking in a minimalist bed, the whole wall is a live view of an alien ice ocean with a gas giant above, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Breakfast is grown in your kitchen overnight. It tastes like whatever you dreamed about.",
+      "image_prompt": "POV of a glowing kitchen pod opening to reveal a perfect breakfast, soft futuristic light, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Your commute to work takes four minutes. Work is on Mars.",
+      "image_prompt": "POV inside a sleek capsule shooting through a transparent tube into space toward a red planet, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Nobody has a job they hate anymore. Machines do the boring stuff. People just build what they want.",
+      "image_prompt": "POV in a floating workshop where people sculpt holographic cities in the air, Martian landscape outside, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Your great great great grandparents are still alive. They're two hundred and eleven. They play tennis.",
+      "image_prompt": "POV of a youthful-looking elderly couple laughing on a tennis court in a dome city, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "But there's one thing nobody's seen in five hundred years. Rain.",
+      "image_prompt": "POV looking up at a dome city ceiling with a perfectly controlled artificial sky, a child pointing at an old photo of rain, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Would you trade your life for this one? Yes or no.",
+      "image_prompt": "POV standing on a balcony overlooking a glittering megacity at night, two moons rising, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    }
+  ]
+}

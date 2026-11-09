@@ -1,0 +1,35 @@
+{
+  "id": "04_what_if_sun_went_out",
+  "series": "What If ____",
+  "title": "What If The Sun Went Out? Hour By Hour",
+  "scenes": [
+    {
+      "narration": "Eight minutes. That's how long you'd have before you even knew the sun was gone.",
+      "image_prompt": "POV in a sunny city street, people walking normally, a countdown overlay reading 8:00, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Then, darkness. Total. The stars come out at noon, and everyone looks up at once.",
+      "image_prompt": "POV of a crowd in a city street looking up at a starry sky in the middle of the day, phones glowing, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Hour one. The moon vanishes too. It was only ever glowing with the sun's light.",
+      "image_prompt": "POV looking at a dark sky where the moon is fading to nothing, eerie silence, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Day one. The temperature drops below freezing. Every power grid on Earth is overloaded.",
+      "image_prompt": "POV of a frost-covered city with flickering power lines, breath visible in cold air, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "Week one. Minus seventy. The oceans start to freeze from the top down.",
+      "image_prompt": "POV standing on a beach as waves freeze mid-motion into ice under starlight, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "But deep underground, near the Earth's core, it's still warm. And that's where you'd have to go.",
+      "image_prompt": "POV descending into a glowing geothermal cave city, survivors with lanterns, warm orange light, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    },
+    {
+      "narration": "How long do you think you'd survive? Day one, week one, or year one?",
+      "image_prompt": "POV looking back up a mine shaft at a frozen, star-filled surface world, cinematic first-person POV, photorealistic, Unreal Engine 5 look, volumetric lighting, film grain, vertical 9:16"
+    }
+  ]
+}

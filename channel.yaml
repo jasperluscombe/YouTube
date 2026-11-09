@@ -1,12 +1,17 @@
 # Channel config: one place to change the niche, voice, and format.
 channel:
-  name: "Whisker Tales"            # working name, rename freely
-  niche: "AI-animated emotional cat stories (YouTube Shorts)"
+  name: "Year Zero"                # working name, rename freely
+  niche: "AI-generated POV apocalypse, survival & future-life stories (YouTube Shorts)"
   why: >
-    The most-watched AI Shorts on YouTube are dominated by animal
-    stories, mostly cats and kittens (channels in the 100M-700M view range).
-    Format: 45-60s vertical, 6-8 scenes, an underdog kitten, a hardship, a twist,
-    an emotional payoff.
+    First-person "what would life be like" videos (e.g. "you wake up as the last
+    person on Earth in 2087") go viral because the viewer imagines living in that world.
+    Survival dramas built around a well-stocked base (fortress vs. chaos) are
+    trending too. We write every script in second person ("you").
+  series:
+    - "POV: Year ____"             # a normal day in a far future (2150, 2500, 3000...)
+    - "Day __ of ____"             # survival log: day 1, day 40, day 300 of an apocalypse
+    - "Last Human"                 # alone / first to wake / last one left
+    - "What If ____"               # the sun goes out, oceans drain, AI takes over, etc.
 
 format:
   width: 1080
@@ -15,13 +20,13 @@ format:
   max_seconds: 60
 
 # Our own voice: a weighted blend of Kokoro preset voices.
-# Blending averages the style vectors, which gives a narrator no other channel has.
+# Deep, calm, cinematic: a movie-trailer / survival-log narrator.
 # Tune weights (they're normalised) and re-run `python src/voice.py --preview`.
 voice:
   lang_code: "a"                   # a = American English, b = British
   blend:
-    af_heart: 0.6                  # Kokoro's highest-rated voice: warm, clear
-    bf_emma: 0.25                  # adds a soft storybook tone
-    af_bella: 0.15                 # adds energy for hooks
-  speed: 0.95                      # slightly slow = more emotional
-  save_as: "voices/whisker_narrator.pt"
+    am_onyx: 0.45                  # deep, low register
+    am_michael: 0.35               # clear, natural storytelling
+    am_fenrir: 0.20                # grit / tension
+  speed: 0.9                       # slower = more ominous
+  save_as: "voices/year_zero_narrator.pt"

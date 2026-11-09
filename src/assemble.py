@@ -1,7 +1,7 @@
 """Build a vertical Short from a story: images + narration + burned-in captions.
 
-    python src/assemble.py stories/01_the_last_kitten.json
-    python src/assemble.py stories/01_the_last_kitten.json --silent   # test without TTS
+    python src/assemble.py stories/01_last_human_2087.json
+    python src/assemble.py stories/01_last_human_2087.json --silent   # test without TTS
 
 Images:  assets/images/<story id>/scene_01.png ... (generate from each scene's
          image_prompt in any image/video generator). Missing images get a
@@ -57,8 +57,8 @@ def main():
             img = outdir / f"placeholder_{i:02d}.png"
             label = outdir / f"label_{i:02d}.txt"
             label.write_text(textwrap.fill(f"SCENE {i}\n" + scene["image_prompt"], 34))
-            run(["ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=0x2b2233:s={W}x{H}",
-                 "-vf", f"drawtext=fontfile={FONT}:textfile={label}:fontcolor=0x9a8fa6:fontsize=40:"
+            run(["ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=0x14181c:s={W}x{H}",
+                 "-vf", f"drawtext=fontfile={FONT}:textfile={label}:fontcolor=0x6f8796:fontsize=40:"
                         "x=(w-text_w)/2:y=h*0.2:line_spacing=12",
                  "-frames:v", "1", str(img)])
 
