@@ -14,7 +14,8 @@
       "shorts"
     ],
     "publish_at": "2026-11-09T17:00:00Z",
-    "comment": "Who's turning on the lights? 👇 Drop your theory, then watch Part 2."
+    "comment": "Who's turning on the lights? 👇 Drop your theory, then watch Part 2.",
+    "cover_ms": 10366
   },
   "part2": {
     "title": "The 9:14 Lights (2/3): Who's On The Stairs? #shorts",
@@ -29,7 +30,8 @@
       "shorts"
     ],
     "publish_at": "2026-11-09T21:30:00Z",
-    "comment": "Machine or stranger? 🤖 vs 🪧 Comment who you trust."
+    "comment": "Machine or stranger? 🤖 vs 🪧 Comment who you trust.",
+    "cover_ms": 28786
   },
   "part3": {
     "title": "The 9:14 Lights (3/3): Lights Out - The Finale #shorts",
@@ -44,6 +46,7 @@
       "shorts"
     ],
     "publish_at": "2026-11-10T01:30:00Z",
-    "comment": "Would you have pulled the lever? ⚡ Yes or no 👇"
+    "comment": "Would you have pulled the lever? ⚡ Yes or no 👇",
+    "cover_ms": 79959
   }
 }

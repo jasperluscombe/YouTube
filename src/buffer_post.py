@@ -57,7 +57,7 @@ def create(channel, text, due, video_url, thumb_url, meta):
              ... on MutationError { message } } }"""
     inp = {"channelId": channel, "text": text, "schedulingType": "automatic", "mode": "customScheduled",
            "dueAt": due, "needsApproval": False, "aiAssisted": True,
-           "assets": [{"video": {"url": video_url, "thumbnailUrl": thumb_url}}], "metadata": meta}
+           "assets": [{"video": {"url": video_url, **({"metadata": {"thumbnailOffset": thumb_url}} if thumb_url is not None else {})}}], "metadata": meta}
     return gql(q, {"i": inp})["createPost"]
 
 
@@ -70,15 +70,14 @@ def main(kit_path, sids):
     kit = json.loads(pathlib.Path(kit_path).read_text())
     parts = list(kit.values())
     vids = [ROOT / "out" / sid / f"{sid}.mp4" for sid in sids]
-    thumbs = sorted((ROOT / "launch").glob(f"thumb_{pathlib.Path(kit_path).stem.split('_')[1]}_*.png"))
-    urls = publish_media([str(v) for v in vids] + [str(t) for t in thumbs])
+    urls = publish_media([str(v) for v in vids])
     now = dt.datetime.now(dt.timezone.utc)
     for k, (m, v) in enumerate(zip(parts, vids)):
         due = m["publish_at"]
         if dt.datetime.fromisoformat(due.replace("Z", "+00:00")) <= now + dt.timedelta(minutes=10):
             print(f"skip part {k + 1}: {due} has passed"); continue
         vurl = urls[v.name]
-        turl = urls.get(thumbs[k].name) if k < len(thumbs) else None
+        cover = m.get("cover_ms")
         tiktok_text = strip_shorts(m["title"]) + "\n\n" + strip_shorts(m["description"])
         jobs = [("youtube", m["description"], {"youtube": {"title": m["title"][:100], "privacy": "public", "categoryId": "24",
                                                              "madeForKids": False, "isAiGenerated": True, "notifySubscribers": True}}),
@@ -89,7 +88,7 @@ def main(kit_path, sids):
             ch = cfg["channels"].get(svc)
             if not ch:
                 continue
-            r = create(ch, text, due, vurl, turl, meta)
+            r = create(ch, text, due, vurl, cover if svc in ("tiktok", "instagram") else None, meta)
             print(f"part {k + 1} {svc}: {r}")
 
 
