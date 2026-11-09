@@ -3,4 +3,3 @@ voices/
 __pycache__/
 models/
 assets/
-voices/*.wav
