@@ -1,40 +1,46 @@
-"""Narration with our own blended Kokoro voice.
+"""Narration with our own blended Kokoro voice (ONNX: runs on CPU, no GPU or torch).
 
-    python src/voice.py --preview                 # say a test line with the blend
-    python src/voice.py stories/01_last_human_2087.json   # narrate every scene
+    python src/voice.py --preview
+    python src/voice.py stories/01_last_human_2087.json
 
-Writes out/<story>/scene_XX.wav (24 kHz mono).
+Model files are downloaded to models/ on first run (from the kokoro-onnx GitHub releases).
+Writes out/<story>/scene_XX.wav
 """
-import argparse, json, pathlib, sys
+import argparse, json, pathlib, urllib.request
 
 import numpy as np
 import soundfile as sf
 import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SR = 24000
+MODELS = ROOT / "models"
+BASE = "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/"
+FILES = ["kokoro-v1.0.int8.onnx", "voices-v1.0.bin"]
 
 
-def load_cfg():
-    return yaml.safe_load((ROOT / "channel.yaml").read_text())
+def ensure_models():
+    MODELS.mkdir(exist_ok=True)
+    for f in FILES:
+        if not (MODELS / f).exists():
+            print(f"downloading {f} ...")
+            urllib.request.urlretrieve(BASE + f, MODELS / f)
 
 
-def build_voice(pipeline, vcfg):
-    """Weighted average of Kokoro voice style tensors = our own voice."""
-    import torch
+def load():
+    from kokoro_onnx import Kokoro
+    ensure_models()
+    vcfg = yaml.safe_load((ROOT / "channel.yaml").read_text())["voice"]
+    tts = Kokoro(str(MODELS / FILES[0]), str(MODELS / FILES[1]))
+    total = sum(vcfg["blend"].values())
+    # Weighted average of voice style vectors = our own narrator voice.
+    style = sum(tts.get_voice_style(n) * (w / total) for n, w in vcfg["blend"].items())
+    lang = "en-us" if vcfg["lang_code"] == "a" else "en-gb"
+    return tts, style, vcfg["speed"], lang
 
-    blend = vcfg["blend"]
-    total = sum(blend.values())
-    mixed = sum(pipeline.load_voice(name) * (w / total) for name, w in blend.items())
-    out = ROOT / vcfg["save_as"]
-    out.parent.mkdir(parents=True, exist_ok=True)
-    torch.save(mixed, out)
-    return mixed
 
-
-def speak(pipeline, voice, text, speed):
-    chunks = [audio for _, _, audio in pipeline(text, voice=voice, speed=speed)]
-    return np.concatenate([np.asarray(c) for c in chunks]) if chunks else np.zeros(1)
+def speak(tts, style, speed, lang, text):
+    audio, sr = tts.create(text, voice=style, speed=speed, lang=lang)
+    return np.asarray(audio), sr
 
 
 def main():
@@ -42,18 +48,15 @@ def main():
     ap.add_argument("story", nargs="?")
     ap.add_argument("--preview", action="store_true")
     args = ap.parse_args()
-
-    from kokoro import KPipeline  # imported late so --help works without it
-
-    vcfg = load_cfg()["voice"]
-    pipeline = KPipeline(lang_code=vcfg["lang_code"])
-    voice = build_voice(pipeline, vcfg)
+    tts, style, speed, lang = load()
 
     if args.preview or not args.story:
-        line = "It's day forty. The radio went silent three weeks ago. Tonight, for the first time, you see a light on the horizon."
+        line = ("It's day forty. The radio went silent three weeks ago. "
+                "Tonight, for the first time, you see a light on the horizon.")
         out = ROOT / "out" / "voice_preview.wav"
         out.parent.mkdir(parents=True, exist_ok=True)
-        sf.write(out, speak(pipeline, voice, line, vcfg["speed"]), SR)
+        audio, sr = speak(tts, style, speed, lang, line)
+        sf.write(out, audio, sr)
         print(f"preview -> {out}")
         return
 
@@ -61,10 +64,10 @@ def main():
     outdir = ROOT / "out" / story["id"]
     outdir.mkdir(parents=True, exist_ok=True)
     for i, scene in enumerate(story["scenes"], 1):
-        audio = speak(pipeline, voice, scene["narration"], vcfg["speed"])
-        sf.write(outdir / f"scene_{i:02d}.wav", audio, SR)
-        print(f"scene {i}: {len(audio) / SR:.1f}s")
+        audio, sr = speak(tts, style, speed, lang, scene["narration"])
+        sf.write(outdir / f"scene_{i:02d}.wav", audio, sr)
+        print(f"  scene {i}: {len(audio) / sr:.1f}s")
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
