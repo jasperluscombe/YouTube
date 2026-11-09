@@ -1,0 +1,27 @@
+# Channel config: one place to change the niche, voice, and format.
+channel:
+  name: "Whisker Tales"            # working name, rename freely
+  niche: "AI-animated emotional cat stories (YouTube Shorts)"
+  why: >
+    The most-watched AI Shorts on YouTube are dominated by animal
+    stories, mostly cats and kittens (channels in the 100M-700M view range).
+    Format: 45-60s vertical, 6-8 scenes, an underdog kitten, a hardship, a twist,
+    an emotional payoff.
+
+format:
+  width: 1080
+  height: 1920
+  fps: 30
+  max_seconds: 60
+
+# Our own voice: a weighted blend of Kokoro preset voices.
+# Blending averages the style vectors, which gives a narrator no other channel has.
+# Tune weights (they're normalised) and re-run `python src/voice.py --preview`.
+voice:
+  lang_code: "a"                   # a = American English, b = British
+  blend:
+    af_heart: 0.6                  # Kokoro's highest-rated voice: warm, clear
+    bf_emma: 0.25                  # adds a soft storybook tone
+    af_bella: 0.15                 # adds energy for hooks
+  speed: 0.95                      # slightly slow = more emotional
+  save_as: "voices/whisker_narrator.pt"

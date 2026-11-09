@@ -1,0 +1,35 @@
+{
+  "id": "01_the_last_kitten",
+  "title": "Nobody Picked Him… Until The Storm 😿",
+  "arc": "underdog -> rejection -> sacrifice -> chosen",
+  "scenes": [
+    {
+      "narration": "Five kittens sat in a box outside the market. Four of them found homes by noon.",
+      "image_prompt": "a tiny grey kitten with one white paw and big amber eyes sitting alone in a cardboard box on a busy market street, other empty space where siblings were, Pixar-style 3D animation, cinematic lighting, vertical 9:16, highly detailed fur"
+    },
+    {
+      "narration": "The last one was the smallest. One white paw. Everyone walked right past him.",
+      "image_prompt": "close-up of a tiny grey kitten with one white paw and big amber eyes watching people's legs walk past, sad expression, Pixar-style 3D animation, cinematic lighting, vertical 9:16, highly detailed fur"
+    },
+    {
+      "narration": "Then the sky turned black, and the rain came down hard.",
+      "image_prompt": "dark storm clouds over the market, heavy rain soaking the cardboard box, Pixar-style 3D animation, cinematic lighting, vertical 9:16, highly detailed fur"
+    },
+    {
+      "narration": "Under a bench, he heard crying. A little girl had lost her mother in the crowd.",
+      "image_prompt": "a small girl in a yellow raincoat crying under a bench, a tiny grey kitten with one white paw and big amber eyes looking at her, Pixar-style 3D animation, cinematic lighting, vertical 9:16, highly detailed fur"
+    },
+    {
+      "narration": "He didn't run. He climbed into her lap and stayed, warm and purring, until she stopped shaking.",
+      "image_prompt": "a tiny grey kitten with one white paw and big amber eyes curled in the lap of a girl in a yellow raincoat, both sheltering from rain, warm glow, Pixar-style 3D animation, cinematic lighting, vertical 9:16, highly detailed fur"
+    },
+    {
+      "narration": "When her mother finally found them, the girl wouldn't let go of him.",
+      "image_prompt": "a relieved mother hugging her daughter who holds a tiny grey kitten with one white paw and big amber eyes tightly, rain easing, Pixar-style 3D animation, cinematic lighting, vertical 9:16, highly detailed fur"
+    },
+    {
+      "narration": "Nobody picked the smallest kitten. So he picked someone who needed him. Would you have stopped for him?",
+      "image_prompt": "a tiny grey kitten with one white paw and big amber eyes asleep on a cozy bed next to a yellow raincoat, sunrise through a window, Pixar-style 3D animation, cinematic lighting, vertical 9:16, highly detailed fur"
+    }
+  ]
+}
