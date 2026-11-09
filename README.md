@@ -1,4 +1,22 @@
-# Year Zero: POV apocalypse, survival & future stories
+# Year Zero: animated survival & mystery stories
+
+## Flagship series: "The 9:14 Lights" (episodes of 90 seconds to 2 minutes, with cliffhangers)
+You and your dog Biscuit are alone in an empty city. Every night at 9:14 every light turns on, and nobody knows why.
+Why this format: liminal "empty world" mystery is the defining story trend of 2026, but almost no one does it
+as emotional 2D animation. Serialized Part 1 / Part 2 survival stories keep viewers coming back, and animal companions
+were behind the biggest AI story hits.
+
+Build an episode (everything is generated in code; no paid services):
+```bash
+python src/voice.py stories/20_lights_at_914.json   # dramatic narration + phrase timings
+python src/anim/lights.py                             # 16 animated scenes, sound design, piano score
+python src/assemble.py stories/20_lights_at_914.json  # captions, mix, loudness -> out/20_lights_at_914/*.mp4
+```
+
+Episode writing rules: a hook in the first line (something impossible and specific), then the emotional
+backstory (Biscuit), then a turn ("but tonight..."), an escalating reveal, a twist, and "Part 2..." on a cliffhanger.
+240-280 words, 14-18 scenes, about 2 minutes.
+
 
 **Niche:** AI-generated first-person Shorts that put the viewer *inside* another world:
 waking up as the last human, surviving day 40 in a bunker, a normal day in the year 3000.

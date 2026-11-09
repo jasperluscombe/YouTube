@@ -226,15 +226,15 @@ def person(ctx, x, y, s, mode="idle", phase=0.0, face=1, lean=0.0, head_turn=0.0
         kn_f = kn_b = -1.45
         ar_f, ar_b = (0.5, 0.9), (0.35, 0.8)
     else:
-        th_f, th_b = 0.06, -0.06
-        kn_f = kn_b = 0.0
+        th_f, th_b = 0.06 + 1.0 * crouch, -0.06 + 0.8 * crouch
+        kn_f = kn_b = -1.9 * crouch
         ar_f, ar_b = (0.08 + breathe * 0.02, 0.12), (-0.06, 0.1)
     if arm_f:
         ar_f = arm_f
     if arm_b:
         ar_b = arm_b
 
-    hip_h = (leg1 + leg2) * (1 - crouch * 0.35)
+    hip_h = leg1 * math.cos(th_f) + leg2 * math.cos(th_f + kn_f) if mode == "idle" else leg1 + leg2
     if mode == "sit":
         hip = (x, y - 0.27 * u)
     else:
@@ -407,3 +407,155 @@ def save_wav(path, x):
     import soundfile as sf
     x = np.clip(x, -1, 1)
     sf.write(path, np.stack([x, x], 1), SR)
+
+
+# ---------- the dog ----------
+FUR = (0.80, 0.58, 0.30)
+FUR_D = (0.60, 0.40, 0.20)
+FUR_L = (0.93, 0.80, 0.60)
+
+
+def dog(ctx, x, y, s, mode="stand", phase=0.0, face=1, wag=0.0, bark=0.0, head_up=0.0, shiver=0.0):
+    """Golden mutt. (x, y) = ground under the body centre, s = shoulder height (px).
+    mode: stand | trot | sit | back (seen from behind, sitting). bark 0..1 opens the mouth."""
+    ctx.save()
+    ctx.translate(x + shiver * math.sin(phase * 40) * 0.03 * s, y)
+    ctx.scale(face, 1)
+    ctx.set_line_cap(cairo.LINE_CAP_ROUND)
+    if mode == "back":
+        rgb(ctx, FUR)
+        ctx.save(); ctx.translate(0, -0.55 * s); ctx.scale(0.55, 0.62); ctx.arc(0, 0, s, 0, 6.283); ctx.restore(); ctx.fill()
+        ctx.arc(0, -1.15 * s, 0.3 * s, 0, 6.283); ctx.fill()
+        rgb(ctx, FUR_D)
+        for side in (-1, 1):
+            ctx.save(); ctx.translate(side * 0.24 * s, -1.2 * s); ctx.rotate(side * 0.35)
+            ctx.scale(0.35, 0.8); ctx.arc(0, 0, 0.2 * s, 0, 6.283); ctx.restore(); ctx.fill()
+        ctx.set_line_width(0.1 * s)
+        ctx.move_to(0, -0.12 * s); ctx.curve_to(0.3 * s, -0.05 * s, 0.45 * s + wag * 0.15 * s, -0.25 * s, 0.5 * s + wag * 0.2 * s, -0.4 * s)
+        ctx.stroke()
+        ctx.restore()
+        return
+    if mode == "sit":
+        rgb(ctx, FUR_D); ctx.set_line_width(0.09 * s)          # tail along the ground
+        ctx.move_to(-0.35 * s, -0.06 * s)
+        ctx.curve_to(-0.6 * s, -0.02 * s, -0.75 * s, -0.08 * s + wag * 0.06 * s, -0.85 * s, -0.2 * s + wag * 0.1 * s)
+        ctx.stroke()
+        rgb(ctx, FUR_D); ctx.set_line_width(0.11 * s)          # far front leg
+        ctx.move_to(0.18 * s, -0.55 * s); ctx.line_to(0.2 * s, -0.04 * s); ctx.stroke()
+        rgb(ctx, FUR)                                           # haunch + chest
+        ctx.save(); ctx.translate(-0.12 * s, -0.3 * s); ctx.scale(1.0, 0.85); ctx.arc(0, 0, 0.33 * s, 0, 6.283); ctx.restore(); ctx.fill()
+        ctx.save(); ctx.translate(0.08 * s, -0.68 * s); ctx.rotate(-1.15); ctx.scale(0.48, 0.24)
+        ctx.arc(0, 0, s, 0, 6.283); ctx.restore(); ctx.fill()
+        rgb(ctx, FUR_L, 0.75)
+        ctx.save(); ctx.translate(0.2 * s, -0.75 * s); ctx.rotate(-1.15); ctx.scale(0.3, 0.1)
+        ctx.arc(0, 0, s, 0, 6.283); ctx.restore(); ctx.fill()
+        rgb(ctx, FUR); ctx.set_line_width(0.12 * s)             # near front leg + paw
+        ctx.move_to(0.3 * s, -0.55 * s); ctx.line_to(0.32 * s, -0.04 * s); ctx.stroke()
+        rgb(ctx, FUR_D); ctx.save(); ctx.translate(-0.05 * s, -0.04 * s); ctx.scale(1, 0.4)
+        ctx.arc(0, 0, 0.14 * s, 0, 6.283); ctx.restore(); ctx.fill()
+        hx, hy = 0.32 * s, -1.18 * s - 0.08 * head_up * s
+        rgb(ctx, FUR); ctx.set_line_width(0.2 * s)
+        ctx.move_to(0.18 * s, -0.85 * s); ctx.line_to(hx, hy); ctx.stroke()
+        _dog_head(ctx, hx, hy, s, bark, head_up)
+        ctx.restore()
+        return
+    sit = mode == "sit"
+    by = -0.78 * s if not sit else -0.62 * s
+    tilt = -0.45 if sit else 0.0
+    bob = abs(math.sin(phase)) * 0.04 * s if mode == "trot" else 0
+    # legs
+    def leg(lx, ph, col, front):
+        a = 0.45 * math.sin(ph) if mode == "trot" else 0.0
+        top = (lx, by - bob + 0.1 * s)
+        if sit and not front:
+            rgb(ctx, col); ctx.set_line_width(0.16 * s)
+            ctx.move_to(lx, -0.3 * s); ctx.line_to(lx + 0.25 * s, -0.05 * s); ctx.stroke()
+            return
+        kx, ky = top[0] + math.sin(a) * 0.38 * s, top[1] + math.cos(a) * 0.38 * s
+        fx, fy = kx + math.sin(a - 0.3 * (1 if front else -1)) * 0.06 * s, 0
+        rgb(ctx, col); ctx.set_line_width(0.11 * s)
+        ctx.move_to(*top); ctx.line_to(kx, ky); ctx.line_to(fx, fy - 0.04 * s); ctx.stroke()
+    leg(-0.32 * s, phase + math.pi, FUR_D, False)
+    leg(0.36 * s, phase, FUR_D, True)
+    # tail
+    rgb(ctx, FUR_D); ctx.set_line_width(0.09 * s)
+    tx, ty = (-0.55 * s, by - 0.05 * s) if not sit else (-0.45 * s, -0.12 * s)
+    ang = -0.9 + wag * 0.6
+    ctx.move_to(tx, ty)
+    ctx.curve_to(tx - 0.2 * s, ty - 0.05 * s, tx - 0.3 * s + math.sin(ang) * 0.1 * s, ty - 0.3 * s,
+                 tx - 0.25 * s + math.sin(ang) * 0.35 * s, ty - 0.45 * s)
+    ctx.stroke()
+    # body
+    ctx.save(); ctx.translate(0, by - bob); ctx.rotate(tilt)
+    rgb(ctx, FUR); ctx.save(); ctx.scale(0.6, 0.27); ctx.arc(0, 0, s, 0, 6.283); ctx.restore(); ctx.fill()
+    rgb(ctx, FUR_L, 0.7); ctx.save(); ctx.translate(0.15 * s, 0.1 * s); ctx.scale(0.35, 0.12); ctx.arc(0, 0, s, 0, 6.283); ctx.restore(); ctx.fill()
+    ctx.restore()
+    leg(-0.22 * s, phase, FUR, False)
+    leg(0.46 * s, phase + math.pi, FUR, True)
+    # neck + head
+    hx, hy = 0.62 * s, by - bob - (0.42 + 0.1 * head_up) * s
+    if sit:
+        hx, hy = 0.45 * s, -1.25 * s - 0.1 * head_up * s
+    rgb(ctx, FUR); ctx.set_line_width(0.22 * s)
+    ctx.move_to(0.4 * s if not sit else 0.25 * s, by - bob - 0.05 * s if not sit else -0.75 * s); ctx.line_to(hx, hy); ctx.stroke()
+    _dog_head(ctx, hx, hy, s, bark, head_up)
+    ctx.restore()
+
+
+def _dog_head(ctx, hx, hy, s, bark, head_up):
+    rgb(ctx, FUR)
+    ctx.arc(hx, hy, 0.21 * s, 0, 6.283); ctx.fill()
+    # snout: upper + jaw
+    ctx.save(); ctx.translate(hx + 0.17 * s, hy + 0.05 * s); ctx.rotate(-0.15 * head_up)
+    rgb(ctx, FUR_L)
+    ctx.save(); ctx.scale(1.0, 0.62); ctx.arc(0.06 * s, -0.03 * s, 0.14 * s, 0, 6.283); ctx.restore(); ctx.fill()
+    ctx.save(); ctx.rotate(0.55 * bark)
+    rgb(ctx, FUR_L if bark < 0.1 else (0.55, 0.2, 0.2))
+    ctx.save(); ctx.scale(1.0, 0.4); ctx.arc(0.04 * s, 0.17 * s, 0.11 * s, 0, 6.283); ctx.restore(); ctx.fill()
+    ctx.restore()
+    rgb(ctx, (0.1, 0.08, 0.08)); ctx.arc(0.19 * s, -0.06 * s, 0.045 * s, 0, 6.283); ctx.fill()
+    ctx.restore()
+    rgb(ctx, (0.08, 0.06, 0.06)); ctx.arc(hx + 0.07 * s, hy - 0.06 * s, 0.035 * s, 0, 6.283); ctx.fill()
+    rgb(ctx, (1, 1, 1), 0.8); ctx.arc(hx + 0.08 * s, hy - 0.07 * s, 0.012 * s, 0, 6.283); ctx.fill()
+    # floppy ear (perks up with head_up)
+    rgb(ctx, FUR_D)
+    ctx.save(); ctx.translate(hx - 0.08 * s, hy - 0.12 * s); ctx.rotate(0.5 - 0.9 * head_up)
+    ctx.scale(0.45, 1); ctx.arc(0, 0.14 * s, 0.15 * s, 0, 6.283); ctx.restore(); ctx.fill()
+
+
+# ---------- music ----------
+def _note(freq, dur, amp=0.3):
+    t = np.arange(int(dur * SR)) / SR
+    env = np.exp(-t * 2.2) * np.minimum(1, t * 200)
+    x = (np.sin(2 * np.pi * freq * t) + 0.35 * np.sin(4 * np.pi * freq * t) * np.exp(-t * 3)
+         + 0.12 * np.sin(6 * np.pi * freq * t) * np.exp(-t * 5))
+    return (x * env * amp).astype(np.float32)
+
+
+def midi(n):
+    return 440.0 * 2 ** ((n - 69) / 12)
+
+
+def piano_score(total, tense_from, bpm=66, seed=0):
+    """Melancholy piano (Am-F-C-G arpeggios) that turns into a tense pulse at tense_from."""
+    out = np.zeros(int((total + 4) * SR), dtype=np.float32)
+    chords = [[57, 60, 64, 69], [53, 57, 60, 65], [48, 55, 60, 64], [55, 59, 62, 67]]
+    beat = 60 / bpm / 2
+    rng = np.random.default_rng(seed)
+    t, k = 0.0, 0
+    while t < tense_from:
+        ch = chords[(k // 8) % 4]
+        n = ch[[0, 2, 1, 3, 2, 1, 3, 2][k % 8]]
+        if k % 8 == 0:                    # bass note on each chord
+            b = _note(midi(ch[0] - 12), 4.0, 0.25)
+            i = int(t * SR); out[i:i + len(b)] += b[: len(out) - i]
+        v = _note(midi(n + (12 if rng.random() < 0.15 else 0)), 2.5, 0.12 + 0.04 * rng.random())
+        i = int(t * SR); out[i:i + len(v)] += v[: len(out) - i]
+        t += beat; k += 1
+    # tension: low drone + slow pulse + high shimmer
+    tt = np.arange(len(out)) / SR
+    ramp = np.clip((tt - tense_from) / 3, 0, 1)
+    pulse = np.exp(-((tt - tense_from) % 0.9) * 7) * (tt > tense_from)
+    out += (np.sin(2 * np.pi * 41.2 * tt) * 0.25 * pulse + np.sin(2 * np.pi * 82.4 * tt) * 0.08 * ramp
+            + np.sin(2 * np.pi * 1318 * tt) * 0.012 * ramp * (0.5 + 0.5 * np.sin(2 * np.pi * 0.2 * tt))).astype(np.float32)
+    return fades(out[: int(total * SR)], 1.0, 2.0)

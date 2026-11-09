@@ -17,7 +17,7 @@ format:
   width: 1080
   height: 1920
   fps: 30
-  max_seconds: 60
+  max_seconds: 180              # Shorts allow up to 3 minutes
 
 # Our own voice: a weighted blend of Kokoro preset voices.
 # Natural, energetic storyteller (not a slow trailer voice).
@@ -25,10 +25,10 @@ format:
 voice:
   lang_code: "a"                   # a = American English, b = British
   blend:
-    am_michael: 0.55               # most natural male voice
-    am_puck: 0.30                  # brighter, more expressive
-    am_fenrir: 0.15                # a bit of edge
-  speed: 1.12                      # brisk, Shorts pacing
+    am_michael: 0.55               # natural storyteller
+    am_fenrir: 0.25                # weight and edge
+    am_onyx: 0.20                  # depth for the dramatic beats
+  speed: 0.95                      # unhurried; drama comes from pauses between beats (see voice.py)
   polish: true                     # EQ + compression + tiny room reverb so it sounds recorded, not synthetic
 
 # Animated clips (fal.ai). Swap the model to change look/price; clips are cached.

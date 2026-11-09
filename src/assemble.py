@@ -42,19 +42,24 @@ def chunks(text):
     return out
 
 
-def caption_filters(text, dur, tmp, prefix):
-    """drawtext filters timed by character share of the scene's audio."""
-    parts = chunks(text)
-    weights = [len(p) + 3 for p in parts]
-    total, t, f = sum(weights), 0.0, []
-    for k, (p, w) in enumerate(zip(parts, weights)):
-        d = dur * w / total
-        tf = tmp / f"{prefix}_{k:02d}.txt"
-        tf.write_text(re.sub(r"[.,;:]$", "", p).upper())
-        f.append(f"drawtext=fontfile={FONT}:textfile={tf}:fontsize=118:fontcolor=white:"
-                 f"borderw=9:bordercolor=black:shadowx=0:shadowy=8:shadowcolor=black@0.6:"
-                 f"x=(w-text_w)/2:y=h*0.76:enable='between(t,{t:.3f},{t + d:.3f})'")
-        t += d
+def caption_filters(text, dur, tmp, prefix, segs=None):
+    """drawtext filters. With segs [(phrase, start, end)] from voice.py the captions follow
+    the real speech timing (and vanish in the dramatic pauses); otherwise spread evenly."""
+    segs = segs or [(text, 0.0, dur)]
+    f, n = [], 0
+    for phrase, s0, s1 in segs:
+        parts = chunks(phrase)
+        weights = [len(p) + 3 for p in parts]
+        total, t = sum(weights), s0
+        for j, (p, w) in enumerate(zip(parts, weights)):
+            d = (s1 - s0) * w / total
+            hold = 0.15 if j == len(parts) - 1 else 0.0   # linger only on a phrase's last words
+            tf = tmp / f"{prefix}_{n:02d}.txt"; n += 1
+            tf.write_text(re.sub(r"[.,;:…]+$", "", p).upper())
+            f.append(f"drawtext=fontfile={FONT}:textfile={tf}:fontsize=112:fontcolor=white:"
+                     f"borderw=9:bordercolor=black:shadowx=0:shadowy=8:shadowcolor=black@0.6:"
+                     f"x=(w-text_w)/2:y=h*0.76:enable='between(t,{t:.3f},{t + d - 0.01 + hold:.3f})'")
+            t += d
     return f
 
 
@@ -102,7 +107,9 @@ def main():
             run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", f"{secs:.2f}", str(wav)])
         speech = duration(wav)
         dur = speech + 0.3
-        caps = ",".join(caption_filters(scene["narration"], speech, tmp, f"c{i:02d}"))
+        tj = wav.with_suffix(".json")
+        segs = json.loads(tj.read_text()) if tj.exists() and not args.silent else None
+        caps = ",".join(caption_filters(scene["narration"], speech, tmp, f"c{i:02d}", segs))
         fit = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS}"
 
         vid = ROOT / "assets" / "clips" / sid / f"scene_{i:02d}.mp4"
@@ -140,7 +147,16 @@ def main():
     lst = tmp / "clips.txt"
     lst.write_text("".join(f"file '{c.name}'\n" for c in clips))
     final = outdir / f"{sid}.mp4"
-    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(final)])
+    music = ROOT / "assets" / "clips" / sid / "music.wav"
+    if music.exists():   # score under the whole video
+        joined = tmp / "joined.mp4"
+        run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(joined)])
+        run(["ffmpeg", "-y", "-i", str(joined), "-i", str(music), "-filter_complex",
+             "[1:a]volume=0.45[m];[0:a][m]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]",
+             "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", str(final)])
+    else:
+        run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c:v", "copy",
+             "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k", str(final)])
     total = duration(final)
     print(f"{final}  ({total:.1f}s)" + ("  ⚠ over Shorts limit" if total > fmt["max_seconds"] else ""))
 
