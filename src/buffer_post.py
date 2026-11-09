@@ -62,6 +62,18 @@ def create(channel, text, due, video_url, thumb_url, meta):
     return gql(q, {"i": inp})["createPost"]
 
 
+def delete_scheduled(match_texts):
+    """Delete scheduled posts whose text contains any of the given strings (used to replace a fixed video)."""
+    org = json.loads(CFG.read_text())["organization"]
+    d = gql("""query($o:OrganizationId!){ posts(first:50, input:{organizationId:$o, filter:{status:[scheduled]}}){
+                edges{ node{ id text channelService dueAt } } } }""", {"o": org})
+    for e in d["posts"]["edges"]:
+        n = e["node"]
+        if any(m in n["text"] for m in match_texts):
+            gql("mutation($i:DeletePostInput!){ deletePost(input:$i){ __typename } }", {"i": {"id": n["id"]}})
+            print("deleted", n["channelService"], n["dueAt"])
+
+
 def strip_shorts(s):
     return s.replace(" #shorts", "").replace("#shorts ", "")
 
@@ -70,7 +82,15 @@ def main(kit_path, sids, only=None):
     cfg = json.loads(CFG.read_text())
     kit = json.loads(pathlib.Path(kit_path).read_text())
     parts = list(kit.values())
-    vids = [ROOT / "out" / sid / f"{sid}.mp4" for sid in sids]
+    vids = []
+    for sid in sids:
+        src = ROOT / "out" / sid / f"{sid}.mp4"
+        import hashlib
+        tag = hashlib.sha1(src.read_bytes()).hexdigest()[:8]
+        dst = ROOT / "out" / sid / f"{sid}_{tag}.mp4"
+        if not dst.exists():
+            shutil.copy2(src, dst)
+        vids.append(dst)
     urls = publish_media([str(v) for v in vids])
     now = dt.datetime.now(dt.timezone.utc)
     for k, (m, v) in enumerate(zip(parts, vids)):
@@ -103,6 +123,11 @@ if __name__ == "__main__":
                     edges{ node{ id dueAt status channelService text error{ message } } } } }""", {"o": org})
         for e in d["posts"]["edges"]:
             n = e["node"]; print(n["dueAt"], n["channelService"], n["status"], (n.get("error") or {}).get("message", ""), n["text"][:40].replace("\n", " "))
+    elif sys.argv[1] == "--replace":      # --replace <kit> <sids...>: delete that kit's scheduled posts, then re-create
+        kit = json.loads(pathlib.Path(sys.argv[2]).read_text())
+        delete_scheduled([strip_shorts(m["title"]).split(":")[0] + ":" + strip_shorts(m["title"]).split(":")[1][:12] for m in kit.values()]
+                         + [m["description"][:40] for m in kit.values()])
+        main(sys.argv[2], sys.argv[3:])
     else:
         args = [a for a in sys.argv[1:] if not a.startswith("--only=")]
         only = next((a.split("=", 1)[1].split(",") for a in sys.argv[1:] if a.startswith("--only=")), None)

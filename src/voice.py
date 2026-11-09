@@ -25,6 +25,7 @@ POLISH = ("highpass=f=70,equalizer=f=160:t=q:w=1:g=3,equalizer=f=3000:t=q:w=1.2:
           "aecho=0.8:0.5:22|37:0.12|0.07")
 
 # pause (seconds) after a phrase, by how it ends
+MAX_DRAMA = 0.85   # above this Chatterbox can tip into shouting (found by src/voice_qc.py)
 PAUSE = {"...": 1.0, "…": 1.0, ".": 0.7, "?": 0.9, "!": 0.6, ",": 0.0, "": 0.35}
 
 
@@ -94,8 +95,10 @@ def chatterbox_batch(story, outdir, vcfg):
             out = work / f"s{i:02d}_{k:02d}.wav"
             table[p] = table.get(p) or out
             if not out.exists():
-                jobs.append({"text": say_text(p), "out": str(out),
-                             "exaggeration": scene.get("drama", cb.get("exaggeration", 0.6)),
+                retry = out.with_suffix(".retry")
+                override = retry.read_text().strip() if retry.exists() else ""
+                drama = float(override) if override else min(scene.get("drama", cb.get("exaggeration", 0.6)), MAX_DRAMA)
+                jobs.append({"text": say_text(p), "out": str(out), "exaggeration": drama,
                              "cfg": cb.get("cfg", 0.35), "temperature": cb.get("temperature", 0.8),
                              "seed": cb.get("seed", 7) + (7919 if out.with_suffix(".retry").exists() else 0)})
     if jobs:
