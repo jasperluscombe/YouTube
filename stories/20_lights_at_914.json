@@ -1,7 +1,7 @@
 {
   "id": "20_lights_at_914",
   "series": "The 9:14 Lights",
-  "title": "Every Night At 9:14, The Lights Come On (Part 1)",
+  "title": "Every Night At 9:14, Every Light Turns On… (Part 1/3)",
   "hook_note": "Liminal mystery + survival + a dog companion, serialized with a cliffhanger.",
   "scenes": [
     {
@@ -85,7 +85,7 @@
       "drama": 1.0
     },
     {
-      "narration": "So... who's turning on the lights? Tell me your theory in the comments. The best one... I'll read in part two.",
+      "narration": "So... who's turning on the lights? Tell me your theory in the comments... then find out in part two.",
       "visual": "end card over the dark skyline: WHO'S TURNING ON THE LIGHTS? / COMMENT YOUR THEORY / FOLLOW FOR PART 2; the city lights snap on at the very end, looping into the opening shot",
       "drama": 0.8,
       "end_card": true
