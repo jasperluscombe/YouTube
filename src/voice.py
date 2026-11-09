@@ -60,12 +60,17 @@ def trim(a, sr, thresh=0.01):
     return a[max(0, idx[0] - int(0.02 * sr)): idx[-1] + int(0.06 * sr)]
 
 
-def speak_line(tts, style, speed, lang, text):
-    """Returns (audio @OUT_SR, [(phrase, start, end), ...])."""
+def say_text(p):
+    return p.rstrip(".…") if p.endswith(("...", "…")) else p
+
+
+def speak_line(tts, style, speed, lang, text, synth=None):
+    """Returns (audio @OUT_SR, [(phrase, start, end), ...]).
+    synth(phrase) -> (audio, sr) overrides Kokoro (used for Chatterbox)."""
     chunks, segs, t = [], [], 0.0
     for p in phrases(text):
-        say = p.rstrip(".…") if p.endswith(("...", "…")) else p
-        a, sr = tts.create(say, voice=style, speed=speed, lang=lang)
+        say = say_text(p)
+        a, sr = synth(p) if synth else tts.create(say, voice=style, speed=speed, lang=lang)
         a = trim(np.asarray(a, dtype=np.float32), sr)
         if sr != OUT_SR:
             a = np.interp(np.linspace(0, len(a), int(len(a) * OUT_SR / sr), endpoint=False),
@@ -76,6 +81,34 @@ def speak_line(tts, style, speed, lang, text):
         chunks += [a, gap]
         t += (len(a) + len(gap)) / OUT_SR
     return np.concatenate(chunks), segs
+
+
+def chatterbox_batch(story, outdir, vcfg):
+    """Voice every phrase of the story in one Chatterbox run; returns a lookup synth()."""
+    cb = vcfg.get("chatterbox", {})
+    work = outdir / "cb"
+    work.mkdir(exist_ok=True)
+    jobs, table = [], {}
+    for i, scene in enumerate(story["scenes"], 1):
+        for k, p in enumerate(phrases(scene["narration"])):
+            out = work / f"s{i:02d}_{k:02d}.wav"
+            table[p] = table.get(p) or out
+            if not out.exists():
+                jobs.append({"text": say_text(p), "out": str(out),
+                             "exaggeration": scene.get("drama", cb.get("exaggeration", 0.6)),
+                             "cfg": cb.get("cfg", 0.35), "temperature": cb.get("temperature", 0.8)})
+    if jobs:
+        spec = work / "jobs.json"
+        spec.write_text(json.dumps({"voice_ref": str(ROOT / cb["voice_ref"]) if cb.get("voice_ref") else None,
+                                    "jobs": jobs}))
+        print(f"  chatterbox: {len(jobs)} phrases (CPU, this takes a while) ...", flush=True)
+        subprocess.run([cb.get("python", "/root/tts-venv/bin/python"), str(ROOT / "src" / "tts_chatterbox.py"),
+                        str(spec)], check=True, env={**__import__("os").environ, "HF_HUB_OFFLINE": "1"})
+
+    def synth(p):
+        a, sr = sf.read(table[p], dtype="float32")
+        return a, sr
+    return synth
 
 
 def write(path, audio, polish):
@@ -108,8 +141,9 @@ def main():
     story = json.loads(pathlib.Path(args.story).read_text())
     outdir = ROOT / "out" / story["id"]
     outdir.mkdir(parents=True, exist_ok=True)
+    synth = chatterbox_batch(story, outdir, vcfg) if vcfg.get("engine") == "chatterbox" else None
     for i, scene in enumerate(story["scenes"], 1):
-        a, segs = speak_line(tts, style, vcfg["speed"] * scene.get("speed", 1.0), lang, scene["narration"])
+        a, segs = speak_line(tts, style, vcfg["speed"] * scene.get("speed", 1.0), lang, scene["narration"], synth)
         write(outdir / f"scene_{i:02d}.wav", a, vcfg.get("polish"))
         (outdir / f"scene_{i:02d}.json").write_text(json.dumps(segs))
         print(f"  scene {i}: {len(a) / OUT_SR:.1f}s")
