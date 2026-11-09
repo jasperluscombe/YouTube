@@ -17,6 +17,7 @@ PANTS = (0.17, 0.19, 0.25)
 PANTS_D = (0.12, 0.13, 0.18)
 FACE = (0.09, 0.10, 0.15)
 SHOE = (0.08, 0.08, 0.10)
+MARA = ((0.16, 0.55, 0.58), (0.10, 0.38, 0.41), (0.22, 0.2, 0.2), (0.15, 0.13, 0.13))
 
 
 # ---------- math ----------
@@ -199,11 +200,12 @@ def _limb(ctx, x, y, a1, l1, a2, l2, face, width, col, cap_r=None):
 
 
 def person(ctx, x, y, s, mode="idle", phase=0.0, face=1, lean=0.0, head_turn=0.0,
-           arm_f=None, arm_b=None, breathe=0.0, back_view=False, crouch=0.0):
+           arm_f=None, arm_b=None, breathe=0.0, back_view=False, crouch=0.0, pal=None):
     """Faceless figure in an orange hoodie. (x, y) = point between the feet on the ground.
     s = full height in px. mode: idle | walk | run | sit. phase drives the cycles.
     arm_f / arm_b = (shoulder_angle, elbow_angle) overrides, radians from straight down, + = forward."""
     u = s
+    HC, HD, PC, PD = pal or (HOODIE, HOODIE_D, PANTS, PANTS_D)
     leg1, leg2 = 0.235 * u, 0.225 * u
     arm1, arm2 = 0.17 * u, 0.16 * u
     bob = 0.0
@@ -243,24 +245,24 @@ def person(ctx, x, y, s, mode="idle", phase=0.0, face=1, lean=0.0, head_turn=0.0
     sh = (hip[0] + face * math.sin(lean) * torso, hip[1] - math.cos(lean) * torso - breathe * 0.006 * u)
 
     # back limbs (darker, behind body)
-    _limb(ctx, hip[0], hip[1], th_b, leg1, th_b + kn_b, leg2, face, 0.085 * u, PANTS_D)
-    _limb(ctx, sh[0], sh[1] + 0.02 * u, ar_b[0], arm1, ar_b[0] + ar_b[1], arm2, face, 0.07 * u, HOODIE_D)
+    _limb(ctx, hip[0], hip[1], th_b, leg1, th_b + kn_b, leg2, face, 0.085 * u, PD)
+    _limb(ctx, sh[0], sh[1] + 0.02 * u, ar_b[0], arm1, ar_b[0] + ar_b[1], arm2, face, 0.07 * u, HD)
 
     # torso (hoodie)
     tw = 0.12 * u
     ctx.save()
     ctx.translate(hip[0], hip[1])
     ctx.rotate(face * lean)
-    rgb(ctx, HOODIE)
+    rgb(ctx, HC)
     rrect(ctx, -tw, -torso - 0.03 * u, tw * 2, torso + 0.08 * u, 0.06 * u)
     ctx.fill()
-    rgb(ctx, HOODIE_D, 0.55)       # pocket / shading
+    rgb(ctx, HD, 0.55)       # pocket / shading
     rrect(ctx, -tw * 0.7, -torso * 0.38, tw * 1.4, torso * 0.3, 0.025 * u)
     ctx.fill()
     ctx.restore()
 
     # front leg + shoe
-    fx, fy = _limb(ctx, hip[0], hip[1], th_f, leg1, th_f + kn_f, leg2, face, 0.088 * u, PANTS)
+    fx, fy = _limb(ctx, hip[0], hip[1], th_f, leg1, th_f + kn_f, leg2, face, 0.088 * u, PC)
     for (lx, ly) in [(fx, fy)]:
         rgb(ctx, SHOE)
         ctx.save()
@@ -273,7 +275,7 @@ def person(ctx, x, y, s, mode="idle", phase=0.0, face=1, lean=0.0, head_turn=0.0
     # head (hood + faceless shadow)
     hx = sh[0] + face * math.sin(lean) * 0.06 * u
     hy = sh[1] - 0.105 * u
-    rgb(ctx, HOODIE)
+    rgb(ctx, HC)
     ctx.arc(hx, hy, 0.105 * u, 0, 6.283)
     ctx.fill()
     if not back_view:
@@ -286,12 +288,12 @@ def person(ctx, x, y, s, mode="idle", phase=0.0, face=1, lean=0.0, head_turn=0.0
         ctx.fill()
         ctx.restore()
     else:
-        rgb(ctx, HOODIE_D, 0.6)
+        rgb(ctx, HD, 0.6)
         ctx.arc(hx + head_turn * 0.03 * u, hy + 0.01 * u, 0.06 * u, 0, 6.283)
         ctx.fill()
 
     # front arm on top
-    hand = _limb(ctx, sh[0], sh[1] + 0.02 * u, ar_f[0], arm1, ar_f[0] + ar_f[1], arm2, face, 0.072 * u, HOODIE)
+    hand = _limb(ctx, sh[0], sh[1] + 0.02 * u, ar_f[0], arm1, ar_f[0] + ar_f[1], arm2, face, 0.072 * u, HC)
     return {"hand": hand, "head": (hx, hy), "hip": hip}
 
 

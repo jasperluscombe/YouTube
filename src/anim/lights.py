@@ -547,7 +547,7 @@ def s17(ctx, t, d):      # End hook: comment your theory, follow for part 2, loo
         bob = math.sin(t * 5) * 8
         rgb(ctx, (0, 0, 0), 0.55 * c); rrect(ctx, 120, 640 + bob, 840, 170, 30); ctx.fill()
         text(ctx, "COMMENT YOUR THEORY", W / 2, 700 + bob, 84, (1, 1, 1), c)
-        text(ctx, "best one gets read in Part 2", W / 2, 775 + bob, 46, (0.85, 0.85, 0.9), c)
+        text(ctx, "then watch Part 2 - it's up next", W / 2, 775 + bob, 46, (0.85, 0.85, 0.9), c)
         rgb(ctx, (1, 1, 1), c)                 # arrow pointing down-right at the comment button
         ctx.set_line_width(10); ctx.move_to(880, 840 + bob); ctx.line_to(960, 960 + bob); ctx.stroke()
         ctx.move_to(915, 950 + bob); ctx.line_to(962, 963 + bob); ctx.line_to(975, 915 + bob); ctx.stroke()
