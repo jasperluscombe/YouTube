@@ -7,8 +7,8 @@
 
 **Description (paste into Customize channel > Basic info):**
 > The world went quiet. You didn't.
-> Animated survival mysteries, told one episode at a time: empty cities, strange signals, and the dog who never left your side.
-> New episodes every day at 12 PM ET, with extra clips at 4:30 PM and 8:30 PM.
+> Animated survival mysteries: empty cities, strange signals, impossible choices. A new story every day.
+> A new story every day, told in 3 parts: 12 PM, 4:30 PM, and the finale at 8:30 PM ET.
 > Comment your theories. The best ones get read in the next episode.
 
 **Channel keywords:** animated story, survival story, mystery, apocalypse, last man on earth, empty city, liminal, story time animation, what if, sci fi shorts

@@ -1,7 +1,7 @@
 {
   "id": "20_lights_at_914",
   "series": "The 9:14 Lights",
-  "title": "Every Night At 9:14, Every Light Turns On… (Part 1/3)",
+  "title": "The 9:14 Lights (1/3): Every Light Turns On…",
   "hook_note": "Liminal mystery + survival + a dog companion, serialized with a cliffhanger.",
   "scenes": [
     {
@@ -90,5 +90,6 @@
       "drama": 0.8,
       "end_card": true
     }
-  ]
+  ],
+  "part": "1/3"
 }

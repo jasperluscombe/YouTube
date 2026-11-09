@@ -1,7 +1,7 @@
 {
   "id": "22_lights_part3",
   "series": "The 9:14 Lights",
-  "title": "Lights Out (The 9:14 Lights, Part 3/3)",
+  "title": "The 9:14 Lights (3/3): Lights Out (Finale)",
   "scenes": [
     {
       "narration": "The machine says she's lying. She says... it's the machine. And you've got four minutes... until nine fourteen.",
@@ -78,5 +78,6 @@
       "visual": "end card: THE END, new story tomorrow",
       "drama": 0.8
     }
-  ]
+  ],
+  "part": "3/3"
 }

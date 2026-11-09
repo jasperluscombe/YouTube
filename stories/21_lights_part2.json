@@ -1,7 +1,7 @@
 {
   "id": "21_lights_part2",
   "series": "The 9:14 Lights",
-  "title": "Who's On The Stairs? (The 9:14 Lights, Part 2/3)",
+  "title": "The 9:14 Lights (2/3): Who's On The Stairs?",
   "scenes": [
     {
       "narration": "Last night... a stranger across the river held up a sign. Don't come here. It's not me turning them on. And then... the stairwell light came on.",
@@ -73,5 +73,6 @@
       "visual": "end card: TRUST THE MACHINE or THE STRANGER?",
       "drama": 0.85
     }
-  ]
+  ],
+  "part": "2/3"
 }

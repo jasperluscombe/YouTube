@@ -147,6 +147,15 @@ def main():
     lst = tmp / "clips.txt"
     lst.write_text("".join(f"file '{c.name}'\n" for c in clips))
     final = outdir / f"{sid}.mp4"
+    if story.get("part"):   # "THE 9:14 LIGHTS  1/3" label for the first seconds
+        (tmp / "part.txt").write_text(f"{story.get('series', '').upper()}   {story['part']}")
+        first = tmp / "clip_01.mp4"
+        lab = tmp / "clip_01_label.mp4"
+        run(["ffmpeg", "-y", "-i", str(first), "-vf",
+             f"drawbox=x=0:y=1660:w=iw:h=90:color=black@0.55:t=fill:enable='lt(t,4)',"
+             f"drawtext=fontfile={FONT}:textfile={tmp}/part.txt:fontsize=58:fontcolor=white:x=(w-text_w)/2:y=1675:"
+             f"enable='lt(t,4)'", "-c:v", "libx264", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "copy", str(lab)])
+        lab.replace(first)
     music = ROOT / "assets" / "clips" / sid / "music.wav"
     if music.exists():   # score under the whole video
         joined = tmp / "joined.mp4"
