@@ -1,0 +1,83 @@
+{
+  "id": "28_nightshift_3",
+  "series": "The Night Shift",
+  "part": "3/3",
+  "title": "The Night Shift (3/3): Knew That? (Finale)",
+  "scenes": [
+    {
+      "narration": "Day four. The shutter is bending. Mia is thirsty. And then you remember the back room.",
+      "visual": "you turn toward the back room door",
+      "drama": 0.8
+    },
+    {
+      "narration": "The water heater. Every building has one. And the tank is full of clean water. This one holds forty gallons.",
+      "visual": "the water heater tank, 40 GALLONS label",
+      "drama": 0.8
+    },
+    {
+      "narration": "First, you switch off its power at the breaker, so it can't heat an empty tank.",
+      "visual": "breaker switch flipped off",
+      "drama": 0.7
+    },
+    {
+      "narration": "Then you open a hot water tap, so air can get in.",
+      "visual": "hot tap opened",
+      "drama": 0.7
+    },
+    {
+      "narration": "Then you twist the drain valve at the bottom... and water pours out. Clear. Clean.",
+      "visual": "drain valve, water filling a bottle",
+      "drama": 0.8
+    },
+    {
+      "narration": "Mia drinks a whole bottle without stopping. Then she laughs. First time in four days.",
+      "visual": "Mia drinking, then laughing",
+      "drama": 0.8
+    },
+    {
+      "narration": "Forty gallons. That's weeks, for two people, if you're careful.",
+      "visual": "rows of filled bottles",
+      "drama": 0.75
+    },
+    {
+      "narration": "You stack every shelf against the front shutter. And you wait.",
+      "visual": "barricade of shelves",
+      "drama": 0.75
+    },
+    {
+      "narration": "Day five. Day six. You teach Mia card games. She wins every one.",
+      "visual": "playing cards on the floor",
+      "drama": 0.7
+    },
+    {
+      "narration": "Day seven. A sound you haven't heard in a week. Engines. A loudspeaker.",
+      "visual": "trucks with lights outside",
+      "drama": 0.8
+    },
+    {
+      "narration": "Anyone inside, make yourself known. And there's a knock. Three knocks.",
+      "visual": "knock on the shutter",
+      "drama": 0.85
+    },
+    {
+      "narration": "This time... you open it.",
+      "visual": "shutter rising, daylight floods in",
+      "drama": 0.85
+    },
+    {
+      "narration": "Soldiers. Water trucks. And the sun... coming up over the parking lot.",
+      "visual": "sunrise, rescue trucks",
+      "drama": 0.75
+    },
+    {
+      "narration": "Mia holds your hand the whole way to the truck. She doesn't let go once.",
+      "visual": "you and Mia walking to the truck",
+      "drama": 0.8
+    },
+    {
+      "narration": "The water heater trick is real. In an emergency, it could save your life. Knew that? Tell me in the comments... and follow. Tomorrow... a new story.",
+      "visual": "end card: KNEW THAT? / NEW STORY TOMORROW",
+      "drama": 0.7
+    }
+  ]
+}
