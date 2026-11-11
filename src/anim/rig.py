@@ -107,6 +107,7 @@ class Character:
     beard: bool = False
     glasses: bool = False
     seed: float = 0.0
+    style: str = "flat"             # flat = the channel's original look (no outlines, simple dot eyes) | outline
     pattern: str = ""               # "" | "hibiscus" (aloha shirt print)
     pattern_col: str = "#f4efe4"
     shorts: bool = False            # bare shins below the knee
@@ -128,14 +129,16 @@ class Character:
         kx, ky = x + face * math.sin(a1) * l1, y + math.cos(a1) * l1
         ex, ey = kx + face * math.sin(a2) * l2, ky + math.cos(a2) * l2
         ctx.set_line_cap(cairo.LINE_CAP_ROUND); ctx.set_line_join(cairo.LINE_JOIN_ROUND)
-        for w, c in ((width * 1.28, OUTLINE), (width, col)):
+        for w, c in (((width, col),) if self.style == "flat" else ((width * 1.28, OUTLINE), (width, col))):
             _rgb(ctx, c); ctx.set_line_width(w)
             ctx.move_to(x, y); ctx.line_to(kx, ky); ctx.line_to(ex, ey); ctx.stroke()
         return (kx, ky), (ex, ey)
 
     def _blob(self, ctx, path_fn, fill, lw):
-        path_fn(); _rgb(ctx, fill); ctx.fill_preserve()
-        _rgb(ctx, OUTLINE); ctx.set_line_width(lw); ctx.stroke()
+        path_fn(); _rgb(ctx, fill)
+        if self.style == "flat":
+            ctx.fill(); return
+        ctx.fill_preserve(); _rgb(ctx, OUTLINE); ctx.set_line_width(lw); ctx.stroke()
 
     def draw(self, ctx, x, y, s, t=0.0, mode="idle", phase=0.0, face=1, expr="neutral", expr_to=None, expr_k=0.0,
              talk=0.0, look=(0.0, 0.0), head_turn=0.0, lean=0.0, breathe=None, arm_f=None, arm_b=None,
@@ -182,9 +185,11 @@ class Character:
         sh = (hip[0] + f * math.sin(lean) * torso, hip[1] - math.cos(lean) * torso - breathe * 0.004 * s)
 
         # back limbs
-        kb, _fb = self._limb(ctx, hip[0], hip[1], th_b, leg1, th_b + kn_b, leg2, f, 0.085 * s, _shade(pants, 0.7))
-        if self.shorts:
-            self._limb(ctx, kb[0], kb[1], th_b + kn_b, 0.001, th_b + kn_b, leg2 * 0.92, f, 0.065 * s, _shade(skin, 0.85))
+        if self.shorts:                                   # bare leg, then the shorts over the thigh only
+            self._limb(ctx, hip[0], hip[1], th_b, leg1, th_b + kn_b, leg2, f, 0.068 * s, _shade(skin, 0.85))
+            self._limb(ctx, hip[0], hip[1], th_b, leg1 * 0.85, th_b + kn_b, 0.001, f, 0.092 * s, _shade(pants, 0.7))
+        else:
+            self._limb(ctx, hip[0], hip[1], th_b, leg1, th_b + kn_b, leg2, f, 0.085 * s, _shade(pants, 0.7))
         self._limb(ctx, sh[0], sh[1] + 0.03 * s, ar_b[0], arm1, ar_b[0] + ar_b[1], arm2, f, 0.068 * s, _shade(top, 0.7))
         # torso
         ctx.save(); ctx.translate(hip[0], hip[1]); ctx.rotate(f * lean)
@@ -210,15 +215,18 @@ class Character:
                 _rgb(ctx, (0.15, 0.45, 0.25)); ctx.save(); ctx.translate(fx_ + fr * 1.3, fy_ + fr * 0.6); ctx.rotate(0.6 + k)
                 ctx.scale(1.0, 0.4); ctx.arc(0, 0, fr * 0.7, 0, 2 * math.pi); ctx.restore(); ctx.fill()
             ctx.restore()
-            body(); _rgb(ctx, OUTLINE); ctx.set_line_width(lw); ctx.stroke()
+            if self.style != "flat":
+                body(); _rgb(ctx, OUTLINE); ctx.set_line_width(lw); ctx.stroke()
             _rgb(ctx, (1, 1, 1), 0.25)                     # collar
             ctx.move_to(-tw * 0.35, -torso + 0.01 * s); ctx.line_to(0, -torso + 0.09 * s); ctx.line_to(tw * 0.35, -torso + 0.01 * s); ctx.close_path(); ctx.fill()
         _rgb(ctx, (0, 0, 0), 0.12); ctx.rectangle(0, -torso + 0.03 * s, tw * 0.9, torso); ctx.fill()  # side shade
         ctx.restore()
         # front leg + shoe
-        knee, foot = self._limb(ctx, hip[0], hip[1], th_f, leg1, th_f + kn_f, leg2, f, 0.09 * s, pants)
-        if self.shorts:                                   # bare shin below the shorts
-            self._limb(ctx, knee[0], knee[1], th_f + kn_f, 0.001, th_f + kn_f, leg2 * 0.92, f, 0.07 * s, skin)
+        if self.shorts:                                   # bare leg, then the shorts over the thigh only
+            knee, foot = self._limb(ctx, hip[0], hip[1], th_f, leg1, th_f + kn_f, leg2, f, 0.072 * s, skin)
+            self._limb(ctx, hip[0], hip[1], th_f, leg1 * 0.85, th_f + kn_f, 0.001, f, 0.098 * s, pants)
+        else:
+            knee, foot = self._limb(ctx, hip[0], hip[1], th_f, leg1, th_f + kn_f, leg2, f, 0.09 * s, pants)
         if torn > 0:                                      # rips and frayed edges on the shorts/trousers
             r = random.Random(int(self.seed * 100) + 7)
             for k in range(int(2 + 4 * torn)):
@@ -226,7 +234,12 @@ class Character:
                 px, py = hip[0] + (knee[0] - hip[0]) * u + r.uniform(-0.02, 0.02) * s, hip[1] + (knee[1] - hip[1]) * u
                 _rgb(ctx, skin); ctx.save(); ctx.translate(px, py); ctx.rotate(r.uniform(0, 3))
                 ctx.move_to(-0.025 * s, 0); ctx.line_to(0, -0.012 * s); ctx.line_to(0.025 * s, 0.004 * s); ctx.line_to(0.004 * s, 0.014 * s)
-                ctx.close_path(); ctx.fill_preserve(); _rgb(ctx, OUTLINE); ctx.set_line_width(lw * 0.6); ctx.stroke(); ctx.restore()
+                ctx.close_path()
+                if self.style == "flat":
+                    ctx.fill()
+                else:
+                    ctx.fill_preserve(); _rgb(ctx, OUTLINE); ctx.set_line_width(lw * 0.6); ctx.stroke()
+                ctx.restore()
         if dirt > 0:
             r = random.Random(int(self.seed * 100) + 9)
             for k in range(int(6 * dirt)):
@@ -324,6 +337,22 @@ class Character:
         for k, ex in enumerate((-0.36, 0.36)):
             persp = 1.0 if face == 0 else (0.82 if (ex < 0) == (face > 0) else 1.0)
             cx, cy = fx + ex * r * persp * (0.85 if face else 1), hy - r * 0.05
+            if self.style == "flat":
+                ed = er * 0.62
+                px = cx + (lx * 0.35 + (side * 0.4 if face else 0)) * ed
+                py = cy + ly * 0.3 * ed
+                ctx.save(); ctx.translate(px, py); ctx.scale(persp * 0.85, max(0.08, open_ * 1.15))
+                _rgb(ctx, (0.08, 0.07, 0.09)); ctx.arc(0, 0, ed, 0, 2 * math.pi); ctx.fill(); ctx.restore()
+                if open_ > 0.35:
+                    _rgb(ctx, (1, 1, 1), 0.8); ctx.arc(px + ed * 0.3, py - ed * 0.35 * open_, ed * 0.22, 0, 2 * math.pi); ctx.fill()
+                if e["droop"] > 0 and open_ > 0.2:
+                    _rgb(ctx, skin); ctx.rectangle(px - ed * 1.3, py - ed * 1.6, ed * 2.6, ed * (0.7 + 1.1 * e["droop"])); ctx.fill()
+                raise_, tilt = e["brow"]
+                by = cy - er * (1.35 + 0.8 * raise_)
+                x_in, x_out = (cx + er * 0.8, cx - er * 0.8) if ex < 0 else (cx - er * 0.8, cx + er * 0.8)
+                _rgb(ctx, (0.08, 0.07, 0.09), 0.9); ctx.set_line_width(max(2, r * 0.07) * self.brows); ctx.set_line_cap(cairo.LINE_CAP_ROUND)
+                ctx.move_to(x_out, by - er * 0.3 * tilt); ctx.line_to(x_in, by + er * 0.55 * tilt); ctx.stroke()
+                continue
             ctx.save(); ctx.translate(cx, cy); ctx.scale(persp * (0.8 if self.eyes == "narrow" else 1.0), open_)
             _rgb(ctx, (0.98, 0.97, 0.95)); ctx.arc(0, 0, er, 0, 2 * math.pi); ctx.fill_preserve()
             _rgb(ctx, OUTLINE); ctx.set_line_width(lw * 0.8 / max(open_, 0.3)); ctx.stroke()
@@ -346,7 +375,7 @@ class Character:
             _rgb(ctx, _shade(hair, 0.65)); ctx.set_line_width(lw * 2.6 * self.brows); ctx.set_line_cap(cairo.LINE_CAP_ROUND)
             ctx.move_to(x_out, by - er * 0.3 * tilt); ctx.line_to(x_in, by + er * 0.55 * tilt); ctx.stroke()   # tilt>0 inner down (angry), <0 inner up (sad/fear)
         # nose
-        _rgb(ctx, _shade(skin, 0.75)); ctx.set_line_width(lw * 0.9)
+        _rgb(ctx, _shade(skin, 0.75), 0.0 if self.style == "flat" else 1.0); ctx.set_line_width(lw * 0.9)
         ctx.move_to(fx + side * r * 0.25, hy + r * 0.05); ctx.line_to(fx + side * r * 0.35 + r * 0.04 * (face or 0), hy + r * 0.28)
         ctx.line_to(fx + side * r * 0.1, hy + r * 0.3); ctx.stroke()
         # mouth: expression curve + speech opening
@@ -358,19 +387,22 @@ class Character:
             h = r * 0.32 * op
             ctx.save(); ctx.translate(mcx, my + h * 0.3); ctx.scale(mw * (1 - 0.3 * op) / (r * 0.3), h / (r * 0.3))
             ctx.arc(0, 0, r * 0.3, 0, 2 * math.pi); ctx.restore()
-            _rgb(ctx, (0.35, 0.08, 0.1)); ctx.fill_preserve(); _rgb(ctx, OUTLINE); ctx.set_line_width(lw); ctx.stroke()
-            if op > 0.3:
+            if self.style == "flat":
+                _rgb(ctx, (0.12, 0.06, 0.07)); ctx.fill()
+            else:
+                _rgb(ctx, (0.35, 0.08, 0.1)); ctx.fill_preserve(); _rgb(ctx, OUTLINE); ctx.set_line_width(lw); ctx.stroke()
+            if op > 0.3 and self.style != "flat":
                 _rgb(ctx, (0.95, 0.93, 0.9)); ctx.rectangle(mcx - mw * 0.45, my - h * 0.05, mw * 0.9, h * 0.22); ctx.fill()
         else:
             c = e["curve"]
-            _rgb(ctx, OUTLINE); ctx.set_line_width(lw * 1.1); ctx.set_line_cap(cairo.LINE_CAP_ROUND)
+            _rgb(ctx, OUTLINE); ctx.set_line_width(max(2, r * 0.06) if self.style == "flat" else lw * 1.1); ctx.set_line_cap(cairo.LINE_CAP_ROUND)
             ctx.move_to(mcx - mw, my - c * r * 0.12)
             ctx.curve_to(mcx - mw * 0.4, my + c * r * 0.22, mcx + mw * 0.4, my + c * r * 0.22, mcx + mw, my - c * r * 0.12)
             ctx.stroke()
         if self.beard:
             _rgb(ctx, _shade(hair, 0.9), 0.9)
             ctx.save(); ctx.translate(hx + side * r * 0.3, hy + r * 0.62); ctx.scale(1.0, 0.55); ctx.arc(0, 0, r * 0.62, 0, math.pi); ctx.restore(); ctx.fill()
-        if self.stubble:
+        if self.stubble and self.style != "flat":
             rs = random.Random(3)
             _rgb(ctx, _shade(skin, 0.72), 0.55)            # soft stubble shadow along the jaw
             ctx.save(); ctx.translate(hx + side * r * 0.25, hy + r * 0.8); ctx.scale(1.0, 0.22)
@@ -378,7 +410,8 @@ class Character:
         if soot > 0:
             rs = random.Random(11)
             for k in range(int(10 * soot)):
-                _rgb(ctx, (0.1, 0.09, 0.08), 0.35); ctx.arc(hx + rs.uniform(-0.7, 0.7) * r, hy + rs.uniform(-0.6, 0.7) * r, rs.uniform(0.06, 0.16) * r, 0, 2 * math.pi); ctx.fill()
+                _rgb(ctx, (0.1, 0.09, 0.08), 0.22 if self.style == "flat" else 0.35)
+                ctx.arc(hx + rs.uniform(-0.7, 0.7) * r, hy + rs.uniform(-0.6, 0.7) * r, rs.uniform(0.06, 0.16) * r * (0.7 if self.style == "flat" else 1), 0, 2 * math.pi); ctx.fill()
         if self.glasses:
             _rgb(ctx, OUTLINE); ctx.set_line_width(lw)
             for ex in (-0.36, 0.36):

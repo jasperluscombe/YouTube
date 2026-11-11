@@ -34,7 +34,7 @@ holes, consistent timeline, original (never a rewritten Reddit/viral script). Fi
 real event; the survival rule is real and accurate.
 
 ## Characters (src/anim/rig.py)
-- Every human is a rig `Character` (face, eyes that blink and look, brows, mouth, hair, outfit, outlines).
+- Every human is a rig `Character` drawn in the **flat style** (the default, chosen by the user): no black outlines, flat colours, simple dark dot eyes that blink and look around, small brows and a simple mouth for expressions, no nose. `style="outline"` exists but is not used.
   The old faceless `person()` is for distant crowd extras only.
 - Before writing scenes, define every character in the story JSON under "characters": name, age, skin, hair,
   hair_style, top/top2, pants, shoes, face_shape, eyes, extras, personality. Never change them mid-story.
