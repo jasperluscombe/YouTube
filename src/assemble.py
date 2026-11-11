@@ -18,6 +18,24 @@ FONT = str(ROOT / "fonts" / "Anton-Regular.ttf")
 SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 
+# Cinematic finishing pass (applied to the picture, before captions so text stays crisp).
+# bloom = blurred copy of the highlights screened back on; then grade, lens fringe, vignette, grain.
+BLOOM = ("split[_b0][_b1];[_b1]gblur=sigma=28,eq=brightness=-0.28:contrast=1.6[_b2];"
+         "[_b0][_b2]blend=all_mode=screen:all_opacity=0.38")
+GRADES = {
+    "night":  "eq=contrast=1.10:saturation=0.92:gamma=0.96,colorbalance=rs=-0.04:bs=0.07:rh=0.05:bh=-0.03",
+    "horror": "eq=contrast=1.18:saturation=0.55:gamma=0.90,colorbalance=rs=-0.03:gs=0.03:bs=0.06:gm=0.03",
+    "warm":   "eq=contrast=1.06:saturation=1.08:gamma=1.0,colorbalance=rh=0.06:gh=0.02:bh=-0.04",
+    "storm":  "eq=contrast=1.12:saturation=0.75:gamma=0.95,colorbalance=bs=0.08:bm=0.03",
+}
+
+
+def finish_chain(grade):
+    g = GRADES.get(grade, GRADES["night"])
+    return (f"format=gbrp,{BLOOM},{g},rgbashift=rh=-2:bh=2,vignette=angle=PI/5,"
+            f"noise=alls=7:allf=t+u,format=yuv420p")
+
+
 def run(cmd):
     r = subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
     if r.returncode:
@@ -120,7 +138,8 @@ def main():
             vf = caps
         elif vid.exists():
             inputs = ["-stream_loop", "-1", "-i", str(vid)]
-            vf = f"{fit},{caps}"
+            grade = scene.get("grade", story.get("grade", "night"))
+            vf = f"{fit},{finish_chain(grade)},{caps}" if grade != "none" else f"{fit},{caps}"
         elif img:
             inputs = ["-loop", "1", "-i", str(img)]
             vf = (f"scale={W*2}:{H*2}:force_original_aspect_ratio=increase,crop={W*2}:{H*2},"
@@ -163,16 +182,44 @@ def main():
              f"drawtext=fontfile={FONT}:textfile={tmp}/part.txt:fontsize=58:fontcolor=white:x=(w-text_w)/2:y=1675:"
              f"enable='lt(t,4)'", "-c:v", "libx264", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "copy", str(lab)])
         lab.replace(first)
+    title_at = None
+    if story.get("part", "").startswith("1") and story.get("series"):   # movie-style title card after the cold open
+        title_at = min(3.2, duration(tmp / "clip_01.mp4") - 1.8)
+        (tmp / "t_small.txt").write_text("A LAST LIGHT STORY")
+        (tmp / "t_big.txt").write_text(story["series"].upper())
+        a = f"if(lt(t,{title_at}),0,if(lt(t,{title_at + 0.25}),(t-{title_at})/0.25,if(lt(t,{title_at + 1.4}),1,max(0,1-(t-{title_at + 1.4})/0.35))))"
+        first = tmp / "clip_01.mp4"; tc = tmp / "clip_01_title.mp4"
+        run(["ffmpeg", "-y", "-i", str(first), "-vf",
+             f"drawbox=x=0:y=0:w=iw:h=ih:color=black@0.55:t=fill:enable='between(t,{title_at},{title_at + 1.75})',"
+             f"drawtext=fontfile={FONT}:textfile={tmp}/t_small.txt:fontsize=48:fontcolor=0xd9d9d9:alpha='{a}':"
+             f"x=(w-text_w)/2:y=h*0.40,"
+             f"drawtext=fontfile={FONT}:textfile={tmp}/t_big.txt:fontsize=150:fontcolor=0xffd27a:alpha='{a}':"
+             f"borderw=4:bordercolor=black:x=(w-text_w)/2:y=h*0.44",
+             "-c:v", "libx264", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "copy", str(tc)])
+        tc.replace(first)
+    # sound-design hits: whoosh into every cut, braam on the title, riser + impact into the end card
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / "src"))
+    import numpy as _np, soundfile as _sf
+    from fx_audio import hits_track
+    starts, t0 = [], 0.0
+    for c in clips:
+        starts.append(t0); t0 += duration(c)
+    braams = [title_at] if title_at is not None else [0.15]
+    hits = hits_track(t0, starts[1:], impact_times=[starts[-1]], braam_times=braams, riser_into=[starts[-1]])
+    hits_wav = tmp / "hits.wav"
+    _sf.write(hits_wav, _np.stack([hits, hits], 1), 44100)
     music = ROOT / "assets" / "clips" / sid / "music.wav"
+    joined = tmp / "joined.mp4"
+    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(joined)])
+    ins, fc = ["-i", str(joined), "-i", str(hits_wav)], "[1:a]volume=0.6[h];"
+    labs = "[0:a][h]"
     if music.exists():   # score under the whole video
-        joined = tmp / "joined.mp4"
-        run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(joined)])
-        run(["ffmpeg", "-y", "-i", str(joined), "-i", str(music), "-filter_complex",
-             "[1:a]volume=0.45[m];[0:a][m]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]",
-             "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", str(final)])
-    else:
-        run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c:v", "copy",
-             "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k", str(final)])
+        ins += ["-i", str(music)]; fc += "[2:a]volume=0.45[m];"; labs += "[m]"
+    n = labs.count("[")
+    run(["ffmpeg", "-y", *ins, "-filter_complex",
+         f"{fc}{labs}amix=inputs={n}:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]",
+         "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", str(final)])
     total = duration(final)
     print(f"{final}  ({total:.1f}s)" + ("  ⚠ over Shorts limit" if total > fmt["max_seconds"] else ""))
 
