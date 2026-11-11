@@ -55,7 +55,7 @@ def caption_filters(text, dur, tmp, prefix, segs=None):
             d = (s1 - s0) * w / total
             hold = 0.15 if j == len(parts) - 1 else 0.0   # linger only on a phrase's last words
             tf = tmp / f"{prefix}_{n:02d}.txt"; n += 1
-            tf.write_text(re.sub(r"[.,;:…]+$", "", p).upper())
+            tf.write_text(re.sub(r"[.,;:…]+$", "", p.replace("~", "")).upper())
             f.append(f"drawtext=fontfile={FONT}:textfile={tf}:fontsize=112:fontcolor=white:"
                      f"borderw=9:bordercolor=black:shadowx=0:shadowy=8:shadowcolor=black@0.6:"
                      f"x=(w-text_w)/2:y=h*0.76:enable='between(t,{t:.3f},{t + d - 0.01 + hold:.3f})'")
@@ -134,10 +134,17 @@ def main():
 
         clip = tmp / f"clip_{i:02d}.mp4"
         sfx = vid.with_suffix(".sfx.wav")
+        ghost = wav.with_suffix(".whisper.wav")      # ghost whispers from voice.py
+        extra, mix = [], ["[1:a]apad[v]"]
+        labels = ["[v]"]
         if sfx.exists() and not scene.get("alert"):   # sound design from the animator
-            extra, afc = ["-i", str(sfx)], "[1:a]apad[v];[2:a]volume=0.5[s];[v][s]amix=inputs=2:duration=first:normalize=0[a]"
+            extra += ["-i", str(sfx)]; mix.append(f"[{1 + len(extra) // 2}:a]volume=0.5[s]"); labels.append("[s]")
+        if ghost.exists() and not args.silent:
+            extra += ["-i", str(ghost)]; mix.append(f"[{1 + len(extra) // 2}:a]volume=0.8[g]"); labels.append("[g]")
+        if len(labels) > 1:
+            afc = ";".join(mix) + f";{''.join(labels)}amix=inputs={len(labels)}:duration=first:normalize=0[a]"
         else:
-            extra, afc = [], "[1:a]apad[a]"
+            afc = "[1:a]apad[a]"
         run(["ffmpeg", "-y", *inputs, "-i", str(wav), *extra,
              "-filter_complex", f"[0:v]{vf}[vo];{afc}", "-map", "[vo]", "-map", "[a]",
              "-t", f"{dur:.2f}", "-c:v", "libx264", "-preset", "medium", "-crf", "20",

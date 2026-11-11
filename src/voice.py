@@ -62,7 +62,36 @@ def trim(a, sr, thresh=0.01):
 
 
 def say_text(p):
+    p = p.lstrip("~").strip()
     return p.rstrip(".…") if p.endswith(("...", "…")) else p
+
+
+def whisperize(a, sr, seed=0):
+    """Turn voiced speech into a breathy whisper: keep each frame's spectral shape, replace the
+    vocal-cord buzz with noise (random phase), tilt toward the hiss band."""
+    n, hop = 1024, 256
+    a = np.asarray(a, dtype=np.float32)
+    if len(a) < n:
+        return a * 0.5
+    win = np.hanning(n).astype(np.float32)
+    frames = 1 + (len(a) - n) // hop
+    rng = np.random.default_rng(seed)
+    out = np.zeros(len(a) + n, dtype=np.float32)
+    norm = np.zeros(len(a) + n, dtype=np.float32)
+    f = np.fft.rfftfreq(n, 1 / sr)
+    tilt = np.clip((f - 300) / 2500, 0.15, 1.2).astype(np.float32)
+    for k in range(frames):
+        seg = a[k * hop:k * hop + n] * win
+        mag = np.abs(np.fft.rfft(seg)) * tilt
+        ph = rng.uniform(0, 2 * np.pi, len(mag))
+        y = np.fft.irfft(mag * np.exp(1j * ph), n).astype(np.float32) * win
+        out[k * hop:k * hop + n] += y
+        norm[k * hop:k * hop + n] += win ** 2
+    out = out[:len(a)] / np.maximum(norm[:len(a)], 1e-3)
+    rms_in = np.sqrt((a ** 2).mean()) + 1e-9
+    rms_out = np.sqrt((out ** 2).mean()) + 1e-9
+    out = out * (0.6 * rms_in / rms_out)          # whispers sit a little under normal speech
+    return np.clip(out, -0.98, 0.98).astype(np.float32)
 
 
 def speak_line(tts, style, speed, lang, text, synth=None):
@@ -73,6 +102,8 @@ def speak_line(tts, style, speed, lang, text, synth=None):
         say = say_text(p)
         a, sr = synth(p) if synth else tts.create(say, voice=style, speed=speed, lang=lang)
         a = trim(np.asarray(a, dtype=np.float32), sr)
+        if p.startswith("~"):          # whispered line
+            a = whisperize(a, sr, seed=len(p))
         if sr != OUT_SR:
             a = np.interp(np.linspace(0, len(a), int(len(a) * OUT_SR / sr), endpoint=False),
                           np.arange(len(a)), a).astype(np.float32)
@@ -101,6 +132,13 @@ def chatterbox_batch(story, outdir, vcfg):
                 jobs.append({"text": say_text(p), "out": str(out), "exaggeration": drama,
                              "cfg": cb.get("cfg", 0.35), "temperature": cb.get("temperature", 0.8),
                              "seed": cb.get("seed", 7) + (7919 if out.with_suffix(".retry").exists() else 0)})
+    for i, scene in enumerate(story["scenes"], 1):       # ghost whispers layered under the scene
+        for k, w in enumerate(scene.get("whispers", [])):
+            txt = w["text"] if isinstance(w, dict) else w
+            out = work / f"w{i:02d}_{k:02d}.wav"
+            table["W:" + txt] = out
+            if not out.exists():
+                jobs.append({"text": txt, "out": str(out), "exaggeration": 0.5, "cfg": 0.5, "temperature": 0.8, "seed": 100 + k})
     if jobs:
         spec = work / "jobs.json"
         spec.write_text(json.dumps({"voice_ref": str(ROOT / cb["voice_ref"]) if cb.get("voice_ref") else None,
@@ -113,6 +151,34 @@ def chatterbox_batch(story, outdir, vcfg):
         a, sr = sf.read(table[p], dtype="float32")
         return a, sr
     return synth
+
+
+WHISPER_FX = ("highpass=f=250,aecho=0.8:0.85:60|140|260:0.45|0.3|0.2,"
+              "volume=0.9")
+
+
+def ghost_track(scene, dur, synth, path):
+    """Mix a scene's ghost whispers onto a silent track of the scene's length."""
+    ws = scene.get("whispers", [])
+    if not ws:
+        return
+    track = np.zeros(int((dur + 2) * OUT_SR), dtype=np.float32)
+    for k, w in enumerate(ws):
+        txt = w["text"] if isinstance(w, dict) else w
+        at = w.get("at") if isinstance(w, dict) else None
+        if at is None:
+            at = dur * (k + 0.5) / len(ws)
+        a, sr = synth("W:" + txt)
+        a = whisperize(trim(np.asarray(a, dtype=np.float32), sr), sr, seed=200 + k)
+        if sr != OUT_SR:
+            a = np.interp(np.linspace(0, len(a), int(len(a) * OUT_SR / sr), endpoint=False), np.arange(len(a)), a).astype(np.float32)
+        i = int(at * OUT_SR)
+        j = min(len(track), i + len(a))
+        track[i:j] += a[: j - i] * 0.55
+    raw = path.with_suffix(".raw.wav")
+    sf.write(raw, track, OUT_SR)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-af", WHISPER_FX, "-ar", str(OUT_SR), str(path)], check=True)
+    raw.unlink()
 
 
 def write(path, audio, polish):
@@ -150,6 +216,8 @@ def main():
         a, segs = speak_line(tts, style, vcfg["speed"] * scene.get("speed", 1.0), lang, scene["narration"], synth)
         write(outdir / f"scene_{i:02d}.wav", a, vcfg.get("polish"))
         (outdir / f"scene_{i:02d}.json").write_text(json.dumps(segs))
+        if synth and scene.get("whispers"):
+            ghost_track(scene, len(a) / OUT_SR, synth, outdir / f"scene_{i:02d}.whisper.wav")
         print(f"  scene {i}: {len(a) / OUT_SR:.1f}s")
 
 
