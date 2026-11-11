@@ -20,3 +20,8 @@
 - **1/3:** person + place + the trap snaps shut. The two-word question. Cliffhanger.
 - **2/3:** things get worse; the survival rule is introduced (RULE card). Cliffhanger.
 - **3/3:** the rule saves them. Emotional payoff. Final two-word question + "New story tomorrow".
+
+## Tools for atmosphere
+- **Whispering:** start a narration phrase with `~` to whisper it (e.g. `~Don't turn around.`). Add
+  `"whispers": ["come closer", {"text": "we see you", "at": 3.5}]` to a scene for echoing ghost whispers
+  layered under the narration (`at` = seconds into the scene; omitted = spread evenly). Use for horror/creepy beats.
