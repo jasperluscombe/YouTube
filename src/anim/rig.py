@@ -107,6 +107,12 @@ class Character:
     beard: bool = False
     glasses: bool = False
     seed: float = 0.0
+    pattern: str = ""               # "" | "hibiscus" (aloha shirt print)
+    pattern_col: str = "#f4efe4"
+    shorts: bool = False            # bare shins below the knee
+    footwear: str = "shoes"         # shoes | flipflops | barefoot
+    shades_on_head: bool = False
+    stubble: bool = False
     extras: dict = field(default_factory=dict)
 
     # proportions per age
@@ -133,7 +139,7 @@ class Character:
 
     def draw(self, ctx, x, y, s, t=0.0, mode="idle", phase=0.0, face=1, expr="neutral", expr_to=None, expr_k=0.0,
              talk=0.0, look=(0.0, 0.0), head_turn=0.0, lean=0.0, breathe=None, arm_f=None, arm_b=None,
-             crouch=0.0, hold=None):
+             crouch=0.0, hold=None, torn=0.0, dirt=0.0, lost_shoe=False, soot=0.0):
         """(x, y) = ground point between the feet; s = full height in px."""
         P = self.prop()
         lw = max(2.0, s * 0.011)
@@ -176,7 +182,9 @@ class Character:
         sh = (hip[0] + f * math.sin(lean) * torso, hip[1] - math.cos(lean) * torso - breathe * 0.004 * s)
 
         # back limbs
-        self._limb(ctx, hip[0], hip[1], th_b, leg1, th_b + kn_b, leg2, f, 0.085 * s, _shade(pants, 0.7))
+        kb, _fb = self._limb(ctx, hip[0], hip[1], th_b, leg1, th_b + kn_b, leg2, f, 0.085 * s, _shade(pants, 0.7))
+        if self.shorts:
+            self._limb(ctx, kb[0], kb[1], th_b + kn_b, 0.001, th_b + kn_b, leg2 * 0.92, f, 0.065 * s, _shade(skin, 0.85))
         self._limb(ctx, sh[0], sh[1] + 0.03 * s, ar_b[0], arm1, ar_b[0] + ar_b[1], arm2, f, 0.068 * s, _shade(top, 0.7))
         # torso
         ctx.save(); ctx.translate(hip[0], hip[1]); ctx.rotate(f * lean)
@@ -187,26 +195,66 @@ class Character:
         self._blob(ctx, body, top, lw)
         if self.top2:
             _rgb(ctx, _col(self.top2)); ctx.rectangle(-tw * 0.18, -torso + 0.02 * s, tw * 0.36, torso * 0.9); ctx.fill()
+        if self.pattern == "hibiscus":
+            body(); ctx.save(); ctx.clip()
+            r = random.Random(42)                         # fixed layout: the shirt always looks identical
+            pc = _col(self.pattern_col)
+            for k in range(9):
+                fx_, fy_ = r.uniform(-tw, tw), r.uniform(-torso, 0.02 * s)
+                fr = r.uniform(0.022, 0.034) * s
+                for pet in range(5):
+                    a = pet * 2 * math.pi / 5 + k
+                    _rgb(ctx, pc); ctx.save(); ctx.translate(fx_ + math.cos(a) * fr * 0.7, fy_ + math.sin(a) * fr * 0.7)
+                    ctx.rotate(a); ctx.scale(1.0, 0.6); ctx.arc(0, 0, fr * 0.7, 0, 2 * math.pi); ctx.restore(); ctx.fill()
+                _rgb(ctx, (0.98, 0.82, 0.25)); ctx.arc(fx_, fy_, fr * 0.28, 0, 2 * math.pi); ctx.fill()
+                _rgb(ctx, (0.15, 0.45, 0.25)); ctx.save(); ctx.translate(fx_ + fr * 1.3, fy_ + fr * 0.6); ctx.rotate(0.6 + k)
+                ctx.scale(1.0, 0.4); ctx.arc(0, 0, fr * 0.7, 0, 2 * math.pi); ctx.restore(); ctx.fill()
+            ctx.restore()
+            body(); _rgb(ctx, OUTLINE); ctx.set_line_width(lw); ctx.stroke()
+            _rgb(ctx, (1, 1, 1), 0.25)                     # collar
+            ctx.move_to(-tw * 0.35, -torso + 0.01 * s); ctx.line_to(0, -torso + 0.09 * s); ctx.line_to(tw * 0.35, -torso + 0.01 * s); ctx.close_path(); ctx.fill()
         _rgb(ctx, (0, 0, 0), 0.12); ctx.rectangle(0, -torso + 0.03 * s, tw * 0.9, torso); ctx.fill()  # side shade
         ctx.restore()
         # front leg + shoe
-        _, foot = self._limb(ctx, hip[0], hip[1], th_f, leg1, th_f + kn_f, leg2, f, 0.09 * s, pants)
+        knee, foot = self._limb(ctx, hip[0], hip[1], th_f, leg1, th_f + kn_f, leg2, f, 0.09 * s, pants)
+        if self.shorts:                                   # bare shin below the shorts
+            self._limb(ctx, knee[0], knee[1], th_f + kn_f, 0.001, th_f + kn_f, leg2 * 0.92, f, 0.07 * s, skin)
+        if torn > 0:                                      # rips and frayed edges on the shorts/trousers
+            r = random.Random(int(self.seed * 100) + 7)
+            for k in range(int(2 + 4 * torn)):
+                u = r.uniform(0.15, 0.85)
+                px, py = hip[0] + (knee[0] - hip[0]) * u + r.uniform(-0.02, 0.02) * s, hip[1] + (knee[1] - hip[1]) * u
+                _rgb(ctx, skin); ctx.save(); ctx.translate(px, py); ctx.rotate(r.uniform(0, 3))
+                ctx.move_to(-0.025 * s, 0); ctx.line_to(0, -0.012 * s); ctx.line_to(0.025 * s, 0.004 * s); ctx.line_to(0.004 * s, 0.014 * s)
+                ctx.close_path(); ctx.fill_preserve(); _rgb(ctx, OUTLINE); ctx.set_line_width(lw * 0.6); ctx.stroke(); ctx.restore()
+        if dirt > 0:
+            r = random.Random(int(self.seed * 100) + 9)
+            for k in range(int(6 * dirt)):
+                _rgb(ctx, (0.25, 0.18, 0.1), 0.45); ctx.arc(hip[0] + r.uniform(-0.08, 0.08) * s, hip[1] + r.uniform(0.02, 0.4) * s,
+                                                            r.uniform(0.01, 0.025) * s, 0, 2 * math.pi); ctx.fill()
         def shoe():
-            ctx.save(); ctx.translate(foot[0] + f * 0.03 * s, foot[1]); ctx.scale(1.0, 0.5)
+            ctx.save(); ctx.translate(foot[0] + f * 0.03 * s, foot[1]); ctx.scale(1.0, 0.5 if self.footwear == "shoes" else 0.28)
             ctx.arc(0, 0, 0.055 * s, 0, 2 * math.pi); ctx.restore()
-        self._blob(ctx, shoe, shoes, lw)
+        if self.footwear == "barefoot" or lost_shoe:
+            self._blob(ctx, lambda: (ctx.save(), ctx.translate(foot[0] + f * 0.025 * s, foot[1] - 0.008 * s), ctx.scale(1.0, 0.45),
+                                     ctx.arc(0, 0, 0.045 * s, 0, 2 * math.pi), ctx.restore()), skin, lw)
+        else:
+            self._blob(ctx, shoe, shoes, lw)
+            if self.footwear == "flipflops":
+                _rgb(ctx, OUTLINE); ctx.set_line_width(lw * 0.9)
+                ctx.move_to(foot[0], foot[1] - 0.02 * s); ctx.line_to(foot[0] + f * 0.04 * s, foot[1]); ctx.stroke()
         # head
         hr = P["head"] * s
         neck = (sh[0], sh[1] - 0.02 * s)
         hx = neck[0] + f * math.sin(lean) * 0.05 * s + head_turn * 0.02 * s
         hy = neck[1] - hr * 0.95
-        self._head(ctx, hx, hy, hr, t, face, expr, expr_to, expr_k, talk, look, head_turn, skin, hair, lw)
+        self._head(ctx, hx, hy, hr, t, face, expr, expr_to, expr_k, talk, look, head_turn, skin, hair, lw, soot)
         # front arm + hand on top
         _, hand = self._limb(ctx, sh[0], sh[1] + 0.03 * s, ar_f[0], arm1, ar_f[0] + ar_f[1], arm2, f, 0.072 * s, top)
         self._blob(ctx, lambda: ctx.arc(hand[0], hand[1], 0.035 * s, 0, 2 * math.pi), skin, lw)
         return {"hand": hand, "head": (hx, hy), "hip": hip, "head_r": hr}
 
-    def _head(self, ctx, hx, hy, r, t, face, expr, expr_to, expr_k, talk, look, head_turn, skin, hair, lw):
+    def _head(self, ctx, hx, hy, r, t, face, expr, expr_to, expr_k, talk, look, head_turn, skin, hair, lw, soot=0.0):
         e = blend_expr(expr, expr_to, expr_k) if expr_to else EXPR[expr]
         side = 0.0 if face == 0 else face * (0.28 + 0.08 * head_turn)     # 3/4 view offset of the features
         # hair behind (long styles)
@@ -235,6 +283,19 @@ class Character:
         ctx.save(); ctx.translate(hx - side * r * 1.2, hy); ctx.scale(0.5, 1); ctx.arc(0, 0, r, 0, 2 * math.pi); ctx.restore(); ctx.fill()
         # hair on top
         hs = self.hair_style
+        if hs == "curly":
+            rr = random.Random(5)
+            for k in range(11):
+                a = math.pi * (1.05 + 0.9 * k / 10)
+                self._blob(ctx, lambda a=a: ctx.arc(hx + math.cos(a) * r * 0.92, hy + math.sin(a) * r * 0.9, r * rr.uniform(0.26, 0.34), 0, 2 * math.pi), hair, lw)
+            _rgb(ctx, hair); ctx.arc(hx, hy - r * 0.35, r * 0.85, math.pi, 2 * math.pi); ctx.fill()
+        if self.shades_on_head:
+            for ex in (-0.32, 0.32):
+                self._blob(ctx, lambda ex=ex: (ctx.save(), ctx.translate(hx + ex * r + (face or 0) * r * 0.15, hy - r * 0.88),
+                                               ctx.scale(1.0, 0.6), ctx.arc(0, 0, r * 0.24, 0, 2 * math.pi), ctx.restore()), (0.95, 0.75, 0.2), lw * 1.2)
+                _rgb(ctx, (0.1, 0.35, 0.45)); ctx.save(); ctx.translate(hx + ex * r + (face or 0) * r * 0.15, hy - r * 0.88)
+                ctx.scale(1.0, 0.6); ctx.arc(0, 0, r * 0.17, 0, 2 * math.pi); ctx.restore(); ctx.fill()
+            _rgb(ctx, (1, 1, 1), 0.35); ctx.arc(hx - r * 0.38 + (face or 0) * r * 0.15, hy - r * 0.93, r * 0.06, 0, 2 * math.pi); ctx.fill()
         if hs in ("short", "long", "ponytail", "bun", "buzz"):
             def cap():
                 ctx.save(); ctx.translate(hx, hy); ctx.scale(sx, sy)
@@ -309,6 +370,15 @@ class Character:
         if self.beard:
             _rgb(ctx, _shade(hair, 0.9), 0.9)
             ctx.save(); ctx.translate(hx + side * r * 0.3, hy + r * 0.62); ctx.scale(1.0, 0.55); ctx.arc(0, 0, r * 0.62, 0, math.pi); ctx.restore(); ctx.fill()
+        if self.stubble:
+            rs = random.Random(3)
+            _rgb(ctx, _shade(skin, 0.72), 0.55)            # soft stubble shadow along the jaw
+            ctx.save(); ctx.translate(hx + side * r * 0.25, hy + r * 0.8); ctx.scale(1.0, 0.22)
+            ctx.arc(0, 0, r * 0.66, 0.05, math.pi - 0.05); ctx.restore(); ctx.fill()
+        if soot > 0:
+            rs = random.Random(11)
+            for k in range(int(10 * soot)):
+                _rgb(ctx, (0.1, 0.09, 0.08), 0.35); ctx.arc(hx + rs.uniform(-0.7, 0.7) * r, hy + rs.uniform(-0.6, 0.7) * r, rs.uniform(0.06, 0.16) * r, 0, 2 * math.pi); ctx.fill()
         if self.glasses:
             _rgb(ctx, OUTLINE); ctx.set_line_width(lw)
             for ex in (-0.36, 0.36):

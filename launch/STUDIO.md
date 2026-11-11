@@ -11,6 +11,18 @@ Read with launch/FORMULA.md (story formula + titles), launch/CINEMA.md (camera, 
   one REAL survival rule, a two-word question.
 - Fully automated: no approval needed; send the owner an FYI.
 
+## Kai - the channel's recurring hero (src/anim/cast.py KAI)
+- Every story stars Kai: from Hawaii, works at a surf shop, sunny, kind, a little clumsy, never gives up.
+  Catchphrase "Could be worse." - and then it gets worse. He is the "ordinary person" of the formula;
+  each story still gives him a new companion and a new trap (one place) and a real survival rule.
+- RUNNING GAG: every story wrecks him (torn shorts via torn=, dirt=, soot=, lost_shoe=, singed hair) but his
+  red aloha shirt ALWAYS comes out spotless. Never damage the shirt. Pay it off near the end of Part 3 with a
+  beat like "...and somehow, the shirt survived." plus a quick insert of the pristine shirt.
+- Tone: genuinely tense survival/horror with warm humour from Kai's optimism. Never mock his culture: he's
+  a capable, likeable guy; humour comes from his luck and the situations, not from where he's from.
+- Narration switches from "you" to third person about Kai ("Kai had worked at the surf shop for six years...").
+- The weekly full movie becomes "Kai's Worst Week" (each story a chapter).
+
 ## Length
 Each part (each video) 1:30-3:00, ideally 2:00-2:30 -> about 260-330 narrated words per part.
 Never pad. Every scene must move the story.
