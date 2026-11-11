@@ -14,7 +14,8 @@
       "shorts"
     ],
     "publish_at": "2026-11-12T17:00:00Z",
-    "comment": "Hear that? 👂 Would you go down to the basement? 👇"
+    "comment": "Hear that? 👂 Would you go down to the basement? 👇",
+    "cover_ms": 68051
   },
   "part2": {
     "title": "Hear That? (2/3): Come Down #shorts",
@@ -31,7 +32,8 @@
       "shorts"
     ],
     "publish_at": "2026-11-12T21:30:00Z",
-    "comment": "Get out? 🚪 What would you do first? 👇"
+    "comment": "Get out? 🚪 What would you do first? 👇",
+    "cover_ms": 23818
   },
   "part3": {
     "title": "Hear That? (3/3): Fresh Air - The Finale #shorts",
@@ -48,6 +50,7 @@
       "shorts"
     ],
     "publish_at": "2026-11-13T01:30:00Z",
-    "comment": "Hear that? 👂 Does your home have a CO alarm? 👇"
+    "comment": "Hear that? 👂 Does your home have a CO alarm? 👇",
+    "cover_ms": 25158
   }
 }

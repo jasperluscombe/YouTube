@@ -131,7 +131,7 @@ def chatterbox_batch(story, outdir, vcfg):
                 drama = float(override) if override else min(scene.get("drama", cb.get("exaggeration", 0.6)), MAX_DRAMA)
                 jobs.append({"text": say_text(p), "out": str(out), "exaggeration": drama,
                              "cfg": cb.get("cfg", 0.35), "temperature": cb.get("temperature", 0.8),
-                             "seed": cb.get("seed", 7) + (7919 if out.with_suffix(".retry").exists() else 0)})
+                             "seed": cb.get("seed", 7) + (7919 * (1 + int(round(drama * 100))) if retry.exists() else 0)})   # new seed per retake level
     for i, scene in enumerate(story["scenes"], 1):       # ghost whispers layered under the scene
         for k, w in enumerate(scene.get("whispers", [])):
             txt = w["text"] if isinstance(w, dict) else w
