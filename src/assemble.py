@@ -24,7 +24,7 @@ BLOOM = ("split[_b0][_b1];[_b1]gblur=sigma=28,eq=brightness=-0.28:contrast=1.6[_
          "[_b0][_b2]blend=all_mode=screen:all_opacity=0.38")
 GRADES = {
     "night":  "eq=contrast=1.10:saturation=0.92:gamma=0.96,colorbalance=rs=-0.04:bs=0.07:rh=0.05:bh=-0.03",
-    "horror": "eq=contrast=1.18:saturation=0.55:gamma=0.90,colorbalance=rs=-0.03:gs=0.03:bs=0.06:gm=0.03",
+    "horror": "eq=contrast=1.12:saturation=0.62:gamma=0.97,colorbalance=rs=-0.03:gs=0.03:bs=0.06:gm=0.03",
     "warm":   "eq=contrast=1.06:saturation=1.08:gamma=1.0,colorbalance=rh=0.06:gh=0.02:bh=-0.04",
     "storm":  "eq=contrast=1.12:saturation=0.75:gamma=0.95,colorbalance=bs=0.08:bm=0.03",
 }
