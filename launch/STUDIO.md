@@ -12,7 +12,7 @@ Read with launch/FORMULA.md (story formula + titles), launch/CINEMA.md (camera, 
 - Fully automated: no approval needed; send the owner an FYI.
 
 ## Kai - the channel's recurring hero (src/anim/cast.py KAI)
-- Every story stars Kai: from Hawaii, works at a surf shop, sunny, kind, a little clumsy, never gives up.
+- Every story stars Kai: a regular, basic white American guy (short brown side-swept hair, fair skin) in his lucky red Hawaiian shirt; works at a surf shop, sunny, kind, a little clumsy, never gives up.
   Catchphrase "Could be worse." - and then it gets worse. He is the "ordinary person" of the formula;
   each story still gives him a new companion and a new trap (one place) and a real survival rule.
 - RUNNING GAG: every story wrecks him (torn shorts via torn=, dirt=, soot=, lost_shoe=, singed hair) but his

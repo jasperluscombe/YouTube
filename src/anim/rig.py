@@ -257,7 +257,7 @@ class Character:
                 _rgb(ctx, OUTLINE); ctx.set_line_width(lw * 0.9)
                 ctx.move_to(foot[0], foot[1] - 0.02 * s); ctx.line_to(foot[0] + f * 0.04 * s, foot[1]); ctx.stroke()
         # head
-        hr = P["head"] * s
+        hr = P["head"] * s * (0.9 if self.style == "flat" and self.age == "adult" else 1.0)
         neck = (sh[0], sh[1] - 0.02 * s)
         hx = neck[0] + f * math.sin(lean) * 0.05 * s + head_turn * 0.02 * s
         hy = neck[1] - hr * 0.95
@@ -286,13 +286,17 @@ class Character:
         sx, sy = {"round": (1.0, 1.0), "oval": (0.9, 1.1), "square": (1.0, 1.02)}[self.face_shape]
         def facepath():
             ctx.save(); ctx.translate(hx, hy); ctx.scale(sx, sy); ctx.arc(0, 0, r, 0, 2 * math.pi); ctx.restore()
+        if face == 0 and self.style == "flat" and self.hair_style not in ("hood", "long"):
+            for sgn in (-1, 1):
+                _rgb(ctx, _shade(skin, 0.92)); ctx.save(); ctx.translate(hx + sgn * r * 0.93 * sx, hy + r * 0.05)
+                ctx.scale(0.5, 0.75); ctx.arc(0, 0, r * 0.24, 0, 2 * math.pi); ctx.restore(); ctx.fill()
         self._blob(ctx, facepath, skin, lw)
         # ear on the far side from the features
         if face != 0:
             self._blob(ctx, lambda: (ctx.save(), ctx.translate(hx - face * r * 0.82, hy + r * 0.08), ctx.scale(0.55, 0.8),
                                      ctx.arc(0, 0, r * 0.28, 0, 2 * math.pi), ctx.restore()), skin, lw)
         # cheek shading
-        _rgb(ctx, (0, 0, 0), 0.08)
+        _rgb(ctx, (0, 0, 0), 0.04 if self.style == "flat" else 0.08)
         ctx.save(); ctx.translate(hx - side * r * 1.2, hy); ctx.scale(0.5, 1); ctx.arc(0, 0, r, 0, 2 * math.pi); ctx.restore(); ctx.fill()
         # hair on top
         hs = self.hair_style
@@ -302,14 +306,24 @@ class Character:
                 a = math.pi * (1.05 + 0.9 * k / 10)
                 self._blob(ctx, lambda a=a: ctx.arc(hx + math.cos(a) * r * 0.92, hy + math.sin(a) * r * 0.9, r * rr.uniform(0.26, 0.34), 0, 2 * math.pi), hair, lw)
             _rgb(ctx, hair); ctx.arc(hx, hy - r * 0.35, r * 0.85, math.pi, 2 * math.pi); ctx.fill()
-        if self.shades_on_head:
-            for ex in (-0.32, 0.32):
-                self._blob(ctx, lambda ex=ex: (ctx.save(), ctx.translate(hx + ex * r + (face or 0) * r * 0.15, hy - r * 0.88),
-                                               ctx.scale(1.0, 0.6), ctx.arc(0, 0, r * 0.24, 0, 2 * math.pi), ctx.restore()), (0.95, 0.75, 0.2), lw * 1.2)
-                _rgb(ctx, (0.1, 0.35, 0.45)); ctx.save(); ctx.translate(hx + ex * r + (face or 0) * r * 0.15, hy - r * 0.88)
-                ctx.scale(1.0, 0.6); ctx.arc(0, 0, r * 0.17, 0, 2 * math.pi); ctx.restore(); ctx.fill()
-            _rgb(ctx, (1, 1, 1), 0.35); ctx.arc(hx - r * 0.38 + (face or 0) * r * 0.15, hy - r * 0.93, r * 0.06, 0, 2 * math.pi); ctx.fill()
-        if hs in ("short", "long", "ponytail", "bun", "buzz"):
+        if hs == "short" and self.style == "flat":        # side-swept everyday haircut
+            fs = face or 1
+            ctx.save(); ctx.translate(hx, hy); ctx.scale(sx * fs, sy)
+            _rgb(ctx, hair)
+            ctx.move_to(-r * 1.04, -r * 0.12)
+            ctx.curve_to(-r * 1.15, -r * 0.9, -r * 0.5, -r * 1.3, r * 0.15, -r * 1.22)      # crown, a little volume
+            ctx.curve_to(r * 0.85, -r * 1.15, r * 1.12, -r * 0.6, r * 1.03, -r * 0.1)
+            ctx.curve_to(r * 0.9, -r * 0.35, r * 0.7, -r * 0.5, r * 0.45, -r * 0.55)         # hairline
+            ctx.curve_to(r * 0.05, -r * 0.6, -r * 0.35, -r * 0.42, -r * 0.62, -r * 0.3)       # fringe swoops down to one side
+            ctx.curve_to(-r * 0.7, -r * 0.5, -r * 0.9, -r * 0.35, -r * 1.04, -r * 0.12)
+            ctx.close_path(); ctx.fill()
+            _rgb(ctx, _shade(hair, 0.8))                                                     # parting / texture strands
+            ctx.set_line_width(max(1.5, r * 0.04)); ctx.set_line_cap(cairo.LINE_CAP_ROUND)
+            for k in range(3):
+                ctx.move_to(r * (0.55 - 0.3 * k), -r * (1.05 - 0.05 * k)); ctx.curve_to(r * (0.2 - 0.3 * k), -r * 0.9, r * (-0.1 - 0.25 * k), -r * 0.7, r * (-0.3 - 0.2 * k), -r * 0.5)
+                ctx.stroke()
+            ctx.restore()
+        elif hs in ("short", "long", "ponytail", "bun", "buzz"):
             def cap():
                 ctx.save(); ctx.translate(hx, hy); ctx.scale(sx, sy)
                 ctx.arc(0, 0, r * 1.04, math.pi * 1.02, math.pi * 1.98)
@@ -328,6 +342,13 @@ class Character:
         elif hs == "hood":
             _rgb(ctx, _col(self.top)); ctx.set_line_width(r * 0.28)
             ctx.arc(hx, hy + r * 0.05, r * 1.08, math.pi * 1.05, math.pi * 1.95); ctx.stroke()
+        if self.shades_on_head:
+            for ex in (-0.32, 0.32):
+                self._blob(ctx, lambda ex=ex: (ctx.save(), ctx.translate(hx + ex * r + (face or 0) * r * 0.15, hy - r * 0.88),
+                                               ctx.scale(1.0, 0.6), ctx.arc(0, 0, r * 0.24, 0, 2 * math.pi), ctx.restore()), (0.95, 0.75, 0.2), lw * 1.2)
+                _rgb(ctx, (0.1, 0.35, 0.45)); ctx.save(); ctx.translate(hx + ex * r + (face or 0) * r * 0.15, hy - r * 0.88)
+                ctx.scale(1.0, 0.6); ctx.arc(0, 0, r * 0.17, 0, 2 * math.pi); ctx.restore(); ctx.fill()
+            _rgb(ctx, (1, 1, 1), 0.35); ctx.arc(hx - r * 0.38 + (face or 0) * r * 0.15, hy - r * 0.93, r * 0.06, 0, 2 * math.pi); ctx.fill()
         fx = hx + side * r
         # eyes
         blink = blink_amount(t, self.seed)
