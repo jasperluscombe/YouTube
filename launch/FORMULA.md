@@ -1,6 +1,6 @@
 # The Last Light formula (every story)
 
-1. **One ordinary person: Kai** (see STUDIO.md). No powers, no special training. A nurse, a delivery driver, a kid's dad.
+1. **One ordinary person: Kai** (see STUDIO.md). No powers, no special training; just a surf-shop guy with terrible luck.
    Give them one companion or relationship that carries the feeling (a dog, a cat, a stranger, a child).
 2. **Trapped in one place.** One location for the whole story: a lighthouse rock, a stalled lift, a snowed-in
    diner, a sinking car, a mountain hut. The place is the antagonist; keep the geography simple and clear.
