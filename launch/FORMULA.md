@@ -25,3 +25,17 @@
 - **Whispering:** start a narration phrase with `~` to whisper it (e.g. `~Don't turn around.`). Add
   `"whispers": ["come closer", {"text": "we see you", "at": 3.5}]` to a scene for echoing ghost whispers
   layered under the narration (`at` = seconds into the scene; omitted = spread evenly). Use for horror/creepy beats.
+
+## Titles (from the yt-viral outlier study, 2026-11-11)
+The niche's biggest outliers (21-149x their channel median) all name ONE specific shelter, usually with a threat
+and a time span: "Zombie Outbreak: 100 Days Trapped On A Zombie Cruise Ship", "Surviving a Blizzard Inside a
+Giant Hollow-Tree Cottage", "Trapped In a Farm Day 1 To Day 100". So every part title is:
+`<Threat>: <time> Trapped In <specific place> <emotional detail> (N/3) #shorts`  (max 100 chars)
+e.g. "Zombie Outbreak: 7 Days Trapped In A Pharmacy With My Little Sister (1/3) #shorts".
+The two-word question stays in the video, the end card and the pinned/comment prompt, not the title.
+
+## Weekly full movie (Sundays)
+Every outlier in the niche is long-form (19-73 min). Each Sunday, stitch the week's stories into one
+16:9 long video with `python src/compile_movie.py out/movies/<week>.mp4 "<sid1,sid2,sid3>" ...`,
+titled like "7 Survival Stories: Trapped In A Pharmacy, A Lighthouse, A Whispering Farmhouse... (Full Movie)",
+with the chapter list from <out>.chapters.txt in the description.
