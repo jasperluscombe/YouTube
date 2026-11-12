@@ -74,8 +74,10 @@ def main():
     start = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--from=")), "voice")
     module, sids = args[0], args[1:]
     todo = STEPS[STEPS.index(start):]
-    for part, sid in enumerate(sids, 1):
-        print(f"== {sid}", flush=True)
+    for pos, sid in enumerate(sids, 1):
+        meta = json.loads((ROOT / "stories" / f"{sid}.json").read_text())
+        part = int(str(meta.get("part", pos)).split("/")[0])     # "2/3" -> 2, so parts can be built one at a time
+        print(f"== {sid} (part {part})", flush=True)
         if "voice" in todo:
             sh(PY, "src/voice.py", f"stories/{sid}.json")
         left = qc(sid) if "qc" in todo else []
