@@ -19,7 +19,7 @@ Read with launch/FORMULA.md (story formula + titles), launch/CINEMA.md (camera, 
   red aloha shirt ALWAYS comes out spotless. Never damage the shirt. Pay it off near the end of Part 3 with a
   beat like "...and somehow, the shirt survived." plus a quick insert of the pristine shirt.
 - Tone: genuinely tense survival/horror with warm humour from Kai's optimism. Never mock his culture: he's
-  a capable, likeable guy; humour comes from his luck and the situations, not from where he's from.
+  a capable, likeable guy; humour comes from his luck and the situations.
 - Narration switches from "you" to third person about Kai ("Kai had worked at the surf shop for six years...").
 - The weekly full movie becomes "Kai's Worst Week" (each story a chapter).
 
