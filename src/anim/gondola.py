@@ -555,11 +555,13 @@ def p2s3(ctx, t, d):
 
 def p2s4(ctx, t, d):
     with camera(ctx, t, d, push=0.08, handheld=0.5, focus=(540, 1000), pan=(-60, 0)):
-        sky(ctx, t); mountains(ctx, 0, 1900)
+        sky(ctx, t, 0.25); mountains(ctx, 0.25, 1900)
+        glow(ctx, 540, 1150, 700, (0.75, 0.85, 1.0), 0.45)                       # cold light from the station
         cable(ctx, -100, 1250, W + 100, 1210, 5)
         for bx in (420, 640):                                                     # boots on the bare cable
-            rgb(ctx, hexc("#151518")); rrect(ctx, bx - 90, 1150, 180, 110, 40); ctx.fill()
             rgb(ctx, hexc("#25252c")); ctx.rectangle(bx - 55, -100, 110, 1270); ctx.fill()
+            rgb(ctx, hexc("#151518")); rrect(ctx, bx - 90, 1150, 180, 110, 40); ctx.fill()
+            rgb(ctx, (0.8, 0.9, 1.0), 0.5); ctx.rectangle(bx + 40, -100, 10, 1250); ctx.fill()   # rim light
         STORM.draw(ctx, t)
     for k, w in enumerate(("NO HARNESS", "NO ROPE")):
         text(ctx, w, 540, 450 + k * 160, 110, (1, 1, 1), prog(t, T2.at(4, k), T2.at(4, k) + 0.2), outline=10)
@@ -575,7 +577,8 @@ def p2s5(ctx, t, d):
 
 def p2s6(ctx, t, d):
     with camera(ctx, t, d, push=0.16, handheld=0.3, focus=(540, 900)):
-        window_close(ctx, t, frost=0.3, inner=lambda c: close(MAN, c, 540, 760, 300, 0.31, face=0, expr="happy", breathe=0.0))
+        window_close(ctx, t, frost=0.3, dawn=0.2, inner=lambda c: (glow(c, 540, 760, 650, (0.75, 0.85, 1.0), 0.5),
+                                                                    close(MAN, c, 540, 760, 300, 0.31, face=0, expr="happy", breathe=0.0)))
     if t > T2.at(6, -1):
         text(ctx, "NO BREATH", 540, 1680, 120, (0.75, 0.9, 1), prog(t, T2.at(6, -1), T2.at(6, -1) + 0.2), outline=10)
     finish(ctx, t, d)
