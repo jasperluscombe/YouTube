@@ -1,0 +1,104 @@
+{
+  "id": "36_boardwalk_2",
+  "series": "Last Wave",
+  "part": "2/3",
+  "grade": "night",
+  "title": "Last Wave (2/3): The Rip",
+  "characters": {
+    "Kai": "src/anim/cast.py KAI - lucky red Hawaiian shirt, shorts, flip-flops; works at the boardwalk surf shop",
+    "Tess": "15, customer, dark ponytail, yellow hoodie, brave but scared, has never surfed",
+    "The infected": "grey-green skin, torn clothes, white eyes, slow then fast; they will not go into water"
+  },
+  "scenes": [
+    {
+      "narration": "~Paddle out? The glass is breaking. Forty infected are inside. And Kai and Tess are running for the ocean.",
+      "visual": "glass bursts, Kai and Tess run out the back, PADDLE OUT?",
+      "drama": 0.8
+    },
+    {
+      "narration": "They hit the sand running. The infected poured out of the shop behind them.",
+      "visual": "beach at night, the infected chasing",
+      "drama": 0.85
+    },
+    {
+      "narration": "Kai threw the boards into the water. Lie on it. Paddle. Don't look back.",
+      "visual": "Kai pushing Tess's board into the waves",
+      "drama": 0.8
+    },
+    {
+      "narration": "They looked back. The infected stopped at the waterline. Moaning. Watching. Not one step further.",
+      "visual": "the infected lined up at the water, white eyes",
+      "drama": 0.8
+    },
+    {
+      "narration": "Tess laughed. Then she cried. They had made it.",
+      "visual": "Tess on her board, crying and laughing",
+      "drama": 0.7
+    },
+    {
+      "narration": "Then the water started moving. Fast. Pulling them out to sea.",
+      "visual": "the water rushing outward, the beach shrinking",
+      "drama": 0.8
+    },
+    {
+      "narration": "A rip current. A river of water running straight out from the beach.",
+      "visual": "diagram: arrows pulling out from the shore",
+      "drama": 0.75
+    },
+    {
+      "narration": "Tess panicked. She turned around and paddled straight back toward the beach. As hard as she could.",
+      "visual": "Tess paddling hard toward shore, not moving",
+      "drama": 0.8
+    },
+    {
+      "narration": "Toward the infected.",
+      "visual": "the infected waiting on the sand",
+      "drama": 0.85
+    },
+    {
+      "narration": "Stop, Kai shouted. You can't fight it. Nobody can.",
+      "visual": "Kai shouting across the water",
+      "drama": 0.8
+    },
+    {
+      "narration": "Here is the rule that saves lives every summer. If a rip current grabs you, don't fight it. Swim sideways, along the beach. Then come in.",
+      "visual": "RULE card: DON'T FIGHT IT / GO SIDEWAYS / THEN COME IN",
+      "drama": 0.75
+    },
+    {
+      "narration": "So they paddled sideways. Parallel to the shore. Arms burning.",
+      "visual": "both paddling sideways, the beach sliding past",
+      "drama": 0.7
+    },
+    {
+      "narration": "The infected walked with them along the sand. Matching every stroke.",
+      "visual": "the crowd walking along the shore, keeping pace",
+      "drama": 0.85
+    },
+    {
+      "narration": "Then the current let go. The water went calm.",
+      "visual": "calm water, moonlight",
+      "drama": 0.7
+    },
+    {
+      "narration": "Kai's board bumped into something in the dark.",
+      "visual": "Kai's board knocks something floating",
+      "drama": 0.8
+    },
+    {
+      "narration": "A man. Floating face down. Wearing a lifeguard shirt.",
+      "visual": "a floating figure next to the board",
+      "drama": 0.85
+    },
+    {
+      "narration": "Then the man's hand closed around Kai's ankle.",
+      "visual": "grey hand grabs Kai's ankle",
+      "drama": 0.85
+    },
+    {
+      "narration": "Kick free? Tell me in the comments. Part three is up next.",
+      "visual": "end card: KICK FREE?",
+      "drama": 0.75
+    }
+  ]
+}

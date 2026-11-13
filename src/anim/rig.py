@@ -107,6 +107,7 @@ class Character:
     beard: bool = False
     glasses: bool = False
     seed: float = 0.0
+    eye_col: str = ""               # flat style: eye colour override (e.g. white for the infected)
     style: str = "flat"             # flat = the channel's original look (no outlines, simple dot eyes) | outline
     pattern: str = ""               # "" | "hibiscus" (aloha shirt print)
     pattern_col: str = "#f4efe4"
@@ -363,7 +364,7 @@ class Character:
                 px = cx + (lx * 0.35 + (side * 0.4 if face else 0)) * ed
                 py = cy + ly * 0.3 * ed
                 ctx.save(); ctx.translate(px, py); ctx.scale(persp * 0.85, max(0.08, open_ * 1.15))
-                _rgb(ctx, (0.08, 0.07, 0.09)); ctx.arc(0, 0, ed, 0, 2 * math.pi); ctx.fill(); ctx.restore()
+                _rgb(ctx, _col(self.eye_col) if self.eye_col else (0.08, 0.07, 0.09)); ctx.arc(0, 0, ed, 0, 2 * math.pi); ctx.fill(); ctx.restore()
                 if open_ > 0.35:
                     _rgb(ctx, (1, 1, 1), 0.8); ctx.arc(px + ed * 0.3, py - ed * 0.35 * open_, ed * 0.22, 0, 2 * math.pi); ctx.fill()
                 if e["droop"] > 0 and open_ > 0.2:
