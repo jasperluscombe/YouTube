@@ -183,7 +183,7 @@ def main():
              f"enable='lt(t,4)'", "-c:v", "libx264", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "copy", str(lab)])
         lab.replace(first)
     title_at = None
-    if story.get("part", "").startswith("1") and story.get("series"):   # movie-style title card after the cold open
+    if story.get("part", "").startswith("1") and story.get("series") and story.get("title_card", True):   # movie-style title card after the cold open
         title_at = min(3.2, duration(tmp / "clip_01.mp4") - 1.8)
         (tmp / "t_small.txt").write_text("A LAST LIGHT STORY")
         (tmp / "t_big.txt").write_text(story["series"].upper())

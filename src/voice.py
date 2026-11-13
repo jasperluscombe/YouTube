@@ -94,7 +94,17 @@ def whisperize(a, sr, seed=0):
     return np.clip(out, -0.98, 0.98).astype(np.float32)
 
 
-def speak_line(tts, style, speed, lang, text, synth=None):
+def stretch(a, sr, tempo):
+    """Speed speech up/down without changing pitch (ffmpeg atempo)."""
+    if abs(tempo - 1.0) < 0.01:
+        return a
+    r = subprocess.run(["ffmpeg", "-v", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "pipe:0",
+                        "-af", f"atempo={tempo:.3f}", "-f", "f32le", "-ar", str(sr), "-ac", "1", "pipe:1"],
+                       input=a.astype(np.float32).tobytes(), capture_output=True, check=True)
+    return np.frombuffer(r.stdout, dtype=np.float32).copy()
+
+
+def speak_line(tts, style, speed, lang, text, synth=None, tempo=1.0, pause=1.0):
     """Returns (audio @OUT_SR, [(phrase, start, end), ...]).
     synth(phrase) -> (audio, sr) overrides Kokoro (used for Chatterbox)."""
     chunks, segs, t = [], [], 0.0
@@ -102,13 +112,14 @@ def speak_line(tts, style, speed, lang, text, synth=None):
         say = say_text(p)
         a, sr = synth(p) if synth else tts.create(say, voice=style, speed=speed, lang=lang)
         a = trim(np.asarray(a, dtype=np.float32), sr)
+        a = stretch(a, sr, tempo)
         if p.startswith("~"):          # whispered line
             a = whisperize(a, sr, seed=len(p))
         if sr != OUT_SR:
             a = np.interp(np.linspace(0, len(a), int(len(a) * OUT_SR / sr), endpoint=False),
                           np.arange(len(a)), a).astype(np.float32)
         end = next((k for k in ("...", "…", "?", "!", ".", ",") if p.endswith(k)), "")
-        gap = np.zeros(int(PAUSE[end] * OUT_SR), dtype=np.float32)
+        gap = np.zeros(int(PAUSE[end] * pause * OUT_SR), dtype=np.float32)
         segs.append((p, t, t + len(a) / OUT_SR))
         chunks += [a, gap]
         t += (len(a) + len(gap)) / OUT_SR
@@ -130,7 +141,7 @@ def chatterbox_batch(story, outdir, vcfg):
                 override = retry.read_text().strip() if retry.exists() else ""
                 drama = float(override) if override else min(scene.get("drama", cb.get("exaggeration", 0.6)), MAX_DRAMA)
                 jobs.append({"text": say_text(p), "out": str(out), "exaggeration": drama,
-                             "cfg": cb.get("cfg", 0.35), "temperature": cb.get("temperature", 0.8),
+                             "cfg": story.get("pace", {}).get("cfg", cb.get("cfg", 0.35)), "temperature": cb.get("temperature", 0.8),
                              "seed": cb.get("seed", 7) + (7919 * (1 + int(round(drama * 100))) if retry.exists() else 0)})   # new seed per retake level
     for i, scene in enumerate(story["scenes"], 1):       # ghost whispers layered under the scene
         for k, w in enumerate(scene.get("whispers", [])):
@@ -213,7 +224,9 @@ def main():
     outdir.mkdir(parents=True, exist_ok=True)
     synth = chatterbox_batch(story, outdir, vcfg) if vcfg.get("engine") == "chatterbox" else None
     for i, scene in enumerate(story["scenes"], 1):
-        a, segs = speak_line(tts, style, vcfg["speed"] * scene.get("speed", 1.0), lang, scene["narration"], synth)
+        pace = story.get("pace", {})        # {"tempo": 1.12, "pause": 0.4, "cfg": 0.5} = the fast 60-80s format
+        a, segs = speak_line(tts, style, vcfg["speed"] * scene.get("speed", 1.0), lang, scene["narration"], synth,
+                             tempo=pace.get("tempo", 1.0), pause=pace.get("pause", 1.0))
         write(outdir / f"scene_{i:02d}.wav", a, vcfg.get("polish"))
         (outdir / f"scene_{i:02d}.json").write_text(json.dumps(segs))
         if synth and scene.get("whispers"):

@@ -89,7 +89,7 @@ def main():
         dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(final)],
                                    capture_output=True, text=True).stdout or 0)
         rep = {"sid": sid, "seconds": round(dur, 1), "mean_db": loudness(final), "leftover_bad_takes": left,
-               "ok": 60 <= dur <= 179 and not left}
+               "ok": 45 <= dur <= 179 and not left}
         (ROOT / "out" / sid / "report.json").write_text(json.dumps(rep, indent=2))
         print("  report:", rep, flush=True)
         if dur > 179:

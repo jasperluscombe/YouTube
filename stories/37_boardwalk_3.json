@@ -11,94 +11,100 @@
   },
   "scenes": [
     {
-      "narration": "~Kick free? An infected lifeguard has Kai's ankle. In the dark. Half a mile from shore.",
-      "visual": "grey hand on Kai's ankle in black water, KICK FREE?",
-      "drama": 0.8
+      "narration": "An infected lifeguard has Kai's ankle. Half a mile from shore. In the dark.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.7
     },
     {
-      "narration": "It pulled. Kai's board tipped. Tess screamed his name.",
-      "visual": "the board tipping, Tess screaming",
-      "drama": 0.85
+      "narration": "It pulled. The board tipped. Tess screamed.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "Kai kicked. Once. Twice. His flip-flop came off in the thing's hand.",
-      "visual": "Kai kicking, flip-flop sinking",
-      "drama": 0.8
+      "narration": "Kai kicked. Once. Twice. And his flip-flop came off in its hand.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "And it held on to the flip-flop instead of him.",
-      "visual": "the infected sinking, holding a blue flip-flop",
-      "drama": 0.75
+      "narration": "It held on to the flip-flop, instead of him.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "It sank. Slowly. Still holding it.",
-      "visual": "the shape fading into the dark water",
-      "drama": 0.75
+      "narration": "And it sank. Still holding it.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
       "narration": "Kai lay on his board, shaking. Could be worse, he said. I had two of those.",
-      "visual": "Kai on the board, exhausted, half smiling",
-      "drama": 0.7
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "Tess didn't laugh. She was pointing at the shore.",
-      "visual": "Tess pointing, scared",
-      "drama": 0.8
+      "narration": "Tess wasn't laughing. She was pointing at the beach.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "The infected were still walking along the beach. Following them. Waiting for them to come in.",
-      "visual": "the line of infected on the sand in the moonlight",
-      "drama": 0.85
+      "narration": "The infected were still following them along the sand. Waiting.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "So Kai looked for a place they couldn't reach.",
-      "visual": "Kai scanning the coast",
-      "drama": 0.7
+      "narration": "So Kai looked for somewhere they couldn't reach.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "A rocky point. And behind it, a tiny cove. Cliffs on every side. No way down from the road.",
-      "visual": "the cove: a little beach walled in by cliffs",
-      "drama": 0.75
+      "narration": "Behind the rocks, a tiny cove. Cliffs on every side. No way down.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "The infected reached the rocks... and couldn't climb them.",
-      "visual": "the infected stuck at the rocks",
-      "drama": 0.75
+      "narration": "The infected reached the rocks, and couldn't climb.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "Kai caught the last wave of the night. Tess too. Lying flat. Screaming the whole way in.",
-      "visual": "both riding a wave into the cove",
-      "drama": 0.75
+      "narration": "Kai caught the last wave of the night. Tess too. Screaming the whole way in.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "They hit the sand and didn't move until the sun came up.",
-      "visual": "both lying on the sand, dawn",
-      "drama": 0.7
+      "narration": "They lay on the sand until the sun came up.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
       "narration": "At seven, a coast guard boat came around the point. Then a helicopter.",
-      "visual": "rescue boat and helicopter at dawn",
-      "drama": 0.75
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "Shorts torn. One flip-flop. Sunburn on his nose. Sand everywhere.",
-      "visual": "Kai standing, wrecked",
-      "drama": 0.7
+      "narration": "Shorts torn. One flip-flop. Sunburnt nose.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "But somehow... the shirt survived. Not a mark on it.",
-      "visual": "insert: the pristine red Hawaiian shirt",
-      "drama": 0.7
+      "narration": "But somehow, the shirt survived. Not a mark on it.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
       "narration": "Tess hugged him. You owe me a surf lesson, she said. Kai laughed. Could be worse.",
-      "visual": "Tess hugging Kai on the beach",
+      "visual": "(see src/anim/boardwalk.py)",
       "drama": 0.7
     },
     {
-      "narration": "Paddle out? Would you have run for the water? Tell me in the comments, and follow. Tomorrow, Kai's next worst day.",
-      "visual": "end card: PADDLE OUT? / NEW STORY TOMORROW",
-      "drama": 0.75
+      "narration": "Would you have paddled out? Tell me. And follow for Kai's next worst day.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     }
-  ]
+  ],
+  "pace": {
+    "tempo": 1.12,
+    "pause": 0.4,
+    "cfg": 0.5
+  },
+  "title_card": false
 }

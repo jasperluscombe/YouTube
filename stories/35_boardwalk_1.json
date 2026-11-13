@@ -11,94 +11,100 @@
   },
   "scenes": [
     {
-      "narration": "~Paddle out? There are forty infected on the boardwalk. They are clawing at the glass of Kai's surf shop. And the only way out... is the ocean.",
-      "visual": "infected hands on the shop glass, the sea behind, PADDLE OUT?",
-      "drama": 0.8
-    },
-    {
-      "narration": "Six in the morning. Kai unlocked the surf shop like he did every day. Sun coming up. Waves perfect.",
-      "visual": "Kai unlocking the shop door at sunrise, happy",
-      "drama": 0.75
-    },
-    {
-      "narration": "Could be worse, he said, looking at the rain clouds. It was about to get much worse.",
-      "visual": "Kai smiling, grey clouds rolling in",
+      "narration": "If zombies trap you in a beach town, don't run for the roads. Run for the water.",
+      "visual": "(see src/anim/boardwalk.py)",
       "drama": 0.7
     },
     {
+      "narration": "Kai opened his surf shop at six, like every morning.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Could be worse, he said. It was about to get much worse.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
       "narration": "At six fifteen, the screaming started.",
-      "visual": "the boardwalk, people running",
-      "drama": 0.85
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "A girl ran through his door. Fifteen. Yellow hoodie. Blood on her sleeve that wasn't hers.",
-      "visual": "Tess bursts into the shop, terrified",
-      "drama": 0.8
+      "narration": "A girl ran in. Fifteen. Blood on her sleeve. Not hers.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "Lock it, she said. Lock it now. They bite.",
-      "visual": "Tess close, pointing at the door",
-      "drama": 0.8
+      "narration": "Lock it. They bite.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "Kai looked outside. A man was walking toward the shop. Grey skin. White eyes. Mouth open.",
-      "visual": "infected man walking on the boardwalk, stiff",
-      "drama": 0.85
+      "narration": "Outside, a man walked toward the glass. Grey skin. White eyes.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "Kai locked the door. Then he grabbed every surfboard on the wall and jammed them against the glass.",
-      "visual": "Kai stacking surfboards against the door",
-      "drama": 0.75
+      "narration": "Kai locked the door and jammed every surfboard he owned against it.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "By noon there were ten of them outside. By sunset, forty.",
-      "visual": "infected crowd growing outside the window, sky going orange",
-      "drama": 0.75
+      "narration": "By noon there were ten of them. By sunset, forty.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "The power went out. The radio said one thing. Stay indoors. Do not go outside.",
-      "visual": "radio, shop goes dark",
-      "drama": 0.75
+      "narration": "The radio said one thing. Stay indoors.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "But Tess noticed something. The infected came right up to the beach... and stopped at the waves.",
-      "visual": "infected lined up at the water's edge, not stepping in",
-      "drama": 0.8
+      "narration": "But Tess noticed something. They walked right up to the waves, and stopped.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "They won't go in the water, she whispered.",
-      "visual": "~Tess whispering, close",
-      "drama": 0.75
+      "narration": "~They won't go in the water.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
       "narration": "Then the glass cracked.",
-      "visual": "crack across the shop window, hands pressing",
-      "drama": 0.85
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "Kai looked at the back door. At the beach. At the two longboards by the counter.",
-      "visual": "Kai looking from the door to the boards",
-      "drama": 0.75
+      "narration": "Front door, forty infected. Back door, the ocean. And two longboards.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "Tess had never surfed in her life. It was dark. And the tide was going out.",
-      "visual": "Tess shaking her head, dark ocean outside",
-      "drama": 0.75
+      "narration": "Tess had never surfed. It was dark. And the tide was going out.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "The glass cracked again. Wider.",
-      "visual": "crack spreads, the surfboards shake",
-      "drama": 0.85
+      "narration": "The glass cracked again.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     },
     {
-      "narration": "Kai grabbed both boards. Get ready, he said. When I say go... we run for the water.",
-      "visual": "Kai holding two boards, determined",
-      "drama": 0.8
+      "narration": "Kai grabbed both boards. When I say go, he said, run for the water.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.7
     },
     {
-      "narration": "Paddle out? Tell me in the comments. Part two is up next.",
-      "visual": "end card: PADDLE OUT?",
-      "drama": 0.75
+      "narration": "Paddle out? Part two is next.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
     }
-  ]
+  ],
+  "pace": {
+    "tempo": 1.12,
+    "pause": 0.4,
+    "cfg": 0.5
+  },
+  "title_card": false
 }

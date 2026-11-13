@@ -23,15 +23,20 @@ Read with launch/FORMULA.md (story formula + titles), launch/CINEMA.md (camera, 
 - Narration switches from "you" to third person about Kai ("Kai had worked at the surf shop for six years...").
 - The weekly full movie becomes "Kai's Worst Week" (each story a chapter).
 
-## Length
-Each part (each video) 1:30-3:00, ideally 2:00-2:30 -> about 260-330 narrated words per part.
-Never pad. Every scene must move the story.
+## Length and pace (changed 2026-11-13 after launch/RESEARCH_2026-11-13.md)
+Each part is **55-80 seconds: 150-190 narrated words, 16-20 scenes** (a new picture about every 3 s).
+Every story file carries `"pace": {"tempo": 1.12, "pause": 0.4, "cfg": 0.5}` and `"title_card": false`; drama 0.6-0.7.
+Never pad. No backstory, no mood-setting lines. If a line is not a decision, a consequence or a reveal, cut it.
 
-## Story (5 stages across the 3 parts)
-Hook (first 1-10 s, a question in the viewer's head; never "hey guys"/"today I'll tell you") -> setup -> escalation
--> climax -> ending with a final revelation that recontextualises the story. Natural spoken language, no plot
-holes, consistent timeline, original (never a rewritten Reddit/viral script). Fiction is never presented as a
-real event; the survival rule is real and accurate.
+## Story (what the breakout videos do)
+- **Line 1 is a decision the viewer has a stake in**: "If <disaster> happens while you're at <specific place>,
+  don't <the obvious thing>. <Do the surprising thing>." Never a vague mystery question, never a greeting.
+- Then a chain: decision -> consequence -> new problem, every 1-2 lines. At least **4 smart, true survival moves per
+  part** (the "I should have thought of that" feeling), with **specific numbers** (40 infected, 30 minutes, 28 floors).
+- Kai is the one living it (third person), but the lesson is always usable by the viewer.
+- **The last story line of Parts 1 and 2 is the cliffhanger.** The end card is one short line ("Paddle out? Part two is next.").
+  Part 3 ends on a reveal, then the shirt gag, then one line asking for a comment + follow.
+- Natural spoken language, no plot holes, original. Fiction is never presented as real; survival facts are real and accurate.
 
 ## Characters (src/anim/rig.py)
 - Every human is a rig `Character` drawn in the **flat style** (the default, chosen by the user): no black outlines, flat colours, simple dark dot eyes that blink and look around, small brows and a simple mouth for expressions, no nose. `style="outline"` exists but is not used.
@@ -44,7 +49,7 @@ real event; the survival rule is real and accurate.
 - Animals keep engine.dog()/lighthouse.cat().
 
 ## Storyboard
-18-25 scenes per part. Each scene in the story JSON has: narration, visual, characters, expressions, movement,
+16-20 scenes per part. Each scene in the story JSON has: narration, visual, characters, expressions, movement,
 camera (wide/medium/close-up/extreme close-up/OTS/POV/insert), camera_move, background, lighting, transition.
 Wide shots establish places; close-ups for emotion; vary shot size on every cut.
 
