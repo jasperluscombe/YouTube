@@ -15,7 +15,7 @@
   ],
   "publish_at": "2026-11-15T17:00:00Z",
   "comment": "Open it? \ud83d\udeaa Would you open the cabin door? YES or NO \ud83d\udc47",
-  "cover_ms": 0
+  "cover_ms": 2000
  },
  "part2": {
   "title": "Zombie Outbreak Day 2: Drifting Back To A Beach With Hundreds Of Infected (2/3) #shorts",
@@ -33,7 +33,7 @@
   ],
   "publish_at": "2026-11-15T21:30:00Z",
   "comment": "Jump in? \ud83c\udf0a Would you leave the boat? YES or NO \ud83d\udc47",
-  "cover_ms": 0
+  "cover_ms": 21820
  },
  "part3": {
   "title": "Zombie Outbreak Day 2: 11 People, 4 Life Jackets, And The Trick That Saved Us (3/3) #shorts",
@@ -51,6 +51,6 @@
   ],
   "publish_at": "2026-11-16T01:30:00Z",
   "comment": "Jump in? \ud83c\udf0a Would YOU have jumped? \ud83d\udc47",
-  "cover_ms": 0
+  "cover_ms": 44576
  }
 }
