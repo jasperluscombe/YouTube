@@ -1,0 +1,114 @@
+{
+  "id": "40_boat_3",
+  "series": "Zombie Outbreak",
+  "day": 2,
+  "part": "3/3",
+  "grade": "night",
+  "title": "Zombie Outbreak Day 2: The Rescue Boat (3/3)",
+  "pace": {
+    "tempo": 1.12,
+    "pause": 0.4,
+    "cfg": 0.5
+  },
+  "title_card": false,
+  "characters": {
+    "Kai": "src/anim/cast.py KAI; one flip-flop left after Day 1",
+    "Tess": "boardwalk.TESS, 15, yellow hoodie",
+    "Captain Reyes": "coast guard skipper, orange jacket, cap, voice [man]",
+    "Dale": "survivor in a grey long-sleeve, hiding a bite on his arm",
+    "The engineer": "infected, locked in the cabin",
+    "Fisherman": "old man in a green raincoat, voice [man]"
+  },
+  "scenes": [
+    {
+      "narration": "Two hundred yards from a beach full of infected. One man turning on deck. And the cabin door is opening.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "The man with the sleeve lunged.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[tess] Kai! Kai grabbed the only thing he had. The tarp.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "He threw it over the man's head, and pushed.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Over the rail. Into the sea.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "And the infected man just stood there, underwater. He wouldn't swim.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Then the cabin door burst open.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[man] Everybody in the water, now!",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Eleven people. Four life jackets.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Then Kai remembered a trick from the surf shop. Trousers float.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Tie the legs in a knot. Swing them over your head to fill them with air. Hold the waist underwater.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Seven pairs of trousers. Seven floats.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "They floated beside the boat while the infected walked the deck above them. Not one would jump in.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "At sunset, Tess flashed her phone at the horizon. Three flashes. Stop. Three flashes.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "A fishing boat flashed back.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai climbed aboard. Shorts soaked. One flip-flop. But somehow, the shirt survived. Bone dry.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[tess] Where is this boat going? [man] The fuel dock. [man] If it's still there.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "Would you have jumped? Tell me. Day three is tomorrow.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    }
+  ]
+}

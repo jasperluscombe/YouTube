@@ -1,0 +1,114 @@
+{
+  "id": "38_boat_1",
+  "series": "Zombie Outbreak",
+  "day": 2,
+  "part": "1/3",
+  "grade": "storm",
+  "title": "Zombie Outbreak Day 2: The Rescue Boat (1/3)",
+  "pace": {
+    "tempo": 1.12,
+    "pause": 0.4,
+    "cfg": 0.5
+  },
+  "title_card": false,
+  "characters": {
+    "Kai": "src/anim/cast.py KAI; one flip-flop left after Day 1",
+    "Tess": "boardwalk.TESS, 15, yellow hoodie",
+    "Captain Reyes": "coast guard skipper, orange jacket, cap, voice [man]",
+    "Dale": "survivor in a grey long-sleeve, hiding a bite on his arm",
+    "The engineer": "infected, locked in the cabin",
+    "Fisherman": "old man in a green raincoat, voice [man]"
+  },
+  "scenes": [
+    {
+      "narration": "If a rescue boat picks you up in an outbreak, don't relax. Count the people who won't show you their arms.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "The coast guard boat pulled Kai and Tess out of the cove at seven.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Eleven survivors on deck. One captain. One locked cabin.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[kai] Could be worse. Then the engine coughed, and died.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Out of fuel. One mile offshore.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[man] Nobody panics. [man] Help is coming.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "No help was coming. The radio was only static.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "By noon the water cooler was empty. Eleven people. Zero water.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "One man scooped up seawater to drink.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[tess] Don't! Seawater is three percent salt. It dries you out faster than drinking nothing.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "So Kai pointed at the sky. Rain clouds.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "They tied the deck tarp into a bowl. Let the first rain rinse off the salt. Then caught the rest.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Two full buckets. Everyone drank.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Everyone, except one man. He kept his sleeve pulled down.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Tess had been counting. Ten people showed their arms. One wouldn't.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Then, from the locked cabin, something knocked.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[man] Nobody opens that door.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "Open it? Part two is next.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    }
+  ]
+}

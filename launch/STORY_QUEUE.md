@@ -1,10 +1,5 @@
 # Story queue (the nightly run uses the top unused one, then removes it). See launch/SERIES.md.
 
-1. DAY 2 - The rescue boat. The coast guard boat that picked up Kai and Tess runs out of fuel a mile offshore with
-   11 survivors and one sealed cabin. Hook: "If a rescue boat picks you up in an outbreak, don't relax. Count the
-   people who won't show you their arms." Real moves: never drink seawater (it dehydrates you faster); catch rain in
-   a tarp; ration by sips; a mirror or phone screen flashes a signal for miles. Cliffhangers: knocking from inside
-   the sealed cabin; the boat is drifting back toward the beach.
 2. DAY 3 - The fuel dock. They reach the marina fuel dock at night. Hook: "If you need fuel in an outbreak, don't
    start the pump. Sound carries farther over water." Real moves: siphon by gravity, quietly; never run a generator
    indoors (carbon monoxide); fuel fumes + sparks. The infected follow the noise along the pier.

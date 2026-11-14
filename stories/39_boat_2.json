@@ -1,0 +1,114 @@
+{
+  "id": "39_boat_2",
+  "series": "Zombie Outbreak",
+  "day": 2,
+  "part": "2/3",
+  "grade": "storm",
+  "title": "Zombie Outbreak Day 2: The Rescue Boat (2/3)",
+  "pace": {
+    "tempo": 1.12,
+    "pause": 0.4,
+    "cfg": 0.5
+  },
+  "title_card": false,
+  "characters": {
+    "Kai": "src/anim/cast.py KAI; one flip-flop left after Day 1",
+    "Tess": "boardwalk.TESS, 15, yellow hoodie",
+    "Captain Reyes": "coast guard skipper, orange jacket, cap, voice [man]",
+    "Dale": "survivor in a grey long-sleeve, hiding a bite on his arm",
+    "The engineer": "infected, locked in the cabin",
+    "Fisherman": "old man in a green raincoat, voice [man]"
+  },
+  "scenes": [
+    {
+      "narration": "Something is knocking inside the locked cabin. And one survivor is hiding his arm.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "[kai] Who's in there?",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[man] My engineer. [man] He got bitten pulling you out of the water.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[man] I couldn't do it. [man] So I locked the door.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Then Tess noticed the shoreline. It was getting bigger.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The tide had turned. The boat was drifting back to the beach.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "And on the sand, they were waiting. Hundreds now.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "No engine. No oars. One hour until they hit the sand.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai looked at the anchor. [kai] Drop it, now!",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "An anchor stops a drifting boat. But only if the rope reaches the bottom.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "It didn't. The anchor hung twenty feet short.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "So they tied on everything. Dock lines. Belts. The tarp.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The anchor hit the bottom. The rope went tight. The boat stopped.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Two hundred yards from the beach.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Everyone cheered. Everyone except the man with the sleeve.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "He was sweating. Shaking. And his eyes were turning white.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Then the knocking stopped, and the cabin handle began to turn.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "Jump in? Part three is next.",
+      "visual": "(see src/anim/rescueboat.py)",
+      "drama": 0.65
+    }
+  ]
+}
