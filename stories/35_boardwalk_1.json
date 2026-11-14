@@ -36,7 +36,7 @@
       "drama": 0.65
     },
     {
-      "narration": "[tess] Lock it. [tess] They bite.",
+      "narration": "[tess] Lock the door, they bite!",
       "visual": "(see src/anim/boardwalk.py)",
       "drama": 0.65
     },
