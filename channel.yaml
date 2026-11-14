@@ -26,6 +26,10 @@ voice:
   engine: chatterbox               # realistic open-source TTS (Resemble AI, MIT); "kokoro" = fast fallback
   chatterbox:
     voice_ref: voices/ref_deep.wav # our narrator: Chatterbox clones the timbre of this 12s reference
+    voices:                        # character voices: start a phrase with [kai] / [tess] / [man] in the narration
+      kai: voices/ref_kai.wav
+      tess: voices/ref_tess.wav
+      man: voices/ref_man.wav
     exaggeration: 0.85             # emotion intensity (0.5 neutral ... 1.0 very dramatic); per scene: "drama"
     cfg: 0.3                       # lower = slower, more deliberate delivery
     temperature: 0.8

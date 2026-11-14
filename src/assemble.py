@@ -66,14 +66,14 @@ def caption_filters(text, dur, tmp, prefix, segs=None):
     segs = segs or [(text, 0.0, dur)]
     f, n = [], 0
     for phrase, s0, s1 in segs:
-        parts = chunks(phrase)
+        parts = chunks(re.sub(r"\[\w+\]\s*", "", phrase))      # drop [kai]-style speaker tags
         weights = [len(p) + 3 for p in parts]
         total, t = sum(weights), s0
         for j, (p, w) in enumerate(zip(parts, weights)):
             d = (s1 - s0) * w / total
             hold = 0.15 if j == len(parts) - 1 else 0.0   # linger only on a phrase's last words
             tf = tmp / f"{prefix}_{n:02d}.txt"; n += 1
-            tf.write_text(re.sub(r"[.,;:…]+$", "", p.replace("~", "")).upper())
+            tf.write_text(re.sub(r"[.,;:…]+$", "", re.sub(r"\[\w+\]\s*", "", p.replace("~", ""))).upper())
             f.append(f"drawtext=fontfile={FONT}:textfile={tf}:fontsize=112:fontcolor=white:"
                      f"borderw=9:bordercolor=black:shadowx=0:shadowy=8:shadowcolor=black@0.6:"
                      f"x=(w-text_w)/2:y=h*0.76:enable='between(t,{t:.3f},{t + d - 0.01 + hold:.3f})'")

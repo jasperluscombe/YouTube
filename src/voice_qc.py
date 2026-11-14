@@ -9,7 +9,7 @@ import soundfile as sf
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
-from voice import phrases
+from voice import phrases, speaker
 
 
 def stats(path):
@@ -34,7 +34,7 @@ def scan(sid):
     for i, sc in enumerate(st["scenes"], 1):
         for k, p in enumerate(phrases(sc["narration"])):
             f = ROOT / "out" / sid / "cb" / f"s{i:02d}_{k:02d}.wav"
-            if f.exists():
+            if f.exists() and not speaker(p):          # character voices are judged separately (different timbre)
                 rows.append((i, k, p, sc.get("drama"), stats(f)))
     L = np.array([r[4]["loud"] for r in rows]); B = np.array([r[4]["bright"] for r in rows]); J = np.array([r[4]["peak_jump"] for r in rows])
     lm, ls, bm, bs = np.median(L), L.std(), np.median(B), B.std()

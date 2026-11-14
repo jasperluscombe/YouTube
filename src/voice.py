@@ -61,7 +61,14 @@ def trim(a, sr, thresh=0.01):
     return a[max(0, idx[0] - int(0.02 * sr)): idx[-1] + int(0.06 * sr)]
 
 
+def speaker(p):
+    """'[kai] Lie flat.' -> 'kai' (a character speaks this phrase in their own voice); '' = the narrator."""
+    m = re.match(r"\s*~?\s*\[(\w+)\]", p)
+    return m.group(1).lower() if m else ""
+
+
 def say_text(p):
+    p = re.sub(r"^\s*\[\w+\]\s*", "", p.lstrip("~").strip())
     p = p.lstrip("~").strip()
     return p.rstrip(".…") if p.endswith(("...", "…")) else p
 
@@ -113,6 +120,10 @@ def speak_line(tts, style, speed, lang, text, synth=None, tempo=1.0, pause=1.0):
         a, sr = synth(p) if synth else tts.create(say, voice=style, speed=speed, lang=lang)
         a = trim(np.asarray(a, dtype=np.float32), sr)
         a = stretch(a, sr, tempo)
+        if speaker(p) and len(a) > sr // 10:   # character voices: match the narrator's level (they clone louder)
+            n = int(0.05 * sr); fr = a[: len(a) // n * n].reshape(-1, n)
+            lvl = 20 * np.log10(np.percentile(np.sqrt((fr ** 2).mean(1) + 1e-12), 95) + 1e-9)
+            a = np.clip(a * 10 ** ((-17.0 - lvl) / 20), -0.98, 0.98)
         if p.startswith("~"):          # whispered line
             a = whisperize(a, sr, seed=len(p))
         if sr != OUT_SR:
@@ -140,7 +151,8 @@ def chatterbox_batch(story, outdir, vcfg):
                 retry = out.with_suffix(".retry")
                 override = retry.read_text().strip() if retry.exists() else ""
                 drama = float(override) if override else min(scene.get("drama", cb.get("exaggeration", 0.6)), MAX_DRAMA)
-                jobs.append({"text": say_text(p), "out": str(out), "exaggeration": drama,
+                who = cb.get("voices", {}).get(speaker(p))
+                jobs.append({"text": say_text(p), "out": str(out), "exaggeration": drama, **({"voice_ref": str(ROOT / who)} if who else {}),
                              "cfg": story.get("pace", {}).get("cfg", cb.get("cfg", 0.35)), "temperature": cb.get("temperature", 0.8),
                              "seed": cb.get("seed", 7) + (7919 * (1 + int(round(drama * 100))) if retry.exists() else 0)})   # new seed per retake level
     for i, scene in enumerate(story["scenes"], 1):       # ghost whispers layered under the scene

@@ -23,6 +23,11 @@ Read with launch/FORMULA.md (story formula + titles), launch/CINEMA.md (camera, 
 - Narration switches from "you" to third person about Kai ("Kai had worked at the surf shop for six years...").
 - The weekly full movie becomes "Kai's Worst Week" (each story a chapter).
 
+## The series (see launch/SERIES.md)
+From 14 Nov 2026 every day is the next day of ONE continuing story, "Zombie Outbreak", starring Kai and Tess:
+"Zombie Outbreak Day N: ..." Premises are queued in launch/STORY_QUEUE.md. Characters speak short lines in their own
+voices: start a phrase with [kai], [tess] or [man] (3-6 spoken lines per part).
+
 ## Length and pace (changed 2026-11-13 after launch/RESEARCH_2026-11-13.md)
 Each part is **55-80 seconds: 150-190 narrated words, 16-20 scenes** (a new picture about every 3 s).
 Every story file carries `"pace": {"tempo": 1.12, "pause": 0.4, "cfg": 0.5}` and `"title_card": false`; drama 0.6-0.7.

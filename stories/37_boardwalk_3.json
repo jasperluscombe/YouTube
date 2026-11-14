@@ -36,7 +36,7 @@
       "drama": 0.65
     },
     {
-      "narration": "Kai lay on his board, shaking. Could be worse, he said. I had two of those.",
+      "narration": "Kai lay on his board, shaking. [kai] Could be worse. [kai] I had two of those.",
       "visual": "(see src/anim/boardwalk.py)",
       "drama": 0.65
     },
@@ -91,7 +91,7 @@
       "drama": 0.65
     },
     {
-      "narration": "Tess hugged him. You owe me a surf lesson, she said. Kai laughed. Could be worse.",
+      "narration": "Tess hugged him. [tess] You owe me a surf lesson. Kai laughed. [kai] Could be worse.",
       "visual": "(see src/anim/boardwalk.py)",
       "drama": 0.7
     },

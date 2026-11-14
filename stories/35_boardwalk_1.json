@@ -21,7 +21,7 @@
       "drama": 0.65
     },
     {
-      "narration": "Could be worse, he said. It was about to get much worse.",
+      "narration": "[kai] Could be worse. It was about to get much worse.",
       "visual": "(see src/anim/boardwalk.py)",
       "drama": 0.65
     },
@@ -36,7 +36,7 @@
       "drama": 0.65
     },
     {
-      "narration": "Lock it. They bite.",
+      "narration": "[tess] Lock it. [tess] They bite.",
       "visual": "(see src/anim/boardwalk.py)",
       "drama": 0.65
     },
@@ -66,7 +66,7 @@
       "drama": 0.65
     },
     {
-      "narration": "~They won't go in the water.",
+      "narration": "~[tess] They won't go in the water.",
       "visual": "(see src/anim/boardwalk.py)",
       "drama": 0.65
     },
@@ -91,7 +91,7 @@
       "drama": 0.65
     },
     {
-      "narration": "Kai grabbed both boards. When I say go, he said, run for the water.",
+      "narration": "Kai grabbed both boards. [kai] When I say go, run for the water.",
       "visual": "(see src/anim/boardwalk.py)",
       "drama": 0.7
     },

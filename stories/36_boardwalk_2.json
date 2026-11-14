@@ -21,7 +21,7 @@
       "drama": 0.65
     },
     {
-      "narration": "Lie flat, Kai said. Paddle. Don't look back.",
+      "narration": "[kai] Lie flat. [kai] Paddle. [kai] Don't look back.",
       "visual": "(see src/anim/boardwalk.py)",
       "drama": 0.65
     },
@@ -56,7 +56,7 @@
       "drama": 0.65
     },
     {
-      "narration": "Stop, Kai shouted. You can't beat it. Nobody can.",
+      "narration": "[kai] Stop! [kai] You can't beat it. [kai] Nobody can.",
       "visual": "(see src/anim/boardwalk.py)",
       "drama": 0.65
     },
