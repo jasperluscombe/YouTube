@@ -1,0 +1,110 @@
+{
+  "id": "37_boardwalk_3",
+  "series": "Last Wave",
+  "part": "3/3",
+  "grade": "night",
+  "title": "Last Wave (3/3): The Cove - The Finale",
+  "characters": {
+    "Kai": "src/anim/cast.py KAI - lucky red Hawaiian shirt, shorts, flip-flops; works at the boardwalk surf shop",
+    "Tess": "15, customer, dark ponytail, yellow hoodie, brave but scared, has never surfed",
+    "The infected": "grey-green skin, torn clothes, white eyes, slow then fast; they will not go into water"
+  },
+  "scenes": [
+    {
+      "narration": "An infected lifeguard has Kai's ankle. Half a mile from shore. In the dark.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "It pulled. The board tipped. Tess screamed.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai kicked. Once. Twice. And his flip-flop came off in its hand.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "It held on to the flip-flop, instead of him.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "And it sank. Still holding it.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai lay on his board, shaking. [kai] Could be worse. [kai] I had two of those.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Tess wasn't laughing. She was pointing at the beach.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The infected were still following them along the sand. Waiting.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "So Kai looked for somewhere they couldn't reach.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Behind the rocks, a tiny cove. Cliffs on every side. No way down.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The infected reached the rocks, and couldn't climb.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai caught the last wave of the night. Tess too. Screaming the whole way in.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "They lay on the sand until the sun came up.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "At seven, a coast guard boat came around the point. Then a helicopter.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Shorts torn. One flip-flop. Sunburnt nose.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "But somehow, the shirt survived. Not a mark on it.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Tess hugged him. [tess] You owe me a surf lesson. Kai laughed. [kai] Could be worse.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "Would you have paddled out? Tell me. And follow for Kai's next worst day.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    }
+  ],
+  "pace": {
+    "tempo": 1.12,
+    "pause": 0.4,
+    "cfg": 0.5
+  },
+  "title_card": false
+}

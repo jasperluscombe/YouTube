@@ -1,0 +1,110 @@
+{
+  "id": "32_gondola_1",
+  "series": "The Last Gondola",
+  "part": "1/3",
+  "grade": "storm",
+  "title": "The Last Gondola (1/3): Stay Inside",
+  "characters": {
+    "Kai": "src/anim/cast.py KAI - lucky red Hawaiian shirt, shorts, flip-flops (bag lost)",
+    "Ruth": "71, retired ski instructor, grey hair, teal parka and knit hat, calm and sharp",
+    "The man on the cable": "red ski patrol jacket, pale, fixed smile, frosted goggles; no breath fog",
+    "Patroller Dee": "real ski patrol, red jacket, ponytail (Part 3)"
+  },
+  "scenes": [
+    {
+      "narration": "~Trust him? A man is standing on the cable outside Kai's gondola. Two hundred feet up. In a blizzard. And he's knocking on the glass.",
+      "visual": "glove knocking on frosted gondola window, figure on cable, TRUST HIM?",
+      "drama": 0.8
+    },
+    {
+      "narration": "Kai had worked at the surf shop for six years. He had never seen snow. Then he won a free ski trip.",
+      "visual": "Kai at the surf shop holding a winning ticket, happy",
+      "drama": 0.75
+    },
+    {
+      "narration": "The airline lost his bag. All of it. Except what he was wearing. Shorts. Flip-flops. And his lucky red Hawaiian shirt.",
+      "visual": "empty baggage carousel, Kai looking down at his outfit",
+      "drama": 0.75
+    },
+    {
+      "narration": "Could be worse, Kai said. It was about to get worse.",
+      "visual": "Kai smiling in the snow, snow falling on him",
+      "drama": 0.7
+    },
+    {
+      "narration": "The last gondola of the day. Four thirty. The storm was coming in early.",
+      "visual": "base station, gondola cabin rising into grey sky",
+      "drama": 0.75
+    },
+    {
+      "narration": "One other passenger climbed in. Ruth. Seventy-one years old. Forty winters on this mountain.",
+      "visual": "Ruth sits across from Kai inside the cabin",
+      "drama": 0.75
+    },
+    {
+      "narration": "She looked at his flip-flops. Then at the sky. Son, she said. You picked the wrong day.",
+      "visual": "close on Ruth, suspicious, looking at his feet",
+      "drama": 0.75
+    },
+    {
+      "narration": "Halfway up, the cable shuddered. The lights went out. And the gondola stopped.",
+      "visual": "exterior: gondola jolts and stops, cabin light dies",
+      "drama": 0.85
+    },
+    {
+      "narration": "Two hundred feet of nothing below. Wind slamming the cabin from side to side.",
+      "visual": "wide: cabin swinging over a dark drop, storm",
+      "drama": 0.75
+    },
+    {
+      "narration": "Kai's radio crackled once before it died. Power's out across the mountain. Stay where you are.",
+      "visual": "radio close-up, static, dies",
+      "drama": 0.75
+    },
+    {
+      "narration": "Kai looked at the door latch. The next tower was right there. Maybe he could climb...",
+      "visual": "Kai's hand reaching for the door latch",
+      "drama": 0.8
+    },
+    {
+      "narration": "Ruth grabbed his wrist. Don't you dare.",
+      "visual": "Ruth close, angry, grabs his wrist",
+      "drama": 0.8
+    },
+    {
+      "narration": "Here is the rule that keeps people alive. If a lift stops, you stay inside. You never climb out. Rescuers come to you.",
+      "visual": "RULE card: STAY INSIDE / NEVER CLIMB OUT / RESCUE COMES TO YOU",
+      "drama": 0.75
+    },
+    {
+      "narration": "And get off that floor, Ruth said. Metal steals your heat faster than the wind.",
+      "visual": "Kai lifts his bare feet off the frosty metal floor",
+      "drama": 0.75
+    },
+    {
+      "narration": "So they sat on Ruth's backpack, shoulder to shoulder, and waited.",
+      "visual": "both huddled together, snow outside the windows",
+      "drama": 0.7
+    },
+    {
+      "narration": "The temperature dropped. Ten degrees. Then zero.",
+      "visual": "thermometer falling, frost creeping across the glass",
+      "drama": 0.75
+    },
+    {
+      "narration": "Then, at midnight... something knocked on the glass.",
+      "visual": "dark window, knock knock",
+      "drama": 0.85
+    },
+    {
+      "narration": "A man in a red ski patrol jacket was standing on the cable. Smiling. Open the door, he said. Follow me down.",
+      "visual": "figure on the cable outside the window, smiling",
+      "drama": 0.85
+    },
+    {
+      "narration": "Trust him? Tell me in the comments. Part two is up next.",
+      "visual": "end card: TRUST HIM?",
+      "drama": 0.75
+    }
+  ]
+}

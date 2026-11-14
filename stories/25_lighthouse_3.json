@@ -1,0 +1,83 @@
+{
+  "id": "25_lighthouse_3",
+  "series": "The Last Lighthouse",
+  "part": "3/3",
+  "title": "The Last Lighthouse (3/3): Burn It All (Finale)",
+  "scenes": [
+    {
+      "narration": "Dozens of boats. Heading straight for the rocks. And the light that guided them... is dead.",
+      "visual": "boat lights approaching, dark tower",
+      "drama": 0.95
+    },
+    {
+      "narration": "The generator is finished. No fuel. No spare parts. Nothing.",
+      "visual": "dead generator, smoke",
+      "drama": 0.9
+    },
+    {
+      "narration": "But a lighthouse doesn't need electricity. It needs fire. That's how they worked... for hundreds of years.",
+      "visual": "old fire lamp",
+      "drama": 0.85
+    },
+    {
+      "narration": "So you grab everything that will burn. The chairs. The table. The bookshelf.",
+      "visual": "carrying furniture up the stairs",
+      "drama": 0.9
+    },
+    {
+      "narration": "Juno carries the logbooks. Three years of the same line. No ships. Nobody.",
+      "visual": "girl carrying a stack of logbooks",
+      "drama": 0.9
+    },
+    {
+      "narration": "You stop her for a second. Then you take the first book... and you light it.",
+      "visual": "lighting the logbook",
+      "drama": 1.0
+    },
+    {
+      "narration": "The fire catches. The great glass lens turns it into a beam... brighter than it's ever been.",
+      "visual": "the beam blazes back",
+      "drama": 1.0
+    },
+    {
+      "narration": "Out in the storm, the boats turn. One by one... they find the channel.",
+      "visual": "boats turning safely",
+      "drama": 0.9
+    },
+    {
+      "narration": "You keep feeding the fire all night. Juno passes you the books. Pepper watches from the stairs.",
+      "visual": "feeding the fire, cat on the stairs",
+      "drama": 0.85
+    },
+    {
+      "narration": "By dawn, the storm is gone. And the little cove... is full of boats.",
+      "visual": "dawn, cove full of boats",
+      "drama": 0.85
+    },
+    {
+      "narration": "Families. Kids. Old people. A hundred and forty strangers... who thought they were the last ones.",
+      "visual": "crowd on the rocks",
+      "drama": 0.85
+    },
+    {
+      "narration": "And then Juno screams... and runs down the rocks.",
+      "visual": "girl running",
+      "drama": 0.95
+    },
+    {
+      "narration": "A man in a torn jacket is climbing off the last boat. He steered for the light. He made it.",
+      "visual": "father and daughter reunite",
+      "drama": 1.0
+    },
+    {
+      "narration": "For three years, you kept a light burning for nobody. Turns out... somebody was always watching.",
+      "visual": "you at the top of the tower at sunrise, cat beside you",
+      "drama": 0.9
+    },
+    {
+      "narration": "What would you have burned to keep the light on? Tell me in the comments... and follow. Tomorrow... a new story.",
+      "visual": "end card: THE END / NEW STORY TOMORROW",
+      "drama": 0.8
+    }
+  ]
+}

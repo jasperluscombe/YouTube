@@ -1,0 +1,86 @@
+{
+  "id": "30_hearthat_2",
+  "series": "Hear That?",
+  "part": "2/3",
+  "grade": "horror",
+  "title": "Hear That? (2/3): Come Down",
+  "scenes": [
+    {
+      "narration": "~Hear that? The basement door is open. And something down there knows your name.",
+      "visual": "basement doorway, darkness, HEAR THAT?",
+      "drama": 0.8,
+      "whispers": [
+        {
+          "text": "come down",
+          "at": 0.4
+        }
+      ]
+    },
+    {
+      "narration": "You grab the flashlight. Moose tries to follow. His legs give out.",
+      "visual": "flashlight, the dog collapsing",
+      "drama": 0.8
+    },
+    {
+      "narration": "So you go down alone. Every step creaks. Then the whispering... stops.",
+      "visual": "descending the stairs with a flashlight beam",
+      "drama": 0.8
+    },
+    {
+      "narration": "The basement is empty. Just an old furnace. Rumbling. Glowing through a crack in its side.",
+      "visual": "furnace with a glowing crack",
+      "drama": 0.8
+    },
+    {
+      "narration": "Your head is pounding. You lean on the wall. And something your dad once told you comes back.",
+      "visual": "you leaning on the wall, dizzy",
+      "drama": 0.75
+    },
+    {
+      "narration": "Carbon monoxide. The quiet killer.",
+      "visual": "RULE card",
+      "drama": 0.8
+    },
+    {
+      "narration": "No smell. No colour. It causes headaches, dizziness, confusion. Some people even hear things that aren't there. And pets can get sick first.",
+      "visual": "RULE card with the symptoms",
+      "drama": 0.7
+    },
+    {
+      "narration": "Headaches every morning. Moose too weak to stand. The whispers.",
+      "visual": "quick flashes: you, the dog, the vent",
+      "drama": 0.8
+    },
+    {
+      "narration": "You follow the furnace pipe to the wall. It vents outside... straight into three feet of snow.",
+      "visual": "exhaust pipe disappearing into a snow-blocked vent",
+      "drama": 0.8
+    },
+    {
+      "narration": "The snow buried the exhaust. Everything that furnace burns has nowhere to go... but into the house.",
+      "visual": "furnace smoke curling back into the room",
+      "drama": 0.8
+    },
+    {
+      "narration": "Your vision blurs. Your legs feel heavy. The stairs look a mile long.",
+      "visual": "blurry stairs going up",
+      "drama": 0.8
+    },
+    {
+      "narration": "And from the top of the stairs, in your mother's voice... ~stay down here with us.",
+      "visual": "top of the stairs, a dark doorway",
+      "drama": 0.85,
+      "whispers": [
+        {
+          "text": "stay with us",
+          "at": 0.8
+        }
+      ]
+    },
+    {
+      "narration": "Get out? Tell me in the comments... part three is up next.",
+      "visual": "end card: GET OUT?",
+      "drama": 0.75
+    }
+  ]
+}

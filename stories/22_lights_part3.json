@@ -1,0 +1,83 @@
+{
+  "id": "22_lights_part3",
+  "series": "The 9:14 Lights",
+  "title": "The 9:14 Lights (3/3): Lights Out (Finale)",
+  "scenes": [
+    {
+      "narration": "The machine says she's lying. She says... it's the machine. And you've got four minutes... until nine fourteen.",
+      "visual": "lobby, clock 9:10, you and the stranger through the glass",
+      "drama": 0.9
+    },
+    {
+      "narration": "You open the door. Biscuit gets there first. Tail going crazy. Dogs know.",
+      "visual": "door opens, Biscuit jumps at her, wagging",
+      "drama": 0.85
+    },
+    {
+      "narration": "Her name is Mara. She used to fix the city's power grid. And she talks fast... like someone who's been alone too long.",
+      "visual": "Mara talking, gesturing",
+      "drama": 0.85
+    },
+    {
+      "narration": "Every night at nine fourteen, the lights come on. Anyone who walks toward them... doesn't come back. That's how she lost her brother.",
+      "visual": "flashback: a figure walks toward a lit window and fades",
+      "drama": 0.95
+    },
+    {
+      "narration": "The lights aren't looking for survivors... they're collecting them.",
+      "visual": "city map: dots blinking out one by one",
+      "drama": 1.0
+    },
+    {
+      "narration": "There's one way to stop it. The substation. Six blocks away. Pull the main breaker... and the city goes dark. Forever.",
+      "visual": "map route to the substation",
+      "drama": 0.9
+    },
+    {
+      "narration": "You run.",
+      "visual": "the three of you sprint into the dark street",
+      "drama": 1.0
+    },
+    {
+      "narration": "Nine twelve. Nine thirteen. Behind you, the streetlights start waking up... one by one... following you.",
+      "visual": "streetlights switching on behind you as you run",
+      "drama": 1.0
+    },
+    {
+      "narration": "The breaker is huge. Rusted. It won't move.",
+      "visual": "giant rusted breaker lever, you and Mara pulling",
+      "drama": 0.95
+    },
+    {
+      "narration": "Nine fourteen.",
+      "visual": "clock hits 9:14",
+      "drama": 1.0
+    },
+    {
+      "narration": "Every light in the city turns toward you... and you pull. With everything you've got.",
+      "visual": "blinding light flood, the lever slams down",
+      "drama": 1.0
+    },
+    {
+      "narration": "Darkness. Real darkness. For the first time in two hundred and twelve nights... it's quiet.",
+      "visual": "black, then silence",
+      "drama": 0.9
+    },
+    {
+      "narration": "And then you look up. Stars. Thousands of them. You'd forgotten they were there.",
+      "visual": "night sky fills with stars",
+      "drama": 0.85
+    },
+    {
+      "narration": "For two hundred and twelve nights, you were alone. Tonight... the city is dark. But you're not.",
+      "visual": "rooftop under the stars: you, Mara and Biscuit",
+      "drama": 0.9
+    },
+    {
+      "narration": "Would you have pulled the lever? Tell me in the comments... and follow. Tomorrow... a new story begins.",
+      "visual": "end card: THE END, new story tomorrow",
+      "drama": 0.8
+    }
+  ],
+  "part": "3/3"
+}

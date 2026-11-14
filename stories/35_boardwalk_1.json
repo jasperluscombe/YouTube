@@ -1,0 +1,110 @@
+{
+  "id": "35_boardwalk_1",
+  "series": "Last Wave",
+  "part": "1/3",
+  "grade": "night",
+  "title": "Last Wave (1/3): The Waterline",
+  "characters": {
+    "Kai": "src/anim/cast.py KAI - lucky red Hawaiian shirt, shorts, flip-flops; works at the boardwalk surf shop",
+    "Tess": "15, customer, dark ponytail, yellow hoodie, brave but scared, has never surfed",
+    "The infected": "grey-green skin, torn clothes, white eyes, slow then fast; they will not go into water"
+  },
+  "scenes": [
+    {
+      "narration": "If zombies trap you in a beach town, don't run for the roads. Run for the water.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "Kai opened his surf shop at six, like every morning.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[kai] Could be worse. It was about to get much worse.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "At six fifteen, the screaming started.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "A girl ran in. Fifteen. Blood on her sleeve. Not hers.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[tess] Lock the door, they bite!",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Outside, a man walked toward the glass. Grey skin. White eyes.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai locked the door and jammed every surfboard he owned against it.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "By noon there were ten of them. By sunset, forty.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The radio said one thing. Stay indoors.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "But Tess noticed something. They walked right up to the waves, and stopped.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "~[tess] They won't go in the water.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Then the glass cracked.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Front door, forty infected. Back door, the ocean. And two longboards.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Tess had never surfed. It was dark. And the tide was going out.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The glass cracked again.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai grabbed both boards. [kai] When I say go, run for the water.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "Paddle out? Part two is next.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    }
+  ],
+  "pace": {
+    "tempo": 1.12,
+    "pause": 0.4,
+    "cfg": 0.5
+  },
+  "title_card": false
+}

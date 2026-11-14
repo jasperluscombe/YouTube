@@ -1,0 +1,40 @@
+{
+  "id": "11_day_100_ice_age",
+  "series": "Day __ of ____",
+  "title": "Day 100 Of The New Ice Age",
+  "scenes": [
+    {
+      "narration": "Day one. Snow in July. Everyone posts pictures. It's kind of fun.",
+      "visual": "a summer street covered in fresh snow, people in t-shirts laughing and taking photos; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    },
+    {
+      "narration": "Day twenty. The snow hasn't stopped. Schools close. Then highways. Then airports.",
+      "visual": "an airport departure board with every flight CANCELLED, snow piling against the windows; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
+      "alert": {
+        "line1": "ALL FLIGHTS",
+        "line2": "CANCELLED",
+        "ticker": "Snowfall continues for 20th day · Highways closed · Stay indoors"
+      }
+    },
+    {
+      "narration": "Day forty five. The snow is past the first floor. You enter your home through the window.",
+      "visual": "climbing through a second floor window from a snow drift, houses buried; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    },
+    {
+      "narration": "Day seventy. Whole neighborhoods move into the mall. It has heat, food, and space.",
+      "visual": "a shopping mall turned into a survivor camp, tents between stores, warm light; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    },
+    {
+      "narration": "Day one hundred. A plane flies overhead for the first time in months.",
+      "visual": "up through a mall skylight as a plane crosses a grey frozen sky; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    },
+    {
+      "narration": "It drops thousands of flyers. They all say the same thing: go south. The equator is still warm.",
+      "visual": "catching falling paper flyers in snow, text reading GO SOUTH; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    },
+    {
+      "narration": "Three thousand miles. On foot. In the snow. Would you make it? Comment yes or no.",
+      "visual": "the edge of a frozen highway stretching south into a white horizon, a line of travelers; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    }
+  ]
+}

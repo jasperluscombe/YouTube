@@ -1,0 +1,111 @@
+{
+  "id": "29_hearthat_1",
+  "series": "Hear That?",
+  "part": "1/3",
+  "grade": "horror",
+  "title": "Hear That? (1/3): The Vents",
+  "scenes": [
+    {
+      "narration": "~Hear that? Three in the morning. The whispering is coming from the vents again.",
+      "visual": "close on a floor vent in the dark, breath of air, HEAR THAT?",
+      "drama": 0.8,
+      "whispers": [
+        {
+          "text": "come down",
+          "at": 0.6
+        },
+        {
+          "text": "come down here",
+          "at": 3.2
+        }
+      ]
+    },
+    {
+      "narration": "Two weeks ago you rented this old farmhouse for the winter. Cheap. Way too cheap. Just you... and Moose.",
+      "visual": "farmhouse alone in the snow, one window lit",
+      "drama": 0.75
+    },
+    {
+      "narration": "Moose is a fourteen-year-old hound. Slow. Gentle. Afraid of nothing.",
+      "visual": "old dog by the fireplace",
+      "drama": 0.7
+    },
+    {
+      "narration": "The first night, you heard it. A whisper. Too soft to understand.",
+      "visual": "bedroom at night, you sit up in bed",
+      "drama": 0.8,
+      "whispers": [
+        {
+          "text": "hello",
+          "at": 2.0
+        }
+      ]
+    },
+    {
+      "narration": "The second night it was louder. It came from under the floor. From the basement.",
+      "visual": "floorboards, the basement door at the end of the hall",
+      "drama": 0.8,
+      "whispers": [
+        "come down",
+        "we're down here"
+      ]
+    },
+    {
+      "narration": "Moose stood at the top of the basement stairs... and growled. He has never growled at anything.",
+      "visual": "dog at the top of dark stairs, hackles up",
+      "drama": 0.85
+    },
+    {
+      "narration": "Then the snow came. Three feet of it. The road disappeared. You're not going anywhere.",
+      "visual": "snow piling against the house and the windows",
+      "drama": 0.75
+    },
+    {
+      "narration": "You started waking up with headaches. Every morning. A little worse every day.",
+      "visual": "you at the sink, pills, mirror",
+      "drama": 0.75
+    },
+    {
+      "narration": "And last night... the whisper said your name. In your mother's voice.",
+      "visual": "dark hallway, the vent grille",
+      "drama": 0.85,
+      "whispers": [
+        {
+          "text": "sweetheart... come down",
+          "at": 1.5
+        }
+      ]
+    },
+    {
+      "narration": "Your mother has been gone for six years.",
+      "visual": "an old framed photo on a shelf",
+      "drama": 0.8
+    },
+    {
+      "narration": "Moose won't eat. He won't get up. He just stares... at the basement door.",
+      "visual": "dog lying down staring at a door",
+      "drama": 0.8
+    },
+    {
+      "narration": "And tonight... the basement door... is open.",
+      "visual": "the basement door creaks open into blackness",
+      "drama": 0.85,
+      "whispers": [
+        "come down",
+        "come down",
+        "come down"
+      ]
+    },
+    {
+      "narration": "Hear that? Tell me in the comments... part two is up next.",
+      "visual": "end card: HEAR THAT?",
+      "drama": 0.75,
+      "whispers": [
+        {
+          "text": "come down",
+          "at": 0.5
+        }
+      ]
+    }
+  ]
+}
