@@ -12,7 +12,7 @@ reason to watch the next and to follow. See launch/RESEARCH_2026-11-13.md. Decid
   each part must work for someone who has seen nothing else.
 - Cast: KAI (lucky shirt, "Could be worse.", the shirt always survives) and TESS (15, yellow hoodie; brave, sharp,
   learns fast). Import TESS and the infected from src/anim/boardwalk.py. New people come and go.
-- Character voices: start a phrase with [kai], [tess] or [man] in the narration and that phrase is spoken in the
+- Character voices: start a phrase with [kai], [tess], [man] or [woman] in the narration and that phrase is spoken in the
   character's voice (channel.yaml voice.chatterbox.voices). Use 3-6 short spoken lines per part; no "he said".
 - Running threads to pay off over the week: Tess is looking for her mother (a nurse at Mercy Hospital);
   the infected will not enter water; they follow sound.

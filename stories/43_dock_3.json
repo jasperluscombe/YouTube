@@ -1,0 +1,112 @@
+{
+  "id": "43_dock_3",
+  "series": "Zombie Outbreak",
+  "day": 3,
+  "part": "3/3",
+  "grade": "night",
+  "title": "Zombie Outbreak Day 3: The Fuel Dock (3/3)",
+  "pace": {
+    "tempo": 1.12,
+    "pause": 0.4,
+    "cfg": 0.5
+  },
+  "title_card": false,
+  "characters": {
+    "Kai": "KAI; one flip-flop left until Part 3, then barefoot",
+    "Tess": "boardwalk.TESS",
+    "Walt": "rescueboat.FISH, old fisherman, voice [man]",
+    "Dana": "nurse in teal hospital scrubs, voice [woman]; worked with Tess's mother at Mercy Hospital"
+  },
+  "scenes": [
+    {
+      "narration": "Someone is trapped in the marina office. Sixty infected are on the pier. And the generator is still calling more.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "[man] We have fuel. [man] We leave now.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[tess] Not without them.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai looked at the generator shed. As long as it ran, they would keep coming.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "But every engine has one weakness. It has to breathe.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Block the air intake, and an engine dies in seconds.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "They rowed the dinghy to the shed in silence. Oars wrapped in rags.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai stuffed his last flip-flop into the air intake.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The engine choked. Coughed. And died.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The lights went out. Total silence.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "And the infected stopped. No sound. No light. Nothing to follow.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[kai] Could be worse. [kai] I had one flip-flop.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "They reached the office window. A woman in hospital scrubs climbed out.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "She had started the generator on purpose. A signal. She had been alone for two days.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai was barefoot. Soaked in diesel. But somehow, the shirt survived. Spotless.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Then the woman looked at Tess. At her yellow hoodie. [woman] Tess?",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[woman] I worked with your mother. [woman] She's alive.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "Would you have gone back? Tell me. Day four is tomorrow.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    }
+  ]
+}

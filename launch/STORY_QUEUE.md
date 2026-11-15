@@ -1,11 +1,8 @@
 # Story queue (the nightly run uses the top unused one, then removes it). See launch/SERIES.md.
 
-2. DAY 3 - The fuel dock. They reach the marina fuel dock at night. Hook: "If you need fuel in an outbreak, don't
-   start the pump. Sound carries farther over water." Real moves: siphon by gravity, quietly; never run a generator
-   indoors (carbon monoxide); fuel fumes + sparks. The infected follow the noise along the pier.
 3. DAY 4 - The supermarket by the marina. Hook: "If you get into a supermarket in an outbreak, don't grab the cans
    first." Real moves: eat fridge food, then freezer, then cans; fill every container while the taps still run;
-   block doors with trolleys chained together. Someone is already living in the stock room.
+   block doors with trolleys chained together. Someone is already living in the stock room. Dana (nurse, teal scrubs, voice [woman], fueldock.DANA) is with them now: she says Tess's mother was alive at Mercy Hospital two days ago. Kai is barefoot from here on (he used his last flip-flop on Day 3).
 4. DAY 5 - Mercy Hospital, for Tess's mother. Hook: "If you have to go into a hospital in an outbreak, don't take
    the stairs you can see." Real moves: direct pressure stops most bleeding; a tourniquet goes high and tight;
    note the time. They find her mother's badge... and a note.

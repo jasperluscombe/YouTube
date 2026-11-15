@@ -30,6 +30,7 @@ voice:
       kai: voices/ref_kai.wav
       tess: voices/ref_tess.wav
       man: voices/ref_man.wav
+      woman: voices/ref_woman.wav
     exaggeration: 0.85             # emotion intensity (0.5 neutral ... 1.0 very dramatic); per scene: "drama"
     cfg: 0.3                       # lower = slower, more deliberate delivery
     temperature: 0.8
