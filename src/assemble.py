@@ -26,6 +26,7 @@ GRADES = {
     "night":  "eq=contrast=1.10:saturation=0.92:gamma=0.96,colorbalance=rs=-0.04:bs=0.07:rh=0.05:bh=-0.03",
     "horror": "eq=contrast=1.12:saturation=0.62:gamma=0.97,colorbalance=rs=-0.03:gs=0.03:bs=0.06:gm=0.03",
     "warm":   "eq=contrast=1.06:saturation=1.08:gamma=1.0,colorbalance=rh=0.06:gh=0.02:bh=-0.04",
+    "moon":   "eq=contrast=1.04:saturation=1.0:gamma=1.38:brightness=0.02,colorbalance=bs=0.05:rh=0.03",   # night scenes, lifted so they read on a phone
     "storm":  "eq=contrast=1.12:saturation=0.75:gamma=0.95,colorbalance=bs=0.08:bm=0.03",
 }
 

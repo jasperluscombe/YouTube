@@ -3,7 +3,7 @@
   "series": "Zombie Outbreak",
   "day": 3,
   "part": "3/3",
-  "grade": "night",
+  "grade": "moon",
   "title": "Zombie Outbreak Day 3: The Fuel Dock (3/3)",
   "pace": {
     "tempo": 1.12,
@@ -94,7 +94,7 @@
       "drama": 0.65
     },
     {
-      "narration": "Then the woman looked at Tess. At her yellow hoodie. [woman] Tess?",
+      "narration": "Then the woman looked at Tess. At her yellow hoodie. [woman] Tess, is that you?",
       "visual": "(see src/anim/fueldock.py)",
       "drama": 0.65
     },
