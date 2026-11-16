@@ -1,0 +1,110 @@
+{
+  "id": "33_gondola_2",
+  "series": "The Last Gondola",
+  "part": "2/3",
+  "grade": "storm",
+  "title": "The Last Gondola (2/3): No Breath",
+  "characters": {
+    "Kai": "src/anim/cast.py KAI - lucky red Hawaiian shirt, shorts, flip-flops (bag lost)",
+    "Ruth": "71, retired ski instructor, grey hair, teal parka and knit hat, calm and sharp",
+    "The man on the cable": "red ski patrol jacket, pale, fixed smile, frosted goggles; no breath fog",
+    "Patroller Dee": "real ski patrol, red jacket, ponytail (Part 3)"
+  },
+  "scenes": [
+    {
+      "narration": "~Trust him? A ski patroller is standing on the cable in a blizzard, asking Kai to open the door.",
+      "visual": "recap: figure outside the window, TRUST HIM?",
+      "drama": 0.8
+    },
+    {
+      "narration": "Kai's hand was already on the latch. Rescue. Finally.",
+      "visual": "Kai's hand on the latch, relief",
+      "drama": 0.75
+    },
+    {
+      "narration": "But Ruth didn't move. She was staring at the man's feet.",
+      "visual": "Ruth staring, suspicious",
+      "drama": 0.8
+    },
+    {
+      "narration": "No harness. No rope. Nothing clipped to the cable. He was just standing there, in wind that could flip a truck.",
+      "visual": "the man's boots on the bare cable, nothing attached",
+      "drama": 0.8
+    },
+    {
+      "narration": "Ma'am, the man said. The cable is failing. You have to come now.",
+      "visual": "the man at the glass, calm smile",
+      "drama": 0.8
+    },
+    {
+      "narration": "His voice was calm. Too calm. And his breath didn't fog the glass.",
+      "visual": "close on the glass in front of his mouth: clear",
+      "drama": 0.85
+    },
+    {
+      "narration": "Kai's breath fogged everything. Ruth's did too. The man's didn't.",
+      "visual": "inside: Kai and Ruth breathing clouds; outside: nothing",
+      "drama": 0.75
+    },
+    {
+      "narration": "Patrol doesn't come out in a storm like this, Ruth whispered. Not alone. Not ever.",
+      "visual": "~Ruth whispering, close",
+      "drama": 0.75
+    },
+    {
+      "narration": "Kai took his hand off the latch. Thanks, he said. We'll wait.",
+      "visual": "Kai pulls his hand back, determined",
+      "drama": 0.75
+    },
+    {
+      "narration": "The man's smile didn't change. He just kept knocking. Slow. Patient.",
+      "visual": "the man knocking, unchanging smile",
+      "drama": 0.85
+    },
+    {
+      "narration": "For one hour. Then two.",
+      "visual": "clock: 12:00 to 2:00",
+      "drama": 0.75
+    },
+    {
+      "narration": "Kai's legs were going numb. His shorts had frozen stiff and split right at the knee.",
+      "visual": "Kai's torn, frosted shorts, shivering",
+      "drama": 0.75
+    },
+    {
+      "narration": "Could be worse, he said through chattering teeth. Then the window cracked.",
+      "visual": "Kai trying to smile; crack shoots across the glass",
+      "drama": 0.85
+    },
+    {
+      "narration": "A thin line ran across the glass, right where the man was knocking.",
+      "visual": "close: crack across the window at the knuckles",
+      "drama": 0.75
+    },
+    {
+      "narration": "Ruth was shivering hard. Then she stopped. That is worse. When the shivering stops, the cold is winning.",
+      "visual": "Ruth goes still, eyes heavy; WHEN SHIVERING STOPS",
+      "drama": 0.8
+    },
+    {
+      "narration": "Kai pulled her close and gave her every bit of heat he had.",
+      "visual": "Kai wraps his arms around Ruth",
+      "drama": 0.7
+    },
+    {
+      "narration": "Outside, the knocking stopped. Kai looked up. The man was gone.",
+      "visual": "window empty, only snow",
+      "drama": 0.8
+    },
+    {
+      "narration": "Then the gondola dipped. Hard. As if something heavy had just climbed onto the roof.",
+      "visual": "exterior: cabin dips, a dark shape on the roof",
+      "drama": 0.85
+    },
+    {
+      "narration": "Hold on? Tell me in the comments. Part three is up next.",
+      "visual": "end card: HOLD ON?",
+      "drama": 0.75
+    }
+  ]
+}

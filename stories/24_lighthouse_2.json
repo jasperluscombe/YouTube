@@ -1,0 +1,88 @@
+{
+  "id": "24_lighthouse_2",
+  "series": "The Last Lighthouse",
+  "part": "2/3",
+  "title": "The Last Lighthouse (2/3): Into The Storm",
+  "scenes": [
+    {
+      "narration": "Last night, a light blinked out of the storm. S O S. Child on board. Then... it went dark.",
+      "visual": "recap: morse light, then darkness",
+      "drama": 0.85
+    },
+    {
+      "narration": "Your rowboat hasn't left the rock in three years. Tonight... it's going to have to.",
+      "visual": "rowboat tied at the rocks, storm",
+      "drama": 0.9
+    },
+    {
+      "narration": "Pepper jumps in before you can stop her. She hates the water. She hates storms. But she hates being left behind more.",
+      "visual": "cat leaps into the boat",
+      "drama": 0.8
+    },
+    {
+      "narration": "You row. The waves are taller than the lighthouse door. Your hands are bleeding. You keep rowing.",
+      "visual": "rowing through huge waves",
+      "drama": 1.0
+    },
+    {
+      "narration": "Lightning. And for one second... you see it. A sailboat. Tipped on its side.",
+      "visual": "lightning reveals a capsized sailboat",
+      "drama": 1.0
+    },
+    {
+      "narration": "A girl is clinging to the mast. Yellow raincoat. Maybe ten years old.",
+      "visual": "girl clinging to the mast",
+      "drama": 0.95
+    },
+    {
+      "narration": "You grab her arm. Her name is Juno. She keeps saying the same thing... Dad steered for the light. Dad steered for the light.",
+      "visual": "pulling her into the rowboat",
+      "drama": 0.95
+    },
+    {
+      "narration": "Her dad isn't on the boat.",
+      "visual": "empty sailboat drifting",
+      "drama": 1.0
+    },
+    {
+      "narration": "You turn back. Every stroke, you watch the lighthouse beam. It's the only way home.",
+      "visual": "rowing toward the beam",
+      "drama": 0.9
+    },
+    {
+      "narration": "Then... the beam stutters. Flickers...",
+      "visual": "beam flickering",
+      "drama": 0.95
+    },
+    {
+      "narration": "And goes out.",
+      "visual": "total darkness",
+      "drama": 1.0
+    },
+    {
+      "narration": "The generator. Three years, it never failed once. And it picks tonight.",
+      "visual": "dark tower in the storm",
+      "drama": 0.9
+    },
+    {
+      "narration": "You make it to the rocks. Barely. Juno is shivering. Pepper hasn't left her lap for a second.",
+      "visual": "on the rocks, cat on the girl's lap",
+      "drama": 0.85
+    },
+    {
+      "narration": "Then Juno points at the horizon... and goes very quiet.",
+      "visual": "girl pointing",
+      "drama": 0.95
+    },
+    {
+      "narration": "Lights. Dozens of them. Boats. All of them... heading straight for the rocks.",
+      "visual": "many boat lights on the horizon",
+      "drama": 1.0
+    },
+    {
+      "narration": "They saw your light. For three years, they saw it. And now it's gone. How would you save them? Comment below... part three is up next.",
+      "visual": "end card: HOW WOULD YOU SAVE THEM?",
+      "drama": 0.85
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "id": "36_boardwalk_2",
+  "series": "Last Wave",
+  "part": "2/3",
+  "grade": "night",
+  "title": "Last Wave (2/3): The Rip",
+  "characters": {
+    "Kai": "src/anim/cast.py KAI - lucky red Hawaiian shirt, shorts, flip-flops; works at the boardwalk surf shop",
+    "Tess": "15, customer, dark ponytail, yellow hoodie, brave but scared, has never surfed",
+    "The infected": "grey-green skin, torn clothes, white eyes, slow then fast; they will not go into water"
+  },
+  "scenes": [
+    {
+      "narration": "The glass broke. Forty infected poured in. Kai and Tess ran for the ocean.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "They hit the sand running.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[kai] Lie flat. [kai] Paddle. [kai] Don't look back.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "They looked back. Every infected had stopped at the waterline. Not one step further.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Tess laughed. They had made it.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Then the water started moving. Fast. Straight out to sea.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "A rip current. A river inside the ocean. It can outrun an Olympic swimmer.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Tess panicked, and paddled straight back toward the beach.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Toward them.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[kai] Stop! [kai] You can't beat it. [kai] Nobody can.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Here's the rule lifeguards teach. Don't fight it. Go sideways, along the beach. Then come in.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "So they paddled sideways. Arms burning.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "On the sand, the infected walked with them. Matching every stroke.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Then the current let go.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai's board bumped something in the dark.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "A man. Face down. In a lifeguard shirt.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Then his hand closed around Kai's ankle.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "Kick free? Part three is next.",
+      "visual": "(see src/anim/boardwalk.py)",
+      "drama": 0.65
+    }
+  ],
+  "pace": {
+    "tempo": 1.12,
+    "pause": 0.4,
+    "cfg": 0.5
+  },
+  "title_card": false
+}

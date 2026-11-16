@@ -1,0 +1,113 @@
+{
+  "id": "41_dock_1",
+  "series": "Zombie Outbreak",
+  "day": 3,
+  "part": "1/3",
+  "grade": "moon",
+  "title": "Zombie Outbreak Day 3: The Fuel Dock (1/3)",
+  "pace": {
+    "tempo": 1.12,
+    "pause": 0.4,
+    "cfg": 0.5
+  },
+  "title_card": false,
+  "characters": {
+    "Kai": "KAI; one flip-flop left until Part 3, then barefoot",
+    "Tess": "boardwalk.TESS",
+    "Walt": "rescueboat.FISH, old fisherman, voice [man]",
+    "Dana": "nurse in teal hospital scrubs, voice [woman]; worked with Tess's mother at Mercy Hospital"
+  },
+  "scenes": [
+    {
+      "narration": "If you need fuel in an outbreak, don't start the pump. Sound carries farther over water.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "The fishing boat reached the marina fuel dock at midnight.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "One pier. Two pumps. And four hundred yards of dark water between them and the town.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[man] Quarter tank. [man] We fill up, or we drift.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The pump needed power. Power meant the generator. And a generator is the loudest thing on a dock.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[kai] So we don't use the pump.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai found a hose, and an empty fuel can.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "A siphon needs no power. Fill the hose, keep the can lower than the tank, and gravity does the rest.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[tess] Don't use your mouth! Fuel in your lungs can kill you.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "So they sank the whole hose in the tank, thumbed the end, and pulled it down.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Fuel ran. Slow. Silent.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Tess wrapped the metal can in her hoodie, so it wouldn't clank.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Three cans. Four. The gauge crept up.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[kai] Could be worse.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Then every light on the dock came on.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Somewhere on shore, someone had started the generator.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "And in the town, four hundred yards away, every head turned.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "Stay or go? Part two is next.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    }
+  ],
+  "movie_title": "Zombie Outbreak Day 3"
+}

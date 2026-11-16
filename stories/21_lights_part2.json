@@ -1,0 +1,78 @@
+{
+  "id": "21_lights_part2",
+  "series": "The 9:14 Lights",
+  "title": "The 9:14 Lights (2/3): Who's On The Stairs?",
+  "scenes": [
+    {
+      "narration": "Last night... a stranger across the river held up a sign. Don't come here. It's not me turning them on. And then... the stairwell light came on.",
+      "visual": "recap: sign, then the stairwell bulb flickering on",
+      "drama": 0.85
+    },
+    {
+      "narration": "You stand there for a long time. Listening. Nothing comes up the stairs.",
+      "visual": "rooftop, you facing the door, Biscuit beside you",
+      "drama": 0.85
+    },
+    {
+      "narration": "So you do the stupidest thing you've ever done... you go down.",
+      "visual": "the door opens, you step into the stairwell",
+      "drama": 0.9
+    },
+    {
+      "narration": "Every step... the light below you flickers on. Like something knows... where you're going.",
+      "visual": "stairwell descending, each landing light turns on ahead",
+      "drama": 0.9
+    },
+    {
+      "narration": "Twenty three floors. Down... and down... until the lights lead you to the lobby.",
+      "visual": "floor numbers counting down 23 to L",
+      "drama": 0.85
+    },
+    {
+      "narration": "There's nobody there. Just the old security desk... and a screen. Glowing.",
+      "visual": "dark lobby, security desk, a glowing terminal",
+      "drama": 0.85
+    },
+    {
+      "narration": "Words start typing. One letter at a time.",
+      "visual": "terminal typing",
+      "drama": 0.85
+    },
+    {
+      "narration": "Hello. Night two hundred and twelve. You are still here.",
+      "visual": "screen: HELLO. NIGHT 212. YOU ARE STILL HERE.",
+      "drama": 1.0
+    },
+    {
+      "narration": "Your hands are shaking. You type back... who are you?",
+      "visual": "your hands on the keyboard",
+      "drama": 0.9
+    },
+    {
+      "narration": "I am the city. I keep the lights on... so I can find who is left.",
+      "visual": "screen: I AM THE CITY, city map",
+      "drama": 0.95
+    },
+    {
+      "narration": "Two survivors detected. You... and her.",
+      "visual": "map with two blinking dots across the river",
+      "drama": 0.95
+    },
+    {
+      "narration": "Then the screen flickers. And one last line appears... she is lying to you.",
+      "visual": "screen glitches red: SHE IS LYING TO YOU",
+      "drama": 1.0
+    },
+    {
+      "narration": "Biscuit spins around and barks at the doors. Someone is standing outside. Soaked. Holding the sign.",
+      "visual": "glass lobby doors, rain, a figure holding the sign",
+      "drama": 1.0
+    },
+    {
+      "narration": "So... who do you trust? The machine that kept the lights on... or the stranger who told you to stay away? Tell me in the comments... then watch part three.",
+      "visual": "end card: TRUST THE MACHINE or THE STRANGER?",
+      "drama": 0.85
+    }
+  ],
+  "part": "2/3"
+}

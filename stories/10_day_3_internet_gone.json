@@ -1,0 +1,40 @@
+{
+  "id": "10_day_3_internet_gone",
+  "series": "Day __ of ____",
+  "title": "Day 3 Without The Internet. Forever.",
+  "scenes": [
+    {
+      "narration": "Day one. At nine a.m. the internet goes down. Everywhere. Every country. At the same time.",
+      "visual": "holding a phone showing NO CONNECTION, people on a busy street all staring at their phones; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    },
+    {
+      "narration": "No maps. No bank. Your card gets declined at the store. So does everyone's.",
+      "visual": "a grocery checkout with a DECLINED card screen and a long confused line; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    },
+    {
+      "narration": "Day two. The shelves are empty by noon. People start trading. Batteries for bread.",
+      "visual": "a supermarket with empty shelves and people bartering in the aisles; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    },
+    {
+      "narration": "No one knows what happened. The TV only shows one message: please stay calm.",
+      "visual": "an old TV showing a test card with the text PLEASE STAY CALM; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16",
+      "alert": {
+        "line1": "PLEASE",
+        "line2": "STAY CALM",
+        "ticker": "Network outage affecting all regions · Cause unknown · Await further instructions"
+      }
+    },
+    {
+      "narration": "Day three. Your neighbor knocks with a paper map. He says the old radio tower still works.",
+      "visual": "opening a front door to a neighbor holding a paper map and a flashlight; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    },
+    {
+      "narration": "On the radio, a voice reads a list of places with food and water. Your street is on it.",
+      "visual": "a crowd gathered around a radio in a dark living room, candlelight; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    },
+    {
+      "narration": "How long would you last without the internet? A day? A week? Be honest.",
+      "visual": "down a dark suburban street lit only by candles in windows; the main character is a simple faceless cartoon figure in an orange hoodie; flat 2D vector animation, minimalist cartoon, muted dark night palette with warm window lights, soft gradients, simple shapes, subtle slow camera movement, no text, vertical 9:16"
+    }
+  ]
+}

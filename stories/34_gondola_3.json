@@ -1,0 +1,110 @@
+{
+  "id": "34_gondola_3",
+  "series": "The Last Gondola",
+  "part": "3/3",
+  "grade": "storm",
+  "title": "The Last Gondola (3/3): Untouched - The Finale",
+  "characters": {
+    "Kai": "src/anim/cast.py KAI - lucky red Hawaiian shirt, shorts, flip-flops (bag lost)",
+    "Ruth": "71, retired ski instructor, grey hair, teal parka and knit hat, calm and sharp",
+    "The man on the cable": "red ski patrol jacket, pale, fixed smile, frosted goggles; no breath fog",
+    "Patroller Dee": "real ski patrol, red jacket, ponytail (Part 3)"
+  },
+  "scenes": [
+    {
+      "narration": "~Something is on the roof. Ruth has stopped shivering. And it's four hours until sunrise.",
+      "visual": "recap: ceiling of the cabin, dents, SOMETHING IS ON THE ROOF",
+      "drama": 0.8
+    },
+    {
+      "narration": "Footsteps crossed the roof. Slow. Heavy.",
+      "visual": "ceiling dents moving across, both look up",
+      "drama": 0.85
+    },
+    {
+      "narration": "Then the handle of the roof hatch began to turn.",
+      "visual": "close: hatch handle turning",
+      "drama": 0.85
+    },
+    {
+      "narration": "Kai grabbed it with both hands and held on. One flip-flop flew off into the dark.",
+      "visual": "Kai hanging on the hatch handle, flip-flop falls",
+      "drama": 0.8
+    },
+    {
+      "narration": "It pulled. He pulled back. Not today, Kai said.",
+      "visual": "struggle, Kai angry",
+      "drama": 0.8
+    },
+    {
+      "narration": "Behind him, Ruth whispered. Keep talking. Don't let me sleep.",
+      "visual": "Ruth slumped, eyes half closed",
+      "drama": 0.7
+    },
+    {
+      "narration": "So Kai talked. About the surf shop. About waves. About the time a seagull stole his entire lunch.",
+      "visual": "Kai talking; thought bubble: beach, seagull",
+      "drama": 0.7
+    },
+    {
+      "narration": "Ruth laughed. Barely. But she laughed. And the handle stopped turning.",
+      "visual": "Ruth smiles weakly; the handle goes still",
+      "drama": 0.75
+    },
+    {
+      "narration": "Hours passed. The wind died. And the sky over the mountain turned grey.",
+      "visual": "dawn outside, storm fading",
+      "drama": 0.7
+    },
+    {
+      "narration": "Then they heard it. Engines. A snowcat below. Voices, with real breath fogging in the cold.",
+      "visual": "snowcat lights below, rescuers breathing clouds",
+      "drama": 0.75
+    },
+    {
+      "narration": "Real ski patrol climbed the tower. Ropes. Harnesses. Clipped on, one step at a time.",
+      "visual": "patroller climbing the tower, clipped on",
+      "drama": 0.75
+    },
+    {
+      "narration": "They lowered Ruth first. Then Kai. Shorts torn. One flip-flop. Frost in his eyebrows.",
+      "visual": "Kai lowered on a rope, wrecked",
+      "drama": 0.75
+    },
+    {
+      "narration": "At the bottom, a patroller named Dee wrapped him in a blanket. You stayed in, she said. That's why you're alive.",
+      "visual": "Dee and Kai at the base, blanket",
+      "drama": 0.75
+    },
+    {
+      "narration": "Kai told her about the man on the cable. The red jacket. The knocking.",
+      "visual": "Kai explaining, Dee listening",
+      "drama": 0.75
+    },
+    {
+      "narration": "Dee went very quiet. We lost a patroller on that line, she said. Twenty years ago tonight. In a storm.",
+      "visual": "Dee's face falls; old photo of a smiling patroller",
+      "drama": 0.85
+    },
+    {
+      "narration": "Kai looked back up at the gondola. Fresh snow covered the roof. Smooth. Untouched. Not one footprint.",
+      "visual": "the gondola roof: smooth snow, no prints",
+      "drama": 0.85
+    },
+    {
+      "narration": "Kai was frozen, scratched, and missing a shoe. But somehow... the shirt survived. Not a single wrinkle.",
+      "visual": "insert: the pristine red Hawaiian shirt",
+      "drama": 0.7
+    },
+    {
+      "narration": "Could be worse, Kai said. And for once, it wasn't.",
+      "visual": "Kai and Ruth wrapped in blankets, smiling at sunrise",
+      "drama": 0.7
+    },
+    {
+      "narration": "Trust him? Would you have opened that door? Tell me in the comments, and follow. Tomorrow, Kai's next worst day.",
+      "visual": "end card: TRUST HIM? / NEW STORY TOMORROW",
+      "drama": 0.75
+    }
+  ]
+}

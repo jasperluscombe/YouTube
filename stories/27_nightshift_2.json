@@ -1,0 +1,78 @@
+{
+  "id": "27_nightshift_2",
+  "series": "The Night Shift",
+  "part": "2/3",
+  "title": "The Night Shift (2/3): Where's Water?",
+  "scenes": [
+    {
+      "narration": "Someone at the back door says they have water. You haven't opened it. Not yet.",
+      "visual": "recap: back door, knocking",
+      "drama": 0.8
+    },
+    {
+      "narration": "You crouch down and look through the gap at the bottom. Two shoes. Standing perfectly still.",
+      "visual": "view under the door: two shoes",
+      "drama": 0.85
+    },
+    {
+      "narration": "Then one of them... turns the wrong way.",
+      "visual": "a foot twisting unnaturally",
+      "drama": 0.85
+    },
+    {
+      "narration": "You don't open the door.",
+      "visual": "you step back from the door",
+      "drama": 0.85
+    },
+    {
+      "narration": "The knocking goes on for an hour. Then it stops. And somehow... the silence is worse.",
+      "visual": "clock ticking, quiet",
+      "drama": 0.8
+    },
+    {
+      "narration": "Here's the thing nobody tells you about survival. It's called the rule of threes.",
+      "visual": "RULE card appears",
+      "drama": 0.75
+    },
+    {
+      "narration": "Three minutes without air. Three hours without shelter in bad weather. Three days without water. Three weeks without food.",
+      "visual": "RULE OF THREES card with four lines",
+      "drama": 0.7
+    },
+    {
+      "narration": "You've got weeks of food. But water... you've got two bottles. And it's day three.",
+      "visual": "two bottles on the counter",
+      "drama": 0.8
+    },
+    {
+      "narration": "You give Mia most of it. She notices. She always notices.",
+      "visual": "Mia drinking, looking at you",
+      "drama": 0.75
+    },
+    {
+      "narration": "By night, her lips are dry. She's dizzy. She keeps saying she's fine.",
+      "visual": "Mia lying down, tired",
+      "drama": 0.8
+    },
+    {
+      "narration": "Then the shutter at the front starts to rattle. Then bend.",
+      "visual": "front shutter denting inward",
+      "drama": 0.85
+    },
+    {
+      "narration": "You search every shelf again. Sports drinks, gone. Soda, gone. Even the ice in the freezer, gone.",
+      "visual": "you searching empty shelves",
+      "drama": 0.8
+    },
+    {
+      "narration": "Mia whispers, I'm thirsty.",
+      "visual": "close on Mia",
+      "drama": 0.8
+    },
+    {
+      "narration": "There's water in this building. A lot of it. You just have to know where. Where's water? Tell me in the comments... part three is up next.",
+      "visual": "end card: WHERE'S WATER?",
+      "drama": 0.75
+    }
+  ]
+}

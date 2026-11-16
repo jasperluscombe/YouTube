@@ -1,0 +1,112 @@
+{
+  "id": "42_dock_2",
+  "series": "Zombie Outbreak",
+  "day": 3,
+  "part": "2/3",
+  "grade": "moon",
+  "title": "Zombie Outbreak Day 3: The Fuel Dock (2/3)",
+  "pace": {
+    "tempo": 1.12,
+    "pause": 0.4,
+    "cfg": 0.5
+  },
+  "title_card": false,
+  "characters": {
+    "Kai": "KAI; one flip-flop left until Part 3, then barefoot",
+    "Tess": "boardwalk.TESS",
+    "Walt": "rescueboat.FISH, old fisherman, voice [man]",
+    "Dana": "nurse in teal hospital scrubs, voice [woman]; worked with Tess's mother at Mercy Hospital"
+  },
+  "scenes": [
+    {
+      "narration": "The dock lights are on. The generator is roaring. And every infected in town is walking toward the pier.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "[man] Who started that?",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Tess pointed at the marina office. A light in the window. Someone waving.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[tess] There's a person in there!",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Between them and the office, one long pier. And the infected were already on it.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Sixty of them. Shoulder to shoulder.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai looked at the pier. Then at the fuel dock under his feet. It was floating.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "A floating dock is joined to the pier by one ramp. And the ramp hangs on two steel pins.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "[kai] Pull the pins!",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The first pin slid out.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The second was rusted solid.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Twenty yards. Ten.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Tess poured diesel on the pin. Diesel creeps into rust like oil.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "Kai kicked. The pin flew out. The ramp dropped into the sea.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "The infected kept walking. Straight off the end of the pier.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "One after another, into the water. They couldn't swim.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    },
+    {
+      "narration": "But the person in the office was trapped now, with sixty infected between them and the only way out.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.7
+    },
+    {
+      "narration": "Go back? Part three is next.",
+      "visual": "(see src/anim/fueldock.py)",
+      "drama": 0.65
+    }
+  ]
+}
