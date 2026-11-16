@@ -34,7 +34,10 @@ Every story file carries `"pace": {"tempo": 1.12, "pause": 0.4, "cfg": 0.5}` and
 Never pad. No backstory, no mood-setting lines. If a line is not a decision, a consequence or a reveal, cut it.
 
 ## Story (what the breakout videos do)
-- **Line 1 is a decision the viewer has a stake in**: "If <disaster> happens while you're at <specific place>,
+- **Hook in 3 seconds (weekly review 16 Nov)**: the very first spoken line is at most 8 words / under 3 seconds, over
+  the most dangerous image of the part already in motion in frame 1 ("Never drink seawater." / "Forty infected. One
+  glass door."). Viewers leave at 4-9 s whatever the length, so nothing slow may come first.
+- **Line 2 is a decision the viewer has a stake in**: "If <disaster> happens while you're at <specific place>,
   don't <the obvious thing>. <Do the surprising thing>." Never a vague mystery question, never a greeting.
 - Then a chain: decision -> consequence -> new problem, every 1-2 lines. At least **4 smart, true survival moves per
   part** (the "I should have thought of that" feeling), with **specific numbers** (40 infected, 30 minutes, 28 floors).

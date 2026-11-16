@@ -174,7 +174,7 @@ def main():
     lst = tmp / "clips.txt"
     lst.write_text("".join(f"file '{c.name}'\n" for c in clips))
     final = outdir / f"{sid}.mp4"
-    if story.get("part"):   # "THE 9:14 LIGHTS  1/3" label for the first seconds
+    if story.get("part") and story.get("part_label", not story.get("pace")):   # "THE 9:14 LIGHTS  1/3" label; off for fast-format parts (weekly review 16 Nov)
         (tmp / "part.txt").write_text(f"{story.get('series', '').upper()}   {story['part']}")
         first = tmp / "clip_01.mp4"
         lab = tmp / "clip_01_label.mp4"

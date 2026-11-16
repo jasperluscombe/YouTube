@@ -7,11 +7,12 @@ then a chapter card before each story and an outro card asking which story was b
 Output is 16:9 (the vertical frame centred over a blurred, darkened copy of itself) because
 long-form viewers watch on TV/desktop. Also writes <out>.chapters.txt for the description.
 """
-import json, pathlib, subprocess, sys
+import json, os, pathlib, subprocess, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FONT = str(ROOT / "fonts" / "Anton-Regular.ttf")
-W, H = 1920, 1080
+W, H = int(os.environ.get("MOVIE_W", 1920)), int(os.environ.get("MOVIE_H", 1080))      # MOVIE_W=1280 MOVIE_H=720 for a fast, small build
+CRF, PRESET = os.environ.get("MOVIE_CRF", "20"), os.environ.get("MOVIE_PRESET", "medium")
 
 
 def run(cmd):
@@ -41,7 +42,7 @@ WIDE = (f"split[a][b];[b]scale={W}:{H}:force_original_aspect_ratio=increase,crop
 
 def segment(src, a, b, out):
     run(["ffmpeg", "-y", "-ss", f"{a:.3f}", "-to", f"{b:.3f}", "-i", str(src), "-filter_complex", f"[0:v]{WIDE}[v]",
-         "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-crf", "20", "-preset", "medium",
+         "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-crf", CRF, "-preset", PRESET,
          "-c:a", "aac", "-ar", "44100", "-ac", "2", "-b:a", "192k", str(out)])
 
 
@@ -65,7 +66,8 @@ def main(out_path, groups):
     titles = []
     for n, g in enumerate(groups, 1):
         sids = g.split(",")
-        series = json.loads((ROOT / "stories" / f"{sids[0]}.json").read_text()).get("series", f"Story {n}")
+        meta = json.loads((ROOT / "stories" / f"{sids[0]}.json").read_text())
+        series = meta.get("movie_title") or meta.get("series", f"Story {n}")
         titles.append(series)
         c = work / f"card_{n}.mp4"
         card([(f"STORY {n}", 60, "0xd9d9d9"), (series.upper(), 120, "0xffd27a")], c)

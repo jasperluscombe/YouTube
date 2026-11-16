@@ -106,5 +106,6 @@
     "pause": 0.4,
     "cfg": 0.5
   },
-  "title_card": false
+  "title_card": false,
+  "movie_title": "Zombie Outbreak Day 1"
 }
